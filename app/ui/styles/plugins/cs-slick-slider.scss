@@ -1,0 +1,44 @@
+.cs-slick-slider {
+    overflow: hidden;
+    margin: 0 (-$space_xxs);
+
+    &_space_none {
+        margin: 0;
+    }
+
+    &_static {
+        display: flex;
+    }
+    &_static &__item {
+        width: calc(100% / 4);
+
+        @include media($mq-fhd) {
+            width: calc(100% / 3);
+        }
+
+        @include media($mq-m) {
+            width: calc(100% / 2);
+        }
+
+        @include mobile {
+            width: 100%;
+        }
+    }
+
+    & .slick-list {
+        min-width: 1078px;
+
+        @include media($mq-n) {
+            min-width: 600px;
+        }
+
+        @include mobile {
+            min-width: 550px;
+        }
+    }
+
+    &__item {
+        padding-left: $space_xxs;
+        padding-right: $space_xxs;
+    }
+}

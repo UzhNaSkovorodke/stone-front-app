@@ -1,26 +1,14 @@
-import styles from "./page.module.css";
-import { cmsRequest, ECmsStoneEndpoints } from "@/app/lib/api/pageDataApi";
-import { ICommonResponse } from "@/app/lib/services/pageData/common/common.interface";
+import styles from './page.module.scss'
+import { getCommon } from 'shared/lib/pageData/common/common'
+import { MainLayout } from 'features/MainLayout/MainLayout'
+import { ICommonResponse } from 'shared/lib/pageData/common/common.interface'
 
-export default async function Home() {
-  // const getMain = (): Promise<IMainPageResponse> => {
-  //   return cmsRequest.get<IMainPageResponse>({
-  //     pageSlug: ECmsStoneEndpoints.MAIN,
-  //     queryParams: "populate=deep,4",
-  //   });
-  // };
-  //
-  // const mainData: IMainPageResponse = await getMain();
+export default async function Main<IMainProps>() {
+  const common: ICommonResponse = await getCommon()
 
-  const getCommon = (): Promise<ICommonResponse> => {
-    return cmsRequest.get<ICommonResponse>({
-      pageSlug: ECmsStoneEndpoints.COMMON,
-      queryParams: "populate=deep",
-    });
-  };
-
-  // const main: IMainPageResponse = await getMain();
-  const common: ICommonResponse = await getCommon();
-
-  return <main className={styles.main}></main>;
+  return (
+    <main className={styles.main}>
+      <MainLayout common={common.data.attributes}></MainLayout>
+    </main>
+  )
 }

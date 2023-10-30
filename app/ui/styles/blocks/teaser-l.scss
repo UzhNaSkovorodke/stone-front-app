@@ -1,0 +1,233 @@
+.teaser-l {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 30*$space_gap 20*$space_gap;
+    overflow: hidden;
+
+    @include desktop {
+        padding: 30*$space_gap 16*$space_gap;
+    }
+
+    @include media($mq-n) {
+        background-color: $color-background;
+        padding: 0 $space 20*$space_gap;
+    }
+
+    &_style_dark  {
+        background-color: $color-background;
+
+        @include desktop {
+            padding: $space_l;
+            padding-right: 0;
+        }
+
+        @include tablet {
+            padding: 20*$space_gap $space;
+            padding-right: 0;
+        }
+    }
+    &_style_dark  &__h {
+        color: $color-text-lighter;
+        margin-bottom: 20*$space_gap;
+
+        @include desktop {
+            margin-right: $space_l;
+        }
+
+        @include tablet {
+            margin-right: $space;
+        }
+    }
+    &_style_dark  &__description {
+        flex: 1 0 auto;
+        color: $color-text-lighter;
+        margin-bottom: $space_s;
+
+        @include media($mq-n) {
+            @include headline-5;
+            margin-bottom: $space_s;
+        }
+    }
+    &_style_dark  &__note {
+        @include text;
+        color: $color-text-light;
+    }
+    &_style_dark  &__body-wrap {
+
+        @include desktop {
+            margin-right: $space_l;
+        }
+
+        @include tablet {
+            margin-right: $space;
+        }
+    }
+
+    &_compact {
+        height: $teaser-item-size;
+        padding: 0 $space_l $space_l;
+
+        @include desktop {
+            height: $teaser-item-size-tablet;
+        }
+
+        @include tablet {
+            padding-left: $space;
+            padding-right: $space;
+        }
+
+        @include media($mq-n) {
+            background-color: $color-background-lighter;
+            padding: 0 $space 20*$space_gap;
+        }
+    }
+    &_compact &__h {
+        display: none;
+        @include headline-4;
+        margin-bottom: $space_s;
+
+        @include media($mq-n) {
+            display: block;
+            color: $color-text;
+        }
+    }
+    &_compact &__description {
+        @include text;
+
+        @include media($mq-n) {
+            color: $color-text;
+        }
+    }
+    &_compact &__note {
+        @include text-caption;
+    }
+    &_compact &__title {
+        @include text;
+
+        @include media($mq-n) {
+            color: $color-text;
+        }
+    }
+
+    &__body-wrap {
+        position: relative;
+        flex: 1 0 auto;
+    }
+
+    &__body {
+        height: 100%;
+    }
+    &__body_col {
+        display: flex;
+        flex-direction: column;
+    }
+    &__body_switchable {
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        opacity: 0;
+    }
+    &__body_switchable.is-active {
+        top: 0;
+        opacity: 1;
+    }
+
+    &__h {
+        @include headline-3;
+        margin-bottom: $space_l;
+        flex-shrink: 0;
+
+        @include desktop {
+            @include headline-4;
+            margin-bottom: $space;
+        }
+
+        @include media($mq-n) {
+            color: $color-text-lighter;
+            margin-bottom: $space_s;
+        }
+    }
+
+    &__description {
+        @include headline-4;
+
+        @include desktop {
+            @include headline-5;
+        }
+
+        @include media($mq-n) {
+            @include text;
+            color: $color-text-lighter;
+        }
+    }
+    &__description_stretched {
+        flex: 1 0 auto;
+    }
+
+    &__footer {
+        flex-shrink: 0;
+    }
+
+    &__title {
+        @include text-accent;
+
+        @include desktop {
+            @include text;
+        }
+
+        @include media($mq-n) {
+            @include text-description;
+            color: $color-text-lighter;
+        }
+    }
+
+    &__note {
+        @include text-description;
+        color: $color-text-gray;
+
+        @include desktop {
+            @include text-description;
+        }
+
+        @include media($mq-n) {
+            @include text-caption;
+        }
+    }
+
+    &__list {
+        display: flex;
+        width: 100%;
+        white-space: nowrap;
+        overflow: auto;
+        overflow-y: hidden;
+
+        @include tablet {
+            @include no-scroll;
+        }
+    }
+
+    &__item {
+        @include headline-2;
+        color: $color-text-lighter;
+        opacity: 0.3;
+        cursor: pointer;
+
+        @include desktop {
+            @include headline-3;
+        }
+    }
+    &__item.is-active {
+        opacity: 1;
+    }
+
+    &__item:not(:last-child) {
+        margin-right: $space_l;
+
+        @include desktop {
+            margin-right: $space_s;
+        }
+    }
+}

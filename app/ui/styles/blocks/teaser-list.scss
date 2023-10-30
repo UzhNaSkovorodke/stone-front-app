@@ -1,0 +1,118 @@
+.teaser-list {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 1;
+
+    @include media($mq-n) {
+        flex-direction: column;
+        background-color: $color-background-lighter;
+        padding: $space_xl $space;
+    }
+
+    &_style_bordered &__item {
+        width: calc(100% / 2);
+
+        @include media($mq-n) {
+            width: auto;
+        }
+    }
+    &_style_bordered &__item:nth-child(1) {
+        border-right: 1px solid $color-border-light;
+        border-bottom: 1px solid $color-border-light;
+
+        @include media($mq-n) {
+            border-right: none;
+        }
+    }
+    &_style_bordered &__item:nth-child(2) {
+        border-bottom: 1px solid $color-border-light;
+    }
+    &_style_bordered &__item:nth-child(3) {
+        border-right: 1px solid $color-border-light;
+
+        @include media($mq-n) {
+            border-right: none;
+            border-bottom: 1px solid $color-border-light;
+        }
+    }
+
+    &_mobile_dark {
+
+        @include media($mq-n) {
+            background-color: $color-background;
+        }
+    }
+    &_mobile_dark &__item {
+
+        @include media($mq-n) {
+            background-color: $color-background;
+            border-bottom: 1px solid $color-border;
+        }
+    }
+
+    &_col-3 &__item {
+        width: calc(100% / 3);
+
+        @include desktop {
+            width: calc(100% / 2);
+        }
+
+        @include media($mq-n) {
+            width: auto;
+        }
+    }
+
+    &__item {
+        width: calc(100% / 4);
+        height: $teaser-item-size;
+
+        @include desktop {
+            width: calc(100% / 3);
+            height: $teaser-item-size-tablet;
+        }
+
+        @include tablet {
+            width: calc(100% / 2);
+            height: $teaser-item-size-tablet;
+        }
+
+        @include media($mq-n) {
+            width: auto;
+            height: auto;
+            border-bottom: 1px solid $color-border-light;
+        }
+    }
+    &__item_border_none {
+        border-bottom: none !important; // перебивает вышестоящие модификаторы
+    }
+    &__item_tablet_display {
+        display: none;
+
+        @include desktop {
+            display: block;
+        }
+
+        @include tablet {
+            display: none;
+        }
+    }
+    &__item_tablet_hide {
+
+        @include desktop {
+            display: none;
+        }
+    }
+    &__item_tablet-s_hide {
+
+        @include media($mq-n) {
+            display: none;
+        }
+    }
+    &__item_mobile_hide {
+
+        @include tablet {
+            display: none;
+        }
+    }
+}

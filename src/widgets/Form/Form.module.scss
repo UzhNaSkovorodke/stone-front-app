@@ -1,0 +1,70 @@
+@import 'app/ui/styles/variables.scss';
+@import 'app/ui/styles/mixins.scss';
+
+.modalContent {
+  padding: 0 $space_l $space_l $space_l;
+
+  @include tablet {
+    padding: $space;
+  }
+
+  .title {
+    @include headline-5;
+    margin-bottom: $space_xs;
+  }
+
+  .description {
+    color: $color-text-gray;
+    margin-bottom: $space_s;
+  }
+
+  .input {
+    margin-bottom: $space;
+  }
+
+  .checkbox {
+    margin-bottom: $space_xs;
+  }
+  .checkbox_spaceB {
+    margin-bottom: $space;
+  }
+}
+
+.inputGroup {
+  position: relative;
+
+  &__title {
+    @include text-caption;
+    margin-bottom: $space_xxs;
+    color: $color-text-gray;
+    user-select: none;
+  }
+
+  .message {
+    display: block;
+    position: absolute;
+    bottom: -17px;
+    left: 0;
+    @include text-caption;
+    @include nowrap;
+    color: $color-text-warning;
+    padding: 0 $space_s;
+    user-select: none;
+  }
+  .message_style_checkbox {
+    padding-left: 20px + $space_xs;
+  }
+}
+
+.checkboxValue {
+  user-select: none;
+  @include text-caption;
+  color: $color-text-light;
+
+  & a {
+    color: $color-text-gray;
+  }
+}
+.submit_btn {
+  user-select: none;
+}

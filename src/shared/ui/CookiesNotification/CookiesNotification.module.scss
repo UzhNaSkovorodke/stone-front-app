@@ -1,0 +1,40 @@
+@import 'app/ui/styles/variables.scss';
+@import 'app/ui/styles/mixins.scss';
+
+$notification-mobile-height: 82px;
+
+.block {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  left: $space_xl;
+  bottom: $space_s;
+  padding: (3 * $space_gap) (3 * $space_gap) (3 * $space_gap) $space_s;
+  background-color: $color-background-lighter;
+  border: 1px solid $color-border-gray;
+  border-radius: $border-radius;
+  color: $color-text-gray;
+  @include text-caption;
+
+  &__description {
+    max-width: 269px;
+    margin-right: $space_xs;
+
+    @include media($mq-m) {
+      max-width: 100%;
+    }
+  }
+
+  @include media($mq-m) {
+    position: fixed;
+    height: $notification-mobile-height;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: $space_xs;
+    border: none;
+    border-radius: 0;
+    border-top: 1px solid $color-border-gray;
+    justify-content: space-between;
+  }
+}

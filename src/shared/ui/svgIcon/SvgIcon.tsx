@@ -1,5 +1,6 @@
-import React, { FC } from 'react'
 import classes from './SvgIcon.module.scss'
+import React, { FC } from 'react'
+
 interface SvgIconPropsInterface {
   name?: string
   link?: string

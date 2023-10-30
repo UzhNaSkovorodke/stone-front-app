@@ -1,0 +1,150 @@
+@import 'app/ui/styles/variables.scss';
+@import 'app/ui/styles/mixins.scss';
+
+$switch-size: 32px;
+$gap: 2px;
+//style_tabs
+$switcher-height: 48px;
+$switch-width-style-tabs: 104px;
+$switch-height-style-tabs: 44px;
+
+.switcher {
+  position: relative;
+  display: block;
+  width: 68px;
+  height: $header-control-height;
+  background-color: $color-background-dark-gray;
+  border-radius: $header-control-height / 2;
+  cursor: pointer;
+  @include unselectable;
+
+  &_style_tabs {
+    width: $switcher-width;
+    height: $switcher-height;
+    background-color: $color-background-light-gray;
+    border-radius: $switcher-height / 2;
+
+    @include media($mq-xs) {
+      width: 100%;
+    }
+  }
+  &_style_tabs &__checkbox:checked + &__switch {
+    left: $switch-width-style-tabs + $gap;
+
+    @include media($mq-xs) {
+      left: calc(50% - $gap);
+    }
+  }
+  &_style_tabs &__checkbox ~ &__values &__value:first-child {
+    color: $color-text;
+  }
+  &_style_tabs &__checkbox ~ &__values &__value:last-child {
+    color: $color-text-gray;
+  }
+  &_style_tabs &__checkbox:checked ~ &__values &__value:first-child {
+    color: $color-text-gray;
+  }
+  &_style_tabs &__checkbox:checked ~ &__values &__value:last-child {
+    color: $color-text;
+  }
+  &_style_tabs &__values {
+    width: $switch-width-style-tabs * 2;
+    height: $switch-height-style-tabs;
+
+    @include media($mq-xs) {
+      width: calc(100% - ($gap * 2));
+    }
+  }
+  &_style_tabs &__value {
+    @include button;
+    text-transform: none;
+  }
+  &_style_tabs &__switch {
+    width: $switch-width-style-tabs;
+    height: $switch-height-style-tabs;
+    background-color: $color-background-lighter;
+    border-radius: $switch-height-style-tabs / 2;
+    border: 1px solid $color-border-gray;
+
+    @include media($mq-xs) {
+      width: 50%;
+    }
+  }
+
+  &__checkbox {
+    position: absolute;
+    visibility: hidden;
+  }
+  &__checkbox + &__switch {
+    left: $gap;
+  }
+  &__checkbox:checked + &__switch {
+    left: $switch-size + $gap;
+  }
+  &__checkbox ~ &__values &__value:first-child {
+    color: $color-text-lighter;
+  }
+  &__checkbox ~ &__values &__value:last-child {
+    color: $color-text-gray;
+  }
+  &__checkbox:checked ~ &__values &__value:first-child {
+    color: $color-text-gray;
+  }
+  &__checkbox:checked ~ &__values &__value:last-child {
+    color: $color-text-lighter;
+  }
+
+  &__values {
+    position: absolute;
+    top: $gap;
+    left: $gap;
+    width: $switch-size * 2;
+    height: $switch-size;
+    display: flex;
+    z-index: 1;
+  }
+
+  &__value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    @include text-caption;
+    text-transform: uppercase;
+
+    transition: color $animation_duration;
+  }
+
+  &__switch {
+    position: absolute;
+    top: $gap;
+    width: $switch-size;
+    height: $switch-size;
+    background-color: $color-background;
+    border-radius: 50%;
+
+    transition: left $animation_duration;
+  }
+
+  &_style_mobile_account {
+    @media (max-width: $mq-n) {
+      width: 100%;
+    }
+  }
+
+  &_style_mobile_account &__values {
+    @media (max-width: $mq-n) {
+      width: 100%;
+    }
+  }
+
+  &_style_mobile_account &__switch {
+    @media (max-width: $mq-n) {
+      width: 50%;
+    }
+  }
+
+  &_style_mobile_account &__checkbox:checked + &__switch {
+    left: 50%;
+  }
+}

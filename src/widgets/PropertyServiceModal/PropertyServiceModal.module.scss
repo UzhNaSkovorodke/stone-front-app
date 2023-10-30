@@ -1,0 +1,353 @@
+@import 'app/ui/styles/variables';
+@import 'app/ui/styles/mixins';
+
+$header-height: 72px;
+$footer-height: 98px;
+$close-size: 32px;
+$teaser-item-size: 406px;
+
+.modal {
+  display: flex;
+  overflow-y: auto;
+  justify-content: center;
+  align-items: flex-start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 101;
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color-background, 0.5);
+  }
+
+  &__body {
+    position: relative;
+    width: 100%;
+    max-width: $content-width;
+    background-color: $color-background;
+    z-index: 1;
+    overflow: hidden;
+    margin-top: 99px;
+
+    @include desktop {
+      margin-top: 87.2px;
+      max-width: none;
+      border-radius: 0;
+    }
+
+    @include tablet {
+      margin-top: 0;
+      height: 100%;
+    }
+    animation: show-modal 0.4s;
+  }
+
+  @keyframes show-modal {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  &__header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: $header-height;
+      border-bottom: 1px solid $color-border;
+      padding-left: $space;
+      padding-right: $space;
+    }
+  }
+
+  &__logo {
+    display: none;
+    width: 89px;
+    height: 16px;
+
+    @include tablet {
+      display: block;
+    }
+  }
+
+  &__close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: $space_l;
+    right: $space_l;
+    width: $close-size;
+    height: $close-size;
+    background-color: $color-background-light;
+    border-radius: 50%;
+    cursor: pointer;
+
+    z-index: 1;
+
+    @include desktop {
+      background-color: $color-background-dark-gray;
+      color: $color-text-lighter;
+    }
+
+    @include tablet {
+      position: static;
+      background-color: transparent;
+    }
+  }
+
+  &__content {
+    position: relative;
+
+    @include tablet {
+      height: 100%;
+      padding-top: $header-height;
+      padding-bottom: $footer-height;
+    }
+  }
+}
+
+.teaserList {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include tablet {
+    display: block;
+    height: 100%;
+    overflow: auto;
+  }
+
+  &__item {
+    width: calc(100% / 4);
+
+    @include desktop {
+      width: calc(100% / 3);
+      height: auto;
+    }
+
+    @include tablet {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__item_size_l {
+    width: calc(100% / 2);
+    height: $teaser-item-size;
+
+    @include desktop {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.teaserL {
+  padding: 20 * $space_gap;
+
+  @include desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  @include tablet {
+    padding: $space_l $space $space;
+  }
+
+  &__body {
+    margin-bottom: $space_xxl;
+
+    @include desktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    @include headline-3;
+    color: $color-text-lighter;
+    margin-bottom: $space_s;
+
+    @include tablet {
+      @include headline-2;
+      margin-bottom: $space_s;
+    }
+  }
+
+  &__description {
+    max-width: 500px;
+    @include text-accent;
+    color: $color-text-lighter;
+
+    @include desktop {
+      @include text;
+    }
+  }
+
+  &__button {
+    @include tablet {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: $footer-height;
+      padding: $space_xs $space 0;
+      background-color: $color-background-dark;
+      border-top: 1px solid $color-border;
+      z-index: 1;
+    }
+
+    &.isTransparent {
+      border-top: 1px solid transparent;
+      background-color: transparent;
+    }
+  }
+}
+
+.teaser {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-background-lighter;
+  padding: $space_l;
+
+  @include tablet {
+    display: block;
+    background-color: $color-background;
+    padding: $space;
+  }
+
+  &_style_gray {
+    background-color: $color-background-primary;
+
+    @include tablet {
+      background-color: $color-background;
+    }
+  }
+
+  &_style_gray &__icon {
+    color: $color-text-lighter;
+  }
+
+  &_style_gray &__title {
+    color: $color-text-lighter;
+  }
+
+  &_style_gray &__description {
+    color: $color-text-light;
+  }
+
+  &_style_primaryOffice {
+    background-color: $color-background-primary-office;
+
+    @include tablet {
+      background-color: $color-background;
+    }
+  }
+
+  &_style_primaryOffice &__icon {
+    color: $color-text-lighter;
+  }
+
+  &_style_primaryOffice &__title {
+    color: $color-text-lighter;
+  }
+
+  &_style_primaryOffice &__description {
+    color: $color-text-light;
+  }
+
+  &_style_dark {
+    background-color: $color-background;
+  }
+
+  &_style_dark &__icon {
+    color: $color-text-lighter;
+  }
+
+  &_style_dark &__title {
+    color: $color-text-lighter;
+  }
+
+  &_style_dark &__description {
+    color: $color-text-light;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 0 auto;
+    margin-bottom: 118px;
+
+    @include desktop {
+      margin-bottom: 44px;
+    }
+    @include tablet {
+      flex-direction: row;
+      margin-bottom: $space_xs;
+    }
+  }
+
+  &__icon {
+    margin-bottom: $space_s;
+    width: $space_s;
+    height: $space_s;
+
+    @include desktop {
+      margin-bottom: $space_xs;
+    }
+
+    @include tablet {
+      color: $color-text-lighter;
+      margin-bottom: 0;
+      margin-right: $space_xs;
+    }
+  }
+
+  &__title {
+    max-width: 195px;
+    @include headline-5;
+
+    @include desktop {
+      max-width: none;
+      @include button-l;
+    }
+
+    @include tablet {
+      color: $color-text-lighter;
+    }
+  }
+
+  &__description {
+    flex-shrink: 0;
+    color: $color-text-dark-gray;
+    min-height: 94px;
+    @include desktop {
+      min-height: 80px;
+      @include text-description;
+    }
+
+    @include tablet {
+      min-height: auto;
+      color: $color-text-light;
+    }
+  }
+}

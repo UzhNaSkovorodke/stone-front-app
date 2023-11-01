@@ -1,0 +1,36 @@
+@import 'app/ui/styles/variables.scss';
+@import 'app/ui/styles/mixins.scss';
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $button-round-size;
+  height: $button-round-size;
+  color: $color-text-lighter;
+  border: 1px solid $color-border-lighter;
+  border-radius: 50%;
+  cursor: pointer;
+  @include unselectable;
+
+  &_style_transparent {
+    background-color: transparent;
+  }
+
+  &_style_filled {
+    background-color: $color-background-lighter;
+  }
+  &_style_filled &__icon {
+    color: $color-text;
+  }
+
+  &_rotate {
+    transform: rotate(180deg);
+  }
+
+  &__icon {
+    width: $icon-size;
+    height: $icon-size;
+    color: $color-text-lighter;
+  }
+}

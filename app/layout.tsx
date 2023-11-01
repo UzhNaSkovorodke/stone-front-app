@@ -1,10 +1,8 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import 'shared/lib/utils/svgSprite'
 import './ui/styles/globals.scss'
 import ProvidesTheQueryClient from '../src/providers/ProvidersTheQueryClient'
-
-const inter = Inter({ subsets: ['latin'] })
+import localFont from 'next/font/local'
 
 export const metadata: Metadata = {
   title: 'Next',
@@ -15,7 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <ProvidesTheQueryClient>
-        <body className={inter.className}>{children}</body>
+        <body>{children}</body>
       </ProvidesTheQueryClient>
     </html>
   )

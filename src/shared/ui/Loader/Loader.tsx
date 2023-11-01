@@ -1,7 +1,7 @@
 import { withStyles } from '@bruitt/classnames'
 import { ReactNode } from 'react'
-import { ColorProps } from '../../types/colors'
-import { IconSizesProps } from '../../types/icons'
+import { ColorProps } from '../../lib/types/colors'
+import { IconSizesProps } from '../../lib/types/icons'
 import { Icon } from '../Icon'
 
 import s from './Loader.module.scss'

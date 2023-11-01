@@ -1,0 +1,89 @@
+@use 'app/ui/styles/unity' as *;
+@use 'app/ui/styles/input' as *;
+
+.tabs {
+  gap: 3px;
+  padding: 2px;
+  background-color: $neutrals-gray-6;
+  border-radius: 48px;
+
+  input {
+    @include invisible-input;
+  }
+}
+
+._width-auto {
+  display: inline-flex;
+}
+
+.item {
+  user-select: none;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.content {
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid transparent;
+  border-radius: 130px;
+
+  transition: all 50ms ease-in-out;
+}
+
+._size-small {
+  .content {
+    // поменять когда сделает с padding разберется дизайнер
+    width: 104px;
+    height: 44px;
+  }
+}
+
+._size-medium {
+  .content {
+    width: 141px;
+    height: 48px;
+  }
+}
+
+._size-large {
+  .content {
+    width: 152.5px;
+    height: 44px;
+  }
+}
+
+._width-full {
+  display: flex;
+
+  > .item {
+    flex-basis: 100%;
+  }
+
+  .content {
+    width: 100%;
+  }
+}
+
+.text {
+  z-index: 1;
+  color: $neutrals-gray-4;
+  text-align: center;
+  transition: 0.2s;
+}
+
+input:checked ~ .content {
+  color: $neutrals-gray-1;
+  background-color: $neutrals-white;
+  border: 1px solid $neutrals-gray-5;
+}
+
+input:checked ~ .content .text {
+  z-index: 1;
+  color: $neutrals-gray-1;
+}

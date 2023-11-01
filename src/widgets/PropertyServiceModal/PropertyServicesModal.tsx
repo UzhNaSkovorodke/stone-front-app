@@ -1,12 +1,12 @@
 import React, { FC, useEffect } from 'react'
-import classes from '@/components/shared/PropertyServiceModal/PropertyServiceModal.module.scss'
-import SvgIcon from '@/components/shared/svgIcon/SvgIcon'
-import { Icon } from '@/shared/uikit/Icon'
-import { Button } from '@/shared/uikit/Button'
-import { IPropertyServiceResponse } from '@/services/pageData/propertyService/propertyService.interface'
-import { IDefaultCard } from '@/services/pageData/default/default.interface'
+import classes from './PropertyServiceModal.module.scss'
+import SvgIcon from 'shared/ui/svgIcon/SvgIcon'
+import { Icon } from 'shared/ui/Icon/Icon'
+import { Button } from 'shared/ui/Button/Button'
+import { IPropertyServiceResponse } from 'shared/lib/pageData/propertyService/propertyService.interface'
+import { IDefaultCard } from 'shared/lib/pageData/default/default.interface'
 import { useInView } from 'react-intersection-observer'
-import { useClientWidth } from '@/hooks/useClientWidth'
+import { useClientWidth } from 'shared//lib/hooks/useClientWidth'
 
 interface IPropertyServicesModalProps {
   isOpen: boolean

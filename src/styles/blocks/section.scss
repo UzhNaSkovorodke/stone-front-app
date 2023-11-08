@@ -1,0 +1,97 @@
+.section {
+    background-color: $color-background-light;
+    padding: 120px 0;
+
+    @include desktop {
+        padding: 20*$space_gap 0;
+    }
+
+    @include tablet {
+        padding: 20*$space_gap 0;
+    }
+
+    &__header {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 $space_l;
+        margin-bottom: 20*$space_gap;
+
+        @include desktop {
+            margin-bottom: $space_xxl;
+        }
+
+        @include tablet {
+            padding: 0 $space;
+        }
+
+        @include media($mq-n) {
+           flex-direction: column;
+            margin-bottom: $space;
+        }
+    }
+    &__header_space-b {
+        margin-bottom: $space;
+    }
+
+    &__title {
+        @include headline-3;
+
+        @include desktop {
+            @include headline-4;
+        }
+
+        @include media($mq-n) {
+            margin-bottom: $space_s;
+        }
+    }
+    &__title_space-b {
+
+        @include media($mq-n) {
+            margin-bottom: $space_xxs;
+        }
+    }
+
+    &__switcher {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: $switcher-width;
+        margin: auto;
+
+        @include tablet {
+            position: static;
+            margin: 0;
+        }
+
+        @include media($mq-xs) {
+            width: 100%;
+        }
+    }
+
+    &__buttons {
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__body {
+        overflow: hidden;
+        padding: 0 $space_l;
+
+        @include tablet {
+            padding-left: $space;
+            padding-right: $space;
+        }
+    }
+    &__body_offset {
+
+        @include media($mq-xl) {
+            padding-right: 0;
+        }
+    }
+
+}

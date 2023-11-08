@@ -1,0 +1,77 @@
+@use 'src/shared/styles/unity' as *;
+
+.option {
+  cursor: pointer;
+
+  &:not(:first-child) {
+    margin-top: 10px;
+  }
+
+  &._disabled {
+    cursor: initial;
+  }
+
+  &._variant-blackStroke {
+    &:hover:not(._disabled) {
+      background: $neutrals-gray-7;
+    }
+
+    &._disabled {
+      color: $neutrals-gray-6;
+    }
+  }
+
+  &._variant-blackFill {
+    &:hover:not(._disabled) {
+      background: $neutrals-gray-7;
+    }
+
+    &._disabled {
+      color: $neutrals-gray-6;
+    }
+  }
+
+  &._variant-whiteStroke {
+    color: $neutrals-white;
+
+    &:hover:not(._disabled) {
+      background: $neutrals-gray-2;
+    }
+
+    &._disabled {
+      color: $neutrals-gray-3;
+    }
+  }
+
+  &._variant-whiteFill {
+    color: $neutrals-white;
+
+    &:hover:not(._disabled) {
+      background: $neutrals-gray-3;
+    }
+
+    &._disabled {
+      color: $neutrals-gray-3;
+    }
+  }
+
+  &._s-medium {
+    padding: 10px 19px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &._s-large {
+    padding: 12px 23px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &[focus='on'] {
+    background: $neutrals-gray-5;
+  }
+
+  &._isSelected {
+    color: $secondary-green;
+  }
+}

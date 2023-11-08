@@ -1,0 +1,107 @@
+@use 'src/shared/styles/unity' as *;
+
+$gap: 0, 1, 2, 3, 4, 5, 6, 7, 8;
+$columns: 1, 2, 3, 4, 5, 6;
+$factor: 8;
+$display: grid, inline-grid, none;
+$gridItems: start, end, center, stretch;
+
+.root {
+  display: grid;
+}
+
+@each $d in $display {
+  ._display-#{$d} {
+    display: $d;
+  }
+}
+
+@each $c in $columns {
+  ._cols-#{$c} {
+    grid-template-columns: repeat($c, minmax(0, 1fr));
+  }
+}
+
+@each $g in $gap {
+  ._g-#{$g} {
+    gap: #{$g * $factor}px;
+  }
+}
+
+@each $g in $gap {
+  ._cg-#{$g} {
+    column-gap: #{$g * $factor}px;
+  }
+}
+
+@each $g in $gap {
+  ._rg-#{$g} {
+    row-gap: #{$g * $factor}px;
+  }
+}
+
+@each $gi in $gridItems {
+  ._ji-#{$gi} {
+    justify-items: $gi;
+  }
+
+  ._ai-#{$gi} {
+    align-items: $gi;
+  }
+
+  ._pi-#{$gi} {
+    place-items: $gi;
+  }
+}
+
+// ==================================
+// Media properties
+// ==================================
+
+@each $size, $dim in $dimensions {
+  @include media($dim) {
+    @each $d in $display {
+      ._display_#{$size}-#{$d} {
+        display: $d;
+      }
+    }
+
+    @each $c in $columns {
+      ._cols_#{$size}-#{$c} {
+        grid-template-columns: repeat($c, minmax(0, 1fr));
+      }
+    }
+
+    @each $g in $gap {
+      ._g_#{$size}-#{$g} {
+        gap: #{$g * $factor}px;
+      }
+    }
+
+    @each $g in $gap {
+      ._cg_#{$size}-#{$g} {
+        column-gap: #{$g * $factor}px;
+      }
+    }
+
+    @each $g in $gap {
+      ._rg_#{$size}-#{$g} {
+        row-gap: #{$g * $factor}px;
+      }
+    }
+
+    @each $gi in $gridItems {
+      ._ji_#{$size}-#{$gi} {
+        justify-items: $gi;
+      }
+
+      ._ai_#{$size}-#{$gi} {
+        align-items: $gi;
+      }
+
+      ._pi_#{$size}-#{$gi} {
+        place-items: $gi;
+      }
+    }
+  }
+}

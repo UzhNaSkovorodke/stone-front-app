@@ -1,0 +1,52 @@
+.tile {
+    display: block;
+    background-color: $color-background-lighter;
+    border-radius: $border-radius;
+    overflow: hidden;
+    position: relative;
+    color: $color-text-dark;
+
+    &__image {
+        width: 100%;
+    }
+
+    &__footer {
+        padding: $space_s;
+
+        @include mobile {
+            padding: $space_s $space_xs;
+        }
+    }
+
+    &__status {
+        margin-bottom: $space_xxs;
+    }
+
+    &__title {
+        @include headline-4;
+        @include nowrap;
+        margin-bottom: $space_gap;
+
+        @include desktop {
+            @include headline-5;
+        }
+
+        @include media($mq-n) {
+            @include text-accent;
+        }
+    }
+
+    &__description {
+        @include text-description;
+        color: $color-text-gray;
+        margin-bottom: $space_xs;
+
+        @include media($mq-n) {
+            @include text-caption;
+        }
+    }
+
+    &__description-list {
+        margin-bottom: $space_s;
+    }
+}

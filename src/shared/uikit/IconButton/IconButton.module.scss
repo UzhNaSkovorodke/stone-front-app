@@ -1,0 +1,163 @@
+@use 'src/shared/styles/unity' as *;
+
+.button {
+  position: relative;
+
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid transparent;
+  border-radius: 50%;
+}
+
+._s-s {
+  width: 32px;
+  height: 32px;
+}
+
+._s-l {
+  width: 48px;
+  height: 48px;
+}
+
+._s-m {
+  width: 40px;
+  height: 40px;
+}
+
+._variant-blackStroke {
+  color: $neutrals-gray-1;
+  border-color: $neutrals-gray-1;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: $neutrals-gray-6;
+    }
+  }
+
+  &:active:not(._disabled) {
+    color: $neutrals-white;
+    background-color: $neutrals-gray-1;
+  }
+
+  //   &:disabled {
+  //   }
+}
+
+._variant-blackFill {
+  color: $neutrals-gray-1;
+  background-color: $neutrals-white;
+  border-color: $neutrals-white;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: $neutrals-gray-6;
+      border-color: $neutrals-gray-6;
+    }
+  }
+
+  &:active:not(._disabled) {
+    color: $neutrals-white;
+    background-color: $neutrals-gray-5;
+    border-color: $neutrals-gray-5;
+  }
+
+  //   &:disabled {
+  //   }
+}
+
+._variant-whiteStroke {
+  color: $neutrals-white;
+  border-color: $neutrals-white;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: $neutrals-gray-3;
+    }
+  }
+
+  &:active:not(._disabled) {
+    background-color: $neutrals-gray-4;
+  }
+
+  //   &:disabled {
+  //   }
+}
+
+._variant-whiteFill {
+  color: $neutrals-white;
+  background-color: $neutrals-gray-2;
+  border-color: $neutrals-gray-2;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: $neutrals-gray-3;
+      border-color: $neutrals-gray-3;
+    }
+  }
+
+  &:active:not(._disabled) {
+    background-color: $neutrals-gray-4;
+    border-color: $neutrals-gray-4;
+  }
+
+  //   &:disabled {
+  //   }
+}
+
+._variant-grayStroke {
+  color: $neutrals-gray-1;
+  background-color: $neutrals-gray-7;
+  border-color: $neutrals-gray-7;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: $neutrals-gray-6;
+      border-color: $neutrals-gray-6;
+    }
+  }
+
+  &:active:not(._disabled) {
+    color: $neutrals-white;
+    background-color: $neutrals-gray-5;
+    border-color: $neutrals-gray-5;
+  }
+
+  //   &:disabled {
+  //   }
+}
+
+._variant-grayStrokeSmall {
+  color: $neutrals-gray-1;
+  background-color: $neutrals-gray-7;
+  border-color: $neutrals-gray-7;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: $neutrals-gray-6;
+      border-color: $neutrals-gray-6;
+    }
+  }
+
+  &:active:not(._disabled) {
+    background-color: $neutrals-gray-5;
+    border-color: $neutrals-gray-5;
+  }
+
+  //   &:disabled {
+  //   }
+}
+
+// ==============================
+// Loading
+// ==============================
+
+._isLoading {
+  pointer-events: none;
+
+  .icon {
+    visibility: hidden;
+  }
+}

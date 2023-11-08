@@ -1,0 +1,12 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.close-button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  padding: 12px;
+  background-color: $color-background-lighter;
+  color: $color-text;
+  cursor: pointer;
+}

@@ -1,0 +1,234 @@
+.footer {
+    max-width: $content-width;
+    background-color: $color-background;
+    margin: 0 auto;
+
+    &__header {
+        display: flex;
+        border-bottom: 1px solid $color-border;
+
+        @include media($mq-m) {
+            flex-direction: column;
+        }
+    }
+
+    &__header-i {
+        width: calc(100% / 2);
+        padding: $space_l;
+
+        @include tablet {
+            padding: $space_l $space;
+        }
+
+        @include media($mq-m) {
+            width: auto;
+        }
+    }
+    &__header-i:first-child {
+        border-right: 1px solid $color-border;
+
+        @include media($mq-m) {
+            border-right: none;
+            border-bottom: 1px solid $color-border;
+        }
+    }
+
+    &__title {
+        @include headline-5;
+        color: $color-text-lighter;
+        margin-bottom: $space_s;
+
+        @include desktop {
+            @include text-accent;
+            margin-bottom: $space_xs;
+        }
+    }
+
+    &__description {
+        @include text-accent;
+        color: $color-text-light;
+        margin-bottom: $space_s;
+
+        @include desktop {
+            @include text-description;
+            color: $color-text-gray;
+        }
+    }
+
+    &__content {
+        display: flex;
+        border-bottom: 1px solid $color-border;
+
+        @include media($mq-s) {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__content-i-wrap {
+        display: flex;
+        width: calc(100% / 4);
+        padding-top: $space_l;
+
+        @include desktop {
+            padding-top: 0;
+        }
+
+        @include media($mq-m) {
+            width: calc(100% / 3);
+        }
+    }
+    &__content-i-wrap:nth-child(1) {
+
+        @include media($mq-m) {
+            display: none;
+        }
+    }
+    &__content-i-wrap:nth-child(2) {
+        border-right: 1px solid $color-border;
+
+        @include media($mq-s) {
+            width: calc(100% / 2);
+            border-bottom: 1px solid $color-border;
+        }
+    }
+    &__content-i-wrap:nth-child(3) {
+
+        @include media($mq-s) {
+            width: calc(100% / 2);
+            border-bottom: 1px solid $color-border;
+        }
+    }
+    &__content-i-wrap:nth-child(4) {
+
+        @include media($mq-s) {
+            width: 100%;
+        }
+    }
+
+    &__content-i {
+        width: 100%;
+        padding: $space_xl $space_l $space_xxl;
+
+        @include tablet {
+            padding: $space_xl $space $space_xxl;
+        }
+
+        @include media($mq-s) {
+            padding-bottom: $space_s;
+        }
+    }
+    &__content-i_style_logo {
+        display: flex;
+
+        flex-direction: column;
+        justify-content: flex-end;
+        border-right: 1px solid $color-border;
+        padding-right: 0;
+
+        @include media($mq-m) {
+            display: none;
+        }
+    }
+    &__content-i_style_company {
+        border-right: 1px solid $color-border;
+
+        @include media($mq-s) {
+            border-right: none;
+        }
+    }
+    &__content-i_style_contacts {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__slogan {
+        & img {
+            max-width: unset;
+            max-height: unset;
+        }
+
+        margin-bottom: $space_s;
+    }
+
+    &__subtitle {
+        @include text-accent;
+        color: $color-text-lighter;
+        margin-bottom: $space_s;
+
+        @include desktop {
+            @include text;
+        }
+    }
+
+    &__list-i {
+        margin-bottom: $space_s;
+
+        @include desktop {
+            @include text-description;
+        }
+    }
+
+    &__link {
+        color: $color-text-gray;
+    }
+
+    &__contact {
+        margin-bottom: $space_s;
+    }
+    &__contact a {
+        @include button-l;
+        color: $color-text-lighter;
+
+        @include desktop {
+            @include button;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        color: $color-text-gray;
+
+        @include desktop {
+            @include text-description;
+        }
+
+        @include media($mq-m) {
+            flex-direction: column;
+        }
+    }
+
+    &__address {
+        width: 75%;
+        padding: $space_l;
+        border-right: 1px solid $color-border;
+
+        @include media($mq-m) {
+            width: auto;
+        }
+
+        @include tablet {
+            padding: $space_xl $space;
+        }
+    }
+    &__address span {
+
+        @include media($mq-m) {
+            display: block;
+            margin-bottom: $space_xs;
+        }
+    }
+    &__address a {
+        color: $color-text-lighter;
+    }
+
+    &__copyright {
+        width: 25%;
+        padding: $space_l;
+
+        @include media($mq-m) {
+            width: auto;
+            padding: 0 $space $space_xl;
+        }
+    }
+}

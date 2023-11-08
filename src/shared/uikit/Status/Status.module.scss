@@ -1,0 +1,65 @@
+@use 'src/shared/styles/unity' as *;
+
+.status {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 16px;
+
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+
+  border-radius: 8px;
+
+  @include sans-serif;
+
+  &._isPre {
+    padding-left: 8px;
+  }
+
+  &._isPost {
+    padding-right: 8px;
+  }
+}
+
+// ==============================
+// Variants
+// ==============================
+
+._variant-purple {
+  color: $secondary-purple;
+  background-color: rgba($secondary-purple, 0.1);
+}
+
+._variant-blue {
+  color: $secondary-blue;
+  background-color: rgba($secondary-blue, 0.1);
+}
+
+._variant-green {
+  color: $secondary-green;
+  background-color: rgba($secondary-green, 0.1);
+}
+
+._variant-deepGreen {
+  color: $secondary-deep-green;
+  background-color: rgba($secondary-deep-green, 0.1);
+}
+
+._variant-yellow {
+  color: $secondary-yellow;
+  background-color: rgba($secondary-yellow, 0.1);
+}
+
+._variant-red {
+  color: $secondary-red;
+  background-color: rgba($secondary-red, 0.1);
+}
+
+._variant-gray {
+  color: $neutrals-gray-4;
+  background-color: $neutrals-gray-7;
+}

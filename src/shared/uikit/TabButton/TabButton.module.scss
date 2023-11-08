@@ -1,0 +1,180 @@
+@use 'src/shared/styles/unity' as *;
+@use 'src/shared/styles/input' as *;
+
+.input {
+  @include invisible-input;
+}
+
+.root {
+  position: relative;
+}
+
+.text {
+  cursor: pointer;
+  user-select: none;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 500;
+
+  border: 1px solid transparent;
+  border-radius: 130px;
+
+  @include sans-serif;
+
+  &._size-small {
+    padding: 7px 15px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  &._size-medium {
+    padding: 11px 23px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+// ==============================
+// Width
+// ==============================
+
+._width-auto {
+  width: auto;
+}
+
+._width-full {
+  width: 100%;
+}
+
+// ==============================
+// Variant 1
+// ==============================
+
+._variant-1 {
+  color: $neutrals-gray-4;
+  background-color: $neutrals-gray-6;
+  border-color: $neutrals-gray-6;
+
+  @media (hover: hover) {
+    &:hover:not(._disabled) {
+      color: $neutrals-gray-1;
+    }
+  }
+
+  &:active:not(._disabled) {
+    color: $neutrals-gray-1;
+    background-color: $neutrals-gray-5;
+    border-color: $neutrals-gray-5;
+  }
+}
+
+.input:checked + ._variant-1 {
+  color: $neutrals-gray-1;
+  background-color: $neutrals-white;
+  border-color: $neutrals-gray-5;
+
+  @media (hover: hover) {
+    &:hover:not(._disabled) {
+      background-color: $neutrals-gray-7;
+    }
+  }
+
+  &:active:not(._disabled) {
+    background-color: $neutrals-gray-7;
+    border-color: $neutrals-gray-4;
+  }
+}
+
+// ==============================
+// Variant 2
+// ==============================
+
+._variant-2 {
+  color: $neutrals-gray-4;
+  background-color: $neutrals-gray-7;
+  border-color: $neutrals-gray-6;
+
+  @media (hover: hover) {
+    &:hover:not(._disabled) {
+      color: $neutrals-gray-1;
+      background-color: $neutrals-gray-6;
+    }
+  }
+
+  &:active:not(._disabled) {
+    color: $neutrals-gray-1;
+    background-color: $neutrals-gray-6;
+  }
+}
+
+.input:checked + ._variant-2 {
+  color: $neutrals-gray-1;
+  background-color: $neutrals-white;
+  border-color: $neutrals-gray-5;
+
+  @media (hover: hover) {
+    &:hover:not(._disabled) {
+      background-color: $neutrals-gray-7;
+    }
+  }
+
+  &:active:not(._disabled) {
+    background-color: $neutrals-gray-7;
+    border-color: $neutrals-gray-4;
+  }
+}
+
+// ==============================
+// Variant 3
+// ==============================
+
+._variant-3 {
+  color: $neutrals-gray-4;
+  background-color: $neutrals-gray-7;
+  border-color: $neutrals-gray-7;
+
+  @media (hover: hover) {
+    &:hover:not(._disabled) {
+      color: $neutrals-gray-1;
+      border-color: $neutrals-gray-6;
+    }
+  }
+
+  &:active:not(._disabled) {
+    color: $neutrals-gray-1;
+    background-color: $neutrals-gray-6;
+    border-color: $neutrals-gray-4;
+  }
+}
+
+.input:checked + ._variant-3 {
+  color: $neutrals-white;
+  background-color: $neutrals-gray-1;
+  border-color: $neutrals-gray-1;
+
+  @media (hover: hover) {
+    &:hover:not(._disabled) {
+      background-color: $neutrals-gray-2;
+      border-color: $neutrals-gray-2;
+    }
+  }
+
+  &:active:not(._disabled) {
+    background-color: $neutrals-gray-3;
+    border-color: $neutrals-gray-3;
+  }
+}
+
+// ==============================
+// Disabled
+// ==============================
+
+._disabled {
+  cursor: default;
+  color: $neutrals-gray-6;
+  background-color: $neutrals-gray-8;
+  border-color: $neutrals-gray-8;
+}

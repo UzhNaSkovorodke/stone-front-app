@@ -3,10 +3,8 @@ const nextConfig = {
   reactStrictMode: true,
   compress: false,
 }
-
 module.exports = nextConfig
 
-const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
 const path = require('path')
 
 module.exports = {
@@ -22,19 +20,10 @@ module.exports = {
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     config.module.rules.push({
       test: /\.svg$/,
-      // указываем директорию, с которой будем брать svg для создания sprite
-      include: path.resolve(__dirname, 'public/assets/icons'),
-      use: ['svg-sprite-loader', 'svgo-loader'],
-    })
-
-    config.module.rules.push({
-      test: /\.svg$/,
       issuer: /\.[jt]sx?$/,
       include: [path.resolve(__dirname, 'src/shared'), path.resolve(__dirname, 'src/features')],
       use: ['@svgr/webpack'],
     })
-
-    config.plugins.push(new SpriteLoaderPlugin())
 
     return config
   },
@@ -53,3 +42,4 @@ module.exports = {
     formats: ['image/webp'],
   },
 }
+

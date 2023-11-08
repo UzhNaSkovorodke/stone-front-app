@@ -1,0 +1,58 @@
+@use 'src/shared/styles/unity' as *;
+
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+._size-small {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+._size-medium {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+._size-large {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+._variant-button {
+  font-weight: 500;
+  border: 1px solid $neutrals-gray-6;
+  border-radius: 130px;
+
+  &._size-small {
+    padding: 7px 15px;
+  }
+
+  &._size-medium {
+    padding: 11px 23px;
+  }
+
+  &._size-large {
+    padding: 13px 23px;
+  }
+}
+
+._variant-text {
+  font-weight: 400;
+}
+
+.root._color-white {
+  background-color: $neutrals-white;
+  border-color: $neutrals-gray-6;
+}
+
+.root._color-black {
+  color: $neutrals-white;
+
+  &:not(._variant-text) {
+    background-color: $neutrals-gray-1;
+    border-color: $neutrals-gray-4;
+  }
+}

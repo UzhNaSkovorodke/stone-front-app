@@ -1,0 +1,233 @@
+.header {
+  position: relative;
+  height: 100%;
+  max-width: $content-width;
+  color: $color-text-lighter;
+  border-bottom: 1px solid $color-text-dark-gray;
+  margin: 0 auto;
+
+  &:before {
+    position: absolute;
+    content: url('/image/angular.svg');
+    left: 0;
+    bottom: - 46px;
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &:after {
+    position: absolute;
+    content: url('/image/angular.svg');
+    right: 0;
+    transform: scale(-1, 1);
+    bottom: - 46px;
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__content {
+    position: relative;
+    background-color: $color-background;
+    height: 100%;
+
+    @include tablet {
+      z-index: 1;
+    }
+  }
+
+  &__switch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    @include tablet {
+      position: absolute;
+      top: $header-height-mobile - 40px;
+      left: 0;
+      width: 100%;
+      height: 40px;
+      background-color: $color-background;
+      border-bottom: 1px solid $color-text-dark-gray;
+
+      transition: top $animation_duration;
+    }
+  }
+
+  &__switch.is-display {
+
+    @include tablet {
+      top: $header-height-mobile;
+    }
+  }
+
+  &__company {
+    display: flex;
+    position: absolute;
+    top: 41px;
+    left: $space_l;
+    z-index: 1;
+
+    @include desktop {
+      top: 36px;
+    }
+
+    @include tablet {
+      top: 28px;
+      left: $space;
+    }
+  }
+
+  &__logo {
+    width: 89px;
+    height: 16px;
+
+    & svg {
+      display: block;
+    }
+  }
+
+  &__phone {
+    @include text-description;
+    color: $color-text-lighter;
+    border-left: 1px solid $color-border;
+    padding-left: $space_s;
+    margin-left: $space_s;
+
+    @include media($mq-xxl) {
+      display: none;
+    }
+  }
+
+  &__links {
+    position: relative;
+    display: flex;
+    height: 100%;
+
+    @include tablet {
+      width: 100%;
+      height: 40px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    width: $header-link-width;
+    height: 100%;
+    @include button-l;
+    color: $color-text-lighter;
+
+    @include tablet {
+      width: calc(100% / 2);
+      @include button-s;
+    }
+  }
+
+  &__link:first-child {
+    justify-content: flex-end;
+    padding-right: $space_l;
+    border-right: 1px solid $color-border;
+
+    @include tablet {
+      justify-content: center;
+      padding-right: 0;
+    }
+  }
+
+  &__link:last-child {
+    padding-left: $space_l;
+
+    @include tablet {
+      justify-content: center;
+      padding-left: 0;
+    }
+  }
+
+  &__link_color_gray {
+    color: $color-text-gray;
+  }
+
+  &__control {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 28px;
+    right: $space_l;
+    height: $header-control-height-full;
+
+    @include desktop {
+      top: 26px;
+      height: $header-control-height;
+    }
+
+    @include tablet {
+      top: 18px;
+      right: $space;
+    }
+  }
+
+  &__lang-switcher {
+
+    @include media($mq-xl) {
+      display: none;
+    }
+  }
+
+  &__icon {
+    width: $icon-size;
+    height: $icon-size;
+    color: $color-text-lighter;
+    margin-left: $space_prexs;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    z-index: 1;
+
+    @include desktop {
+      margin-left: $space_s;
+    }
+
+    &_space-l {
+      margin-left: $space_s;
+    }
+
+    &_style_phone {
+      position: relative;
+      z-index: 0;
+
+      & a {
+        font-size: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        position: absolute;
+      }
+    }
+
+    &_style_user {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 48px;
+      width: 48px;
+
+      @include desktop {
+        display: none;
+      }
+    }
+
+    &_style_user.isOpen {
+      background-color: $color-background-dark-gray;
+      border-radius: 50%;
+    }
+  }
+}

@@ -1,0 +1,176 @@
+@use 'src/shared/styles/unity' as *;
+@use 'src/shared/styles/input' as *;
+
+$border: 1px solid $neutrals-gray-6;
+$radius: 12px;
+
+.root {
+  input {
+    @include invisible-input;
+  }
+}
+
+.item {
+  cursor: pointer;
+  user-select: none;
+
+  padding: 14px 0;
+
+  border-right: $border;
+  border-bottom: $border;
+
+  &:not(._isFirstColumn) {
+    border-left: none;
+  }
+
+  &._isLastInFirstRow {
+    border-top-right-radius: $radius;
+  }
+
+  &._isFirstInLastRow {
+    border-bottom-left-radius: $radius;
+  }
+
+  &._isFirstRow {
+    border-top: $border;
+  }
+
+  &._isFirstColumn {
+    border-left: $border;
+  }
+}
+
+label:first-of-type {
+  .item {
+    border-left: $border;
+    border-top-left-radius: $radius;
+  }
+}
+
+label:last-of-type {
+  .item {
+    border-bottom-right-radius: $radius;
+  }
+}
+
+// VARIANT OFFICE FILL
+._variant-officeFill {
+  @media (hover: hover) {
+    input:not(:checked, :active) ~ .item:not(._isDisabled):hover {
+      background-color: $primary-office;
+      box-shadow: inset 0 64px 0 rgb(0 0 0 / 10%);
+
+      .text {
+        color: $neutrals-white;
+      }
+    }
+  }
+
+  input:disabled ~ .item {
+    cursor: initial;
+    opacity: 0.2;
+    background-color: $primary-office;
+
+    .text {
+      color: $neutrals-white;
+    }
+  }
+
+  input:checked ~ .item {
+    background-color: $primary-office;
+
+    .text {
+      color: $neutrals-white;
+    }
+  }
+
+  input:active:not(:disabled) ~ .item {
+    background-color: $primary-office;
+    box-shadow: 0 64px 0 0 #0000004d inset;
+
+    .text {
+      color: $neutrals-white;
+    }
+  }
+}
+
+// VARIANT DOM FILL
+._variant-domFill {
+  @media (hover: hover) {
+    input:not(:checked, :active) ~ .item:not(._isDisabled):hover {
+      background-color: $primary-home;
+      box-shadow: inset 0 64px 0 rgb(0 0 0 / 10%);
+
+      .text {
+        color: $neutrals-white;
+      }
+    }
+  }
+
+  input:disabled ~ .item {
+    cursor: initial;
+    opacity: 0.2;
+    background-color: $primary-home;
+
+    .text {
+      color: $neutrals-white;
+    }
+  }
+
+  input:checked ~ .item {
+    background-color: $primary-home;
+
+    .text {
+      color: $neutrals-white;
+    }
+  }
+
+  input:active:not(:disabled) ~ .item {
+    color: $neutrals-white;
+    background-color: $primary-home;
+    box-shadow: 0 64px 0 0 #0003 inset;
+
+    .text {
+      color: $neutrals-white;
+    }
+  }
+}
+
+// VARIANT BLACK FILL
+._variant-blackFill {
+  @media (hover: hover) {
+    input:not(:checked, :active) ~ .item:not(._isDisabled):hover {
+      background-color: $neutrals-gray-2;
+
+      .text {
+        color: $neutrals-white;
+      }
+    }
+  }
+
+  input:disabled ~ .item {
+    cursor: initial;
+    background-color: $neutrals-gray-5;
+
+    .text {
+      color: $neutrals-gray-6;
+    }
+  }
+
+  input:checked ~ .item {
+    background-color: $neutrals-gray-1;
+
+    .text {
+      color: $neutrals-white;
+    }
+  }
+
+  input:active:not(:disabled) ~ .item {
+    color: $neutrals-white;
+    background-color: $neutrals-gray-3;
+
+    .text {
+      color: $neutrals-white;
+    }
+  }
+}

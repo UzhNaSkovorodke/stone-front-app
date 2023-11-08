@@ -1,0 +1,58 @@
+@use 'src/shared/styles/unity' as *;
+
+.root {
+  display: flex;
+}
+
+._variant-button {
+  &._size-small,
+  &._size-medium {
+    gap: 4px;
+  }
+
+  &._size-large {
+    gap: 8px;
+  }
+}
+
+.child {
+  position: relative;
+}
+
+._variant-text {
+  &._size-small {
+    gap: 20px;
+
+    .child:not(:last-of-type) {
+      &::after {
+        left: calc(100% + 8px);
+      }
+    }
+  }
+
+  &._size-medium,
+  &._size-large {
+    gap: 36px;
+
+    .child:not(:last-of-type) {
+      &::after {
+        left: calc(100% + 16px);
+      }
+    }
+  }
+
+  .child:not(:last-of-type) {
+    &::after {
+      content: '';
+
+      position: absolute;
+      top: calc(50% - 2px);
+
+      width: 4px;
+      height: 4px;
+
+      background-color: $neutrals-gray-5;
+      border-radius: 50%;
+    }
+  }
+}

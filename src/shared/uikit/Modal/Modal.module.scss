@@ -1,0 +1,54 @@
+@use 'src/shared/styles/unity' as *;
+
+.root {
+  position: absolute;
+  inset: 20px 40px;
+
+  overflow: auto;
+
+  padding: 40px;
+
+  background-color: $neutrals-white;
+  border: none;
+  border-radius: 16px;
+  outline: none;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    border-radius: 32px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $neutrals-gray-5;
+    border: 3px $neutrals-white solid;
+    border-radius: 22px;
+  }
+
+  &:global(.ReactModal__Content) {
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 200ms;
+  }
+
+  &:global(.ReactModal__Content--after-open) {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &:global(.ReactModal__Content--before-close) {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+}
+
+.overlay {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  background-color: rgb(17 20 45 / 40%);
+}

@@ -1,0 +1,89 @@
+@use 'src/shared/styles/unity' as *;
+
+$sizes: 12, 14, 16, 20, 24, 32, 40;
+$lineheights: 16, 20, 24, 32, 40, 48;
+$weights: 400, 500;
+
+// font-weight
+@each $w in $weights {
+  ._w-#{$w} {
+    font-weight: #{$w};
+  }
+}
+
+@each $size, $d in $dimensions {
+  @include media($d) {
+    @each $w in $weights {
+      ._w_#{$size}-#{$w} {
+        font-weight: #{$w};
+      }
+    }
+  }
+}
+
+// font-size
+@each $s in $sizes {
+  ._s-#{$s} {
+    font-size: #{$s}px;
+  }
+}
+
+@each $size, $d in $dimensions {
+  @include media($d) {
+    @each $s in $sizes {
+      ._s_#{$size}-#{$s} {
+        font-size: #{$s}px;
+      }
+    }
+  }
+}
+
+// line-height
+@each $lh in $lineheights {
+  ._lh-#{$lh} {
+    line-height: #{$lh}px;
+  }
+}
+
+@each $size, $d in $dimensions {
+  @include media($d) {
+    @each $lh in $lineheights {
+      ._lh_#{$size}-#{$lh} {
+        line-height: #{$lh}px;
+      }
+    }
+  }
+}
+
+// text-align
+._align-left {
+  text-align: left;
+}
+
+._align-center {
+  text-align: center;
+}
+
+._align-right {
+  text-align: right;
+}
+
+@each $size, $d in $dimensions {
+  ._align_#{$size}-left {
+    @include media($d) {
+      text-align: left;
+    }
+  }
+
+  ._align_#{$size}-center {
+    @include media($d) {
+      text-align: center;
+    }
+  }
+
+  ._align_#{$size}-right {
+    @include media($d) {
+      text-align: right;
+    }
+  }
+}

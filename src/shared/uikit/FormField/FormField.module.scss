@@ -1,0 +1,13 @@
+@use 'src/shared/styles/unity' as *;
+
+._label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+._labelText {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: $neutrals-gray-1;
+}

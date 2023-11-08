@@ -1,0 +1,79 @@
+@use '../../styles/unity' as *;
+@use '../../styles/input' as *;
+
+.input {
+  @include invisible-input;
+}
+
+.root {
+  position: relative;
+}
+
+.wrapper {
+  cursor: pointer;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+
+  @media (hover: hover) {
+    &:hover {
+      .text {
+        color: $neutrals-gray-3;
+      }
+
+      .icon {
+        border: 1px solid $neutrals-gray-3;
+      }
+    }
+  }
+}
+
+.text {
+  user-select: none;
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: $neutrals-gray-4;
+
+  @include sans-serif;
+}
+
+.icon {
+  position: relative;
+
+  width: 12px;
+  height: 12px;
+
+  border: 1px solid $neutrals-gray-5;
+  border-radius: 50%;
+}
+
+.input:checked + .wrapper {
+  .text {
+    color: $neutrals-gray-1;
+
+    &:active {
+      color: $neutrals-gray-1;
+    }
+  }
+
+  .icon {
+    border: 1px solid $neutrals-gray-1;
+  }
+
+  .icon::after {
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 6px;
+    height: 6px;
+
+    background-color: $neutrals-gray-1;
+    border-radius: 50%;
+  }
+}

@@ -1,0 +1,62 @@
+@use 'src/shared/styles/unity' as *;
+
+.root {
+  position: absolute;
+  z-index: 2;
+
+  overflow: auto;
+
+  width: 100%;
+  height: auto;
+  max-height: 236px;
+
+  border-style: solid;
+  border-width: 1px;
+  border-top: none;
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 64px 64px -48px rgb(15 15 15 / 8%);
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    border-radius: 32px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $neutrals-gray-5;
+    border: 3px $neutrals-white solid;
+    border-radius: 22px;
+  }
+
+  &._variant-blackStroke {
+    background-color: $neutrals-white;
+    border-color: $neutrals-gray-5;
+  }
+
+  &._variant-blackFill {
+    background-color: $neutrals-white;
+    border-color: $neutrals-gray-6;
+  }
+
+  &._variant-whiteStroke {
+    background-color: $neutrals-gray-1;
+    border-color: $neutrals-gray-5;
+
+    &::-webkit-scrollbar-thumb {
+      border-color: $neutrals-gray-1;
+    }
+  }
+
+  &._variant-whiteFill {
+    background-color: $neutrals-gray-2;
+    border-color: $neutrals-gray-3;
+
+    &::-webkit-scrollbar-thumb {
+      border-color: $neutrals-gray-2;
+    }
+  }
+}

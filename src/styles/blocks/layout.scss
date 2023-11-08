@@ -1,0 +1,69 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100%;
+    background-color: $color-background;
+
+    &__header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: $header-height;
+
+        z-index: 100;
+
+        @include desktop {
+            height: $header-height-tablet;
+        }
+
+        @include tablet {
+            height: $header-height-mobile;
+        }
+    }
+
+    &__content {
+        position: relative;
+        width: 100%;
+        max-width: $content-width;
+        flex: 1 0 auto;
+        padding-top: $header-height;
+        margin: 0 auto;
+
+        @include desktop {
+            padding-top: $header-height-tablet;
+        }
+
+        @include tablet {
+            padding-top: $header-height-mobile;
+        }
+    }
+
+    &__footer {
+        flex-shrink: 0;
+    }
+
+    &__section {
+        position: relative;
+    }
+
+    &__fixed-container {
+        position: fixed;
+        width: 100%;
+        max-width: $content-width;
+        height: 0;
+        left: 50%;
+        bottom: 0;
+        margin-left: - ($content-width / 2);
+        z-index: 10; //перекрывает кнопку фильтр/карта. модалку легенды и просмотра проекта на карте
+
+        @include desktop {
+            left: 0;
+            margin-left: 0;
+        }
+    }
+}
+body.modal-open{
+    overflow: hidden;
+}

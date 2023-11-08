@@ -1,0 +1,58 @@
+@use 'src/shared/styles/unity' as *;
+
+.content {
+  position: relative;
+  background-color: $neutrals-white;
+  border: 1px solid $neutrals-gray-5;
+  border-radius: 24px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  z-index: 101;
+  padding-right: 32px;
+}
+
+.arrow {
+  &::before {
+    content: '';
+
+    position: relative;
+    z-index: 1;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+
+    background-color: $neutrals-white;
+    border-top: 1px solid $neutrals-gray-5;
+    border-left: 1px solid $neutrals-gray-5;
+    border-top-left-radius: 3px;
+  }
+}
+
+._position-bottom::before {
+  transform: translate(-50%) rotate(45deg);
+}
+
+._position-top::before {
+  transform: translate(-50%) rotate(-135deg);
+}
+
+._position-left::before {
+  transform: translate(-160%, -50%) rotate(135deg);
+}
+
+._position-right::before {
+  transform: translate(0, -50%) rotate(-45deg);
+}

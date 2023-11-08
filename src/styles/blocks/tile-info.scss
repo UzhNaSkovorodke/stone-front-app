@@ -1,0 +1,42 @@
+.tile-info {
+    $tile-info-height: 40px;
+
+    display: inline-flex;
+    align-items: center;
+    height: $tile-info-height;
+    padding-left: 14px;
+    padding-right: 14px;
+    border: 1px solid $color-border-light;
+    border-radius: $tile-info-height / 2;
+    @include text-caption;
+
+    @include media($mq-n) {
+        align-items: flex-start;
+        width: 100%;
+        height: auto;
+        padding-top: $space_xs;
+        padding-left: 0;
+        padding-right: 0;
+        border: none;
+        border-top: 1px solid $color-border-light;
+        border-radius: 0;
+    }
+
+    &__icon {
+        width: 20px;
+        height: 12px;
+        margin-right: $space_xxs;
+    }
+
+    &__title {
+        margin-right: $space_xxs;
+    }
+
+    &__description {
+        color: $color-text-gray;
+
+        @include desktop {
+            display: none;
+        }
+    }
+}

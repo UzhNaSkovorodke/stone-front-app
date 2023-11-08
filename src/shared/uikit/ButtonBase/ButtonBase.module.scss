@@ -1,0 +1,21 @@
+@use 'src/shared/styles/unity' as *;
+
+.button {
+  cursor: pointer;
+
+  margin: 0;
+  padding: 0;
+
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+
+  appearance: none; // Just in case we missed anything.
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+
+  &:disabled {
+    cursor: initial;
+  }
+}

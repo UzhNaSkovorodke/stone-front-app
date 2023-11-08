@@ -1,6 +1,4 @@
 import type { Metadata } from 'next'
-import 'shared/lib/utils/svgSprite'
-import './ui/styles/globals.scss'
 
 export const metadata: Metadata = {
   title: 'Next',

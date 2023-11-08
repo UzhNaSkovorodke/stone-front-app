@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 import 'shared/lib/utils/svgSprite'
 import './ui/styles/globals.scss'
-import ProvidesTheQueryClient from '../src/providers/ProvidersTheQueryClient'
-import localFont from 'next/font/local'
 
 export const metadata: Metadata = {
   title: 'Next',
@@ -12,9 +10,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <ProvidesTheQueryClient>
-        <body>{children}</body>
-      </ProvidesTheQueryClient>
+      <body>{children}</body>
     </html>
   )
 }

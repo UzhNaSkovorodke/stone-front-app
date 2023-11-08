@@ -1,3 +1,3 @@
-export default function Nrror() {
-  return <main>404</main>;
+export default function Error() {
+  return <main>404</main>
 }

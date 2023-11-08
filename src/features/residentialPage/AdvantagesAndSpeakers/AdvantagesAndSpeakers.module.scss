@@ -307,7 +307,7 @@
 
   &__item:last-child {
     width: calc((100% / 4) * 3);
-    background-image: url('/image/infographics_3.jpg');
+    background-image: url('public/image/infographics_3.jpg');
     background-position: bottom right;
 
     @include desktop {

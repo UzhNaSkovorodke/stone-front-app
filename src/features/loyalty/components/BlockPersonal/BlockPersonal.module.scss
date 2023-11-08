@@ -1,0 +1,269 @@
+@import 'src/styles/variables.scss';
+@import 'src/styles/mixins.scss';
+
+.personal {
+  display: flex;
+  justify-content: center;
+  width: auto;
+}
+
+.body {
+  width: 1360px;
+  @include desktop {
+    width: 944px;
+  }
+  @include tablet {
+    width: 328px;
+  }
+}
+
+.title {
+  color: $d-color-neutrals-white;
+  @include headline-2;
+  @include desktop {
+    @include headline-3;
+  }
+  margin-top: 40px;
+  @include tablet {
+    @include headline-5;
+    margin-top: 0;
+  }
+}
+
+.number {
+  width: 48px;
+  height: 48px;
+  background: $d-color-neutrals-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  border-radius: 100px;
+  @include text;
+  @include headline-5;
+  margin: 64px 0 16px;
+  @include tablet {
+    margin: 40px 0 24px;
+  }
+}
+
+.subtitle {
+  white-space: pre-line;
+  position: relative;
+  z-index: 2;
+  max-width: 592px;
+  color: $d-color-neutrals-white;
+  @include headline-3;
+  margin-bottom: 24px;
+  @include desktop {
+    @include headline-4;
+    margin-bottom: 24px;
+  }
+  @include tablet {
+    @include text-accent;
+    margin-bottom: 16px;
+  }
+}
+
+.description {
+  position: relative;
+  z-index: 2;
+  white-space: pre-line;
+  max-width: 592px;
+  color: $d-color-neutrals-white;
+  @include text;
+  margin-bottom: 32px;
+  text-align: center;
+  @include desktop {
+    @include text-description;
+    margin-bottom: 32px;
+  }
+  @include tablet {
+    margin-bottom: 24px;
+    @include text-caption;
+  }
+}
+
+.btn {
+  margin-bottom: 48px;
+  @include tablet {
+    margin-bottom: 40px;
+  }
+}
+
+.personal_wrapper {
+  position: relative;
+}
+
+.line_first {
+  position: absolute;
+  left: 0;
+  top: 355px;
+  width: 335px;
+  @include desktop {
+    width: 180px;
+    top: 370px;
+    left: 20px;
+  }
+  @include tablet {
+    width: 300px;
+    top: 270px;
+    left: 30px;
+  }
+
+  animation: shine_first 5600ms linear infinite;
+  @keyframes shine_first {
+    0% {
+      background-position: 0;
+    }
+
+    100% {
+      background-position: 335px;
+    }
+  }
+  @include desktop {
+    @keyframes shine_first {
+      0% {
+        background-position: 0;
+      }
+
+      100% {
+        background-position: 180px;
+      }
+    }
+  }
+  @include tablet {
+    @keyframes shine_first {
+      0% {
+        background-position: 0;
+      }
+
+      100% {
+        background-position: 300px;
+      }
+    }
+  }
+}
+
+.line_second {
+  position: absolute;
+  width: 160px;
+  top: 445px;
+  left: 180px;
+  @include desktop {
+    width: 110px;
+    top: 400px;
+    left: 120px;
+  }
+  @include tablet {
+    width: 143px;
+    top: 340px;
+    left: 205px;
+  }
+
+  animation: shine_second 5600ms linear infinite;
+  @keyframes shine_second {
+    0% {
+      background-position: 0;
+    }
+
+    100% {
+      background-position: 160px;
+    }
+  }
+  @include desktop {
+    @keyframes shine_second {
+      0% {
+        background-position: 0;
+      }
+
+      100% {
+        background-position: 110px;
+      }
+    }
+  }
+  @include tablet {
+    @keyframes shine_second {
+      0% {
+        background-position: 0;
+      }
+
+      100% {
+        background-position: 143px;
+      }
+    }
+  }
+}
+
+.line_third {
+  position: absolute;
+  right: 100px;
+  top: 355px;
+  width: 335px;
+  @include desktop {
+    width: 180px;
+    top: 370px;
+    right: 55px;
+  }
+  @include tablet {
+    display: none;
+  }
+
+  animation: shine_third 5600ms linear infinite;
+
+  @keyframes shine_third {
+    0% {
+      background-position: 335px;
+    }
+    100% {
+      background-position: 0;
+    }
+  }
+  @include desktop {
+    @keyframes shine_third {
+      0% {
+        background-position: 180px;
+      }
+      100% {
+        background-position: 0;
+      }
+    }
+  }
+}
+
+.line_fourth {
+  position: absolute;
+  right: 40px;
+  width: 160px;
+  top: 445px;
+  @include desktop {
+    width: 110px;
+    top: 400px;
+    right: 30px;
+  }
+  @include tablet {
+    display: none;
+  }
+
+  animation: shine_fourth 5600ms linear infinite;
+
+  @keyframes shine_fourth {
+    0% {
+      background-position: 160px;
+    }
+    100% {
+      background-position: 0;
+    }
+  }
+  @include desktop {
+    @keyframes shine_fourth {
+      0% {
+        background-position: 110px;
+      }
+      100% {
+        background-position: 0;
+      }
+    }
+  }
+}

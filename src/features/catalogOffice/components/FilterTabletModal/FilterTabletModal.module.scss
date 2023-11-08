@@ -1,0 +1,9 @@
+@use 'shared/styles/unity' as *;
+
+.modalButton {
+  width: 100%;
+
+  @include media($m) {
+    width: 271px;
+  }
+}

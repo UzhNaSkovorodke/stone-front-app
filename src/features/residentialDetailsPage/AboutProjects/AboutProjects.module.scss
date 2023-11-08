@@ -1,0 +1,204 @@
+@import 'src/styles/variables.scss';
+@import 'src/styles/mixins.scss';
+
+$transition-animation: 3000ms;
+$transition-duration: 300ms;
+
+$animation-width: 1000px;
+$animation-width-desktop: 800px;
+$animation-width-tablet: 460px;
+$animation-offset: -300px;
+$animation-offset-mobile: -150px;
+
+.blockList {
+  display: flex;
+  flex-wrap: wrap;
+  height: 520px;
+  background-color: $color-background;
+
+  @include desktop {
+    height: 532px;
+  }
+
+  @include tablet {
+    height: auto;
+    padding: $space_l $space;
+  }
+
+  &__item {
+    width: calc(100% / 2);
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+}
+
+.leftSide {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 20 * $space_gap;
+
+  @include desktop {
+    padding: (20 * $space_gap) $space_l;
+  }
+
+  @include tablet {
+    padding: 0;
+    padding-bottom: $space_l;
+    border-bottom: 1px solid $color-border;
+  }
+
+  &__content {
+    flex: 1 0 auto;
+    overflow: hidden;
+  }
+
+  &__title {
+    width: $animation-width;
+    color: $color-text-lighter;
+    background: linear-gradient(
+      to right,
+      $color-text-gray 0,
+      $color-text-lighter 10%,
+      $color-text-gray 20%
+    );
+    background-position: $animation-offset;
+    background-clip: text;
+    @include headline-1-light;
+    margin-bottom: $space_s;
+
+    -webkit-text-fill-color: transparent;
+    animation-fill-mode: forwards;
+    -webkit-text-size-adjust: none;
+    text-decoration: none;
+
+    @keyframes shine {
+      0% {
+        background-position: $animation-offset;
+      }
+
+      100% {
+        background-position: $animation-width + $animation-offset;
+      }
+    }
+
+    @include desktop {
+      width: $animation-width-desktop;
+      @include headline-2;
+      margin-bottom: $space_s;
+
+      @keyframes shine {
+        0% {
+          background-position: $animation-offset;
+        }
+
+        100% {
+          background-position: $animation-width-desktop + $animation-offset;
+        }
+      }
+    }
+
+    @include media($mq-n) {
+      width: $animation-width-tablet;
+      @include headline-4;
+      margin-bottom: $space_xs;
+      background-position: $animation-offset-mobile;
+
+      @keyframes shine {
+        0% {
+          background-position: $animation-offset-mobile;
+        }
+
+        100% {
+          background-position: $animation-width-tablet + $animation-offset-mobile;
+        }
+      }
+    }
+  }
+
+  &__title.isAnimate {
+    animation: shine $transition-animation linear backwards;
+  }
+
+  &__title span {
+    display: block;
+    max-width: 576px;
+
+    @include media($mq-fhd) {
+      max-width: 550px;
+    }
+
+    @include media($mq-n) {
+      max-width: 311px;
+    }
+
+    @include mobile {
+      max-width: 256px;
+    }
+  }
+
+  &__address {
+    color: $color-text-lighter;
+    @include headline-5;
+    margin-bottom: $space_s;
+
+    @include media($mq-n) {
+      @include text;
+      margin-bottom: $space_xs;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -3px;
+  }
+
+  &__item {
+    padding: 0 3px;
+    margin-bottom: $space_gap;
+  }
+
+  &__footer {
+    flex-shrink: 0;
+
+    @include tablet {
+      display: none;
+    }
+  }
+}
+
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: (20 * $space_gap) $space_l;
+
+  @include tablet {
+    padding: 0;
+    padding-top: $space_l;
+  }
+
+  &__content {
+    flex: 1 0 auto;
+  }
+
+  &__description {
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
+  }
+
+  &__info {
+    @include headline-4;
+    color: $color-text-lighter;
+
+    @include tablet {
+      @include text;
+    }
+  }
+}

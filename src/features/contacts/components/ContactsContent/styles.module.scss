@@ -1,0 +1,240 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.section {
+  display: flex;
+  background-color: $color-background;
+  height: 732px;
+
+  @include desktop {
+    height: 556px;
+  }
+
+  @include tablet-mini {
+    height: 100%;
+    flex-direction: column;
+    margin: $space_l $space 80px;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  padding: 80px 0 120px 80px;
+  border-right: 1px solid $color-border;
+
+  @include desktop {
+    padding: 80px 0 80px 40px;
+  }
+
+  @include tablet-mini {
+    padding: 0 0 $space_xl 0;
+    border-right: 0;
+    width: 100%;
+    gap: $space_l;
+  }
+
+  &__title {
+    display: flex;
+    align-items: flex-end;
+    width: max-content;
+    height: max-content;
+    color: $color-text-lighter;
+    background: linear-gradient(
+      to right,
+      $color-text-gray 0,
+      $color-text-lighter 10%,
+      $color-text-gray 20%
+    );
+    background-position: 0;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    animation-fill-mode: forwards;
+    -webkit-text-size-adjust: none;
+    text-decoration: none;
+    transition-property: opacity, bottom, top;
+    transition-duration: 200ms;
+    transition-delay: 200ms;
+    transition-timing-function: ease-in-out;
+
+    animation: 3s infinite linear shine;
+
+    @include headline-1-light;
+
+    @keyframes shine {
+      0% {
+        background-position: 0;
+      }
+
+      100% {
+        background-position: 288px;
+      }
+    }
+
+    @include desktop {
+      @include headline-2;
+
+      @keyframes shine {
+        0% {
+          background-position: 0;
+        }
+
+        100% {
+          background-position: 200px;
+        }
+      }
+    }
+
+    @include tablet {
+      @include headline-4;
+
+      @keyframes shine {
+        0% {
+          background-position: 0;
+        }
+
+        100% {
+          background-position: 135px;
+        }
+      }
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: $space_xs;
+
+    @include desktop {
+      gap: $space_xxs;
+    }
+
+    @include tablet-mini {
+      gap: $space_xs;
+    }
+  }
+
+  &__phone {
+    color: $color-text-lighter;
+
+    @include headline-4;
+
+    margin: 0;
+
+    @include desktop {
+      @include headline-5;
+    }
+  }
+
+  &__address {
+    color: $color-text-lighter;
+
+    @include text-caption;
+
+    margin: 0;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  width: 50%;
+  padding: 80px 0 120px 80px;
+
+  @include desktop {
+    padding: 80px 0 80px 40px;
+    gap: $space_xl;
+  }
+
+  @include tablet-mini {
+    padding: 0;
+    width: 100%;
+    gap: 0;
+  }
+}
+
+.list-item {
+  display: flex;
+  flex-direction: column;
+  gap: $space_s;
+
+  @include tablet-mini {
+    border-top: 1px solid $color-border;
+    padding: $space_xl 0;
+
+    &:last-child {
+      padding: $space_xl 0 0 0;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: $space_xxs;
+    width: 240px;
+
+    @include desktop {
+      width: 170px;
+      gap: $space_gap;
+    }
+  }
+
+  &__block {
+    display: flex;
+    gap: 50px;
+
+    @include desktop {
+      gap: 70px;
+    }
+
+    @include tablet {
+      gap: 25px;
+    }
+
+    @include tablet-mini {
+      flex-direction: column;
+      gap: $space;
+    }
+  }
+
+  &__title {
+    color: $color-text-lighter;
+
+    @include headline-4;
+
+    margin: 0;
+
+    @include desktop {
+      @include headline-5;
+    }
+  }
+
+  &__description {
+    color: $color-text-light;
+
+    @include text-description;
+
+    margin: 0;
+
+    @include desktop {
+      @include text-caption;
+    }
+  }
+
+  &__email {
+    color: $color-text-lighter;
+
+    @include headline-5;
+
+    margin: 0;
+
+    @include desktop {
+      @include button-l;
+    }
+  }
+}

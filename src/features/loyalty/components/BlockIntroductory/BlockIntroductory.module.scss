@@ -1,0 +1,219 @@
+@import 'src/styles/variables.scss';
+@import 'src/styles/mixins.scss';
+
+.body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo {
+  color: var(--neutrals-white, #fff);
+  width: 314px;
+  height: 32px;
+
+  @include desktop {
+    width: 235.5px;
+    height: 24px;
+  }
+  @include mobile {
+    width: 157px;
+    height: 16px;
+  }
+}
+
+.title {
+  position: relative;
+  z-index: 2;
+  white-space: pre-line;
+  color: var(--neutrals-white, #fff);
+  text-align: center;
+
+  @include headline-1-light;
+  @include desktop {
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 56px;
+    letter-spacing: -0.48px;
+    @include headline-2;
+  }
+  @include tablet {
+    text-align: left;
+    @include headline-4;
+  }
+}
+
+.line_first {
+  position: absolute;
+  top: 210px;
+  left: 30px;
+  width: 194px;
+
+  @include desktop {
+    width: 131px;
+    top: 170px;
+    left: 10px;
+  }
+  @include tablet {
+    width: 143px;
+    top: 150px;
+    left: 60px;
+  }
+  animation: shine_first 5600ms linear infinite;
+  @keyframes shine_first {
+    0% {
+      background-position: 0;
+    }
+
+    100% {
+      background-position: 194px;
+    }
+  }
+  @include desktop {
+    @keyframes shine_first {
+      0% {
+        background-position: 0;
+      }
+
+      100% {
+        background-position: 131px;
+      }
+    }
+  }
+  @include tablet {
+    @keyframes shine_first {
+      0% {
+        background-position: 0;
+      }
+
+      100% {
+        background-position: 143px;
+      }
+    }
+  }
+}
+
+.line_second {
+  position: absolute;
+  width: 450px;
+  top: 240px;
+  left: 70px;
+
+  @include desktop {
+    width: 321px;
+    top: 180px;
+    left: 30px;
+  }
+
+  @include tablet {
+    width: 265px;
+    top: 135px;
+    left: 125px;
+  }
+
+  animation: shine_second 5600ms linear infinite;
+
+  @keyframes shine_second {
+    0% {
+      background-position: 0;
+    }
+
+    100% {
+      background-position: 450px;
+    }
+  }
+  @include desktop {
+    @keyframes shine_second {
+      0% {
+        background-position: 0;
+      }
+      100% {
+        background-position: 321px;
+      }
+    }
+  }
+  @include tablet {
+    @keyframes shine_second {
+      0% {
+        background-position: 0;
+      }
+      100% {
+        background-position: 265px;
+      }
+    }
+  }
+}
+
+.line_third {
+  position: absolute;
+  top: 170px;
+  right: 80px;
+  width: 319px;
+  @include desktop {
+    width: 215px;
+    top: 130px;
+    right: 50px;
+  }
+  @include tablet {
+    display: none;
+  }
+
+  animation: shine_third 5600ms linear infinite;
+
+  @keyframes shine_third {
+    0% {
+      background-position: 319px;
+    }
+    100% {
+      background-position: 0;
+    }
+  }
+  @include desktop {
+    @keyframes shine_third {
+      0% {
+        background-position: 215px;
+      }
+      100% {
+        background-position: 0;
+      }
+    }
+  }
+}
+
+.line_fourth {
+  position: absolute;
+  top: 290px;
+  right: -20px;
+  width: 345px;
+  @include desktop {
+    top: 220px;
+    right: -40px;
+    width: 253px;
+  }
+  @include tablet {
+    display: none;
+  }
+
+  animation: shine_fourth 5000ms linear infinite;
+
+  @keyframes shine_fourth {
+    0% {
+      background-position: 345px;
+    }
+
+    100% {
+      background-position: 0;
+    }
+  }
+  @include desktop {
+    @keyframes shine_fourth {
+      0% {
+        background-position: 253px;
+      }
+      100% {
+        background-position: 0;
+      }
+    }
+  }
+}

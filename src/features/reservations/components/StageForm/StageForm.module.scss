@@ -1,0 +1,119 @@
+@use 'shared/styles/input' as *;
+@use 'shared/styles/unity' as *;
+@import 'src/styles/variables';
+
+.form {
+  height: 504px;
+  @media (max-width: $mq-xxl) {
+    height: 524px;
+  }
+  @media (max-width: $mq-l) {
+    height: auto;
+  }
+}
+
+.inputWrapper {
+  div {
+    height: 56px;
+    @media (max-width: $mq-xxl) {
+      height: 48px;
+    }
+  }
+
+  input {
+    padding: 16px 24px !important;
+    @media (max-width: $mq-xxl) {
+      padding: 14px 20px !important;
+    }
+  }
+}
+
+.subHeader {
+  font-size: 20px;
+  line-height: 32px;
+  margin-bottom: 40px;
+  font-weight: 400;
+  color: $d-color-neutrals-white;
+  text-align: center;
+  @media (max-width: $mq-xxl) {
+    div {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+  @media (max-width: $mq-l) {
+    margin-right: 16px;
+    margin-left: 16px;
+    margin-bottom: 24px;
+  }
+}
+
+.subHeader__error {
+  color: $d-color-secondary-red;
+}
+
+.fieldsWrapper {
+  label {
+    margin-bottom: 16px;
+    @media (max-width: $mq-xxl) {
+      margin-bottom: 24px;
+    }
+    @media (max-width: $mq-l) {
+      margin-bottom: 16px;
+      &:last-child {
+        margin-bottom: 32px;
+      }
+    }
+  }
+
+  @media (max-width: $mq-l) {
+    margin-right: 16px;
+    margin-left: 16px;
+    grid-template-columns: 1fr;
+  }
+}
+
+.input__default {
+  opacity: 0.3;
+  background: $d-color-neutrals-gray-2;
+  @media (max-width: $mq-xxl) {
+    input {
+      padding: 14px 20px !important;
+    }
+  }
+}
+
+.inputMask {
+  @include input;
+  height: 56px;
+  @media (max-width: $mq-xxl) {
+    height: 48px;
+  }
+
+  color: $neutrals-white;
+  background-color: $neutrals-gray-2;
+  border-radius: 12px;
+
+  &:hover:not(:disabled) {
+    background-color: $neutrals-gray-3;
+  }
+
+  &:focus-within:not(:disabled) {
+    background-color: $neutrals-gray-3;
+
+    &::placeholder {
+      color: $neutrals-gray-5;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    background-color: $neutrals-gray-2;
+  }
+}
+
+.lotDescription {
+  @media (max-width: $mq-l) {
+    display: none;
+  }
+}

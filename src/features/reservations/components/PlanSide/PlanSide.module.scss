@@ -1,0 +1,27 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins.scss';
+
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 720px;
+  height: 812px;
+  @media (max-width: $mq-xxl) {
+    width: 512px;
+    .planImg {
+      width: 365px;
+      height: 314px;
+    }
+  }
+  @media (max-width: $mq-l) {
+    width: auto;
+    padding: 40px;
+    height: 332px;
+    .planImg {
+      width: 293px;
+      height: 252px;
+    }
+  }
+}

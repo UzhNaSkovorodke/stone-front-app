@@ -1,0 +1,42 @@
+@import 'src/styles/variables';
+
+.agreementWrapper {
+  overflow-y: scroll;
+  height: 408px;
+  margin-top: 32px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (max-width: $mq-xxl) {
+    height: 436px;
+    margin-top: 40px;
+  }
+  @media (max-width: $mq-l) {
+    height: 223px;
+    margin-top: 32px;
+  }
+}
+
+.agreement {
+  margin-bottom: 32px;
+  text-align: justify;
+}
+
+.subHeader {
+  @media (max-width: $mq-xxl) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  @media (max-width: $mq-l) {
+    margin-right: 16px;
+    margin-left: 16px;
+  }
+}
+
+.lotDescription {
+  @media (max-width: $mq-l) {
+    display: none;
+  }
+}

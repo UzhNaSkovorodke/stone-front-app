@@ -1,0 +1,145 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.section {
+  display: flex;
+
+  @include tablet {
+    flex-direction: column;
+    background-color: $color-background-lighter;
+    padding: 20 * $space_gap $space $space_xl;
+  }
+
+  &__item {
+    width: calc(100% / 2);
+
+    &:first-child {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: $color-background-lighter;
+      padding: 30 * $space_gap 20 * $space_gap;
+
+      @include desktop {
+        width: calc(100% / 3);
+        padding: $space_l;
+      }
+
+      @include tablet {
+        width: 100%;
+        padding: 0;
+        margin-bottom: $space;
+      }
+    }
+
+    &:last-child {
+      @include desktop {
+        width: calc(100% / 3 * 2);
+      }
+    }
+  }
+
+  &__title {
+    @include headline-3;
+
+    @include desktop {
+      @include headline-4;
+    }
+  }
+
+  &__description {
+    @include text-accent;
+    color: $color-text-gray;
+
+    @include desktop {
+      @include text;
+    }
+
+    @include tablet {
+      display: none;
+    }
+  }
+}
+
+.teaserList {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    width: calc(100% / 2);
+    height: 360px;
+
+    @include desktop {
+      height: 341px;
+    }
+  }
+}
+
+.teaser {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: $color-background;
+  padding: $space_l;
+
+  &_style_light {
+    background-color: $color-background-light-gray;
+  }
+
+  &_style_light &__title {
+    color: $color-text-dark-gray;
+  }
+
+  &_style_light &__description {
+    color: $color-text-dark-gray;
+  }
+
+  &_style_home {
+    background-color: $color-background-primary-home;
+  }
+
+  &_style_home &__description {
+    color: $color-text-lighter;
+  }
+
+  &_style_office {
+    background-color: $color-background-primary-office;
+  }
+
+  &_style_home &__description {
+    color: $color-text-lighter;
+  }
+
+  &_style_dark {
+    background-color: $color-background-dark;
+  }
+
+  &__header {
+    flex: 1 0 auto;
+  }
+
+  &__title {
+    @include headline-5;
+    margin-bottom: $space;
+    color: $color-text-lighter;
+  }
+
+  &__icon {
+    width: 280px;
+    height: 78px;
+
+    @include desktop {
+      width: 261px;
+      height: 75px;
+    }
+  }
+
+  &__description {
+    color: $color-text-light;
+    flex-shrink: 0;
+
+    @include desktop {
+      @include text-description;
+    }
+  }
+}

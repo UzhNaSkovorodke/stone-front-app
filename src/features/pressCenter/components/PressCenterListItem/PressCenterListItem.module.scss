@@ -1,0 +1,28 @@
+@use 'shared/styles/unity' as *;
+
+.root {
+  min-height: 420px;
+
+  @include media($m) {
+    min-height: 348px;
+  }
+
+  @include media($l) {
+    min-height: 640px;
+  }
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  background-color: $neutrals-gray-4;
+  border-radius: 50%;
+}
+
+.link {
+  @media (hover: hover) {
+    &:hover {
+      color: $neutrals-gray-4;
+    }
+  }
+}

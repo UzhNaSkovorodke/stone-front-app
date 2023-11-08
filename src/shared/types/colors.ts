@@ -1,4 +1,4 @@
-import { Color } from 'src/shared/styles/colors.module.scss'
+import { Color } from 'shared/styles/colors.module.scss'
 
 export interface ColorProps {
   color?: keyof Color

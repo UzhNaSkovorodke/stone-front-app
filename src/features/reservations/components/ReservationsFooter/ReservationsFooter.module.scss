@@ -1,0 +1,43 @@
+@import 'src/styles/variables';
+
+.root {
+  width: 720px;
+  height: 104px;
+  padding: 24px 80px 24px 80px;
+
+  button {
+    width: 272px;
+    height: 56px;
+
+    &:first-child {
+      margin-right: 16px;
+    }
+  }
+
+  @media (max-width: $mq-xxl) {
+    width: 512px;
+    height: 96px;
+    padding: 24px 40px 24px 40px;
+
+    button {
+      font-size: 14px;
+      width: 208px;
+      height: 48px;
+      line-height: 20px;
+      padding: 14px 24px 14px 24px;
+    }
+  }
+  @media (max-width: $mq-l) {
+    width: 100%;
+    height: 81px;
+    padding: 16px 16px 32px 16px;
+    button {
+      width: 160px;
+      height: 32px;
+      padding: 8px 16px 8px 16px;
+      border-radius: 8px;
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+}

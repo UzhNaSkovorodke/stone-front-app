@@ -1,0 +1,11 @@
+@use 'shared/styles/unity' as *;
+
+.image {
+  margin: 0 auto;
+  object-fit: scale-down;
+}
+
+div.transformWrapper {
+  max-height: 398px;
+  border-radius: 16px;
+}

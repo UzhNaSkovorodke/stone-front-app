@@ -1,0 +1,103 @@
+@use 'shared/styles/unity' as *;
+
+.root {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border-bottom: 1px solid $neutrals-gray-6;
+}
+
+.imagePreviewMobile {
+  height: auto;
+
+  &._isSunOpen {
+    width: 260px;
+
+    @include media('>=600px') {
+      width: 400px;
+    }
+  }
+}
+
+@include media($m) {
+  .imageZoomPanWrapper {
+    position: relative;
+  }
+
+  .imageZoomPanControls {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.imageZoomPan {
+  @include media($m) {
+    grid-template-columns: 1fr 800px 1fr;
+  }
+}
+
+.imageContainer {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 350px;
+
+  @include media('>=600px') {
+    height: 480px;
+  }
+
+  @include media($m) {
+    display: block;
+    height: auto;
+  }
+}
+
+.sunContainer {
+  position: absolute;
+  z-index: 3; // For tutorial overlay
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sunIcon._isSunOpen {
+  background-color: $neutrals-gray-1;
+
+  svg {
+    color: $secondary-yellow;
+  }
+}
+
+.linkCopiedPopoverContent {
+  border-radius: 8px;
+}
+
+.status {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 16px;
+
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+
+  border-radius: 8px;
+
+  @include sans-serif;
+}
+
+.emptyCompass {
+  width: 68px;
+  height: 80px;
+}

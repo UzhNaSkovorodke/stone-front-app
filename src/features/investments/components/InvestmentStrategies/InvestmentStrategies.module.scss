@@ -1,0 +1,149 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+
+.section {
+  position: relative;
+}
+
+.teaserList {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include tablet {
+    flex-direction: column;
+    padding-bottom: $space;
+  }
+
+  &__item {
+    width: calc(100% / 4);
+
+    @include desktop {
+      width: calc(100% / 3);
+    }
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  &__item_l {
+    width: calc(100% / 2);
+
+    @include desktop {
+      width: calc(100% / 3);
+    }
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  &__item_xl {
+    width: calc(100% / 4 * 3);
+
+    @include desktop {
+      width: calc(100% / 3 * 2);
+    }
+
+    @include tablet {
+      display: none !important; // перебить стиль .teaser
+    }
+  }
+}
+
+.teaserL {
+  height: 360px;
+  background-color: $color-background;
+  @include headline-3;
+  color: $color-text-lighter;
+  padding: $space_l;
+
+  @include desktop {
+    @include headline-4;
+    height: 341px;
+  }
+
+  @include tablet {
+    height: auto;
+    padding: (20 * $space_gap) $space (16 * $space_gap);
+  }
+}
+
+.teaser {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 360px;
+  background-color: $color-background;
+  padding: $space_l;
+
+  @include desktop {
+    height: 341px;
+  }
+
+  @include tablet {
+    height: auto;
+    padding: 0 $space $space_xl;
+  }
+
+  &_style_bg {
+    background-image: url('/image/invesments_bg.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+
+  &_style_gray {
+    background-color: $color-background-primary;
+
+    @include tablet {
+      background-color: $color-background;
+    }
+  }
+
+  &_style_light {
+    background-color: $color-background-lighter;
+
+    @include tablet {
+      background-color: $color-background;
+    }
+  }
+
+  &_style_light &__title {
+    color: $color-text-light;
+
+    @include tablet {
+      color: $color-text-gray;
+    }
+  }
+
+  &_style_light &__description {
+    color: $color-text-dark-gray;
+
+    @include tablet {
+      color: $color-text-lighter;
+    }
+  }
+
+  &__title {
+    @include headline-1-light;
+    color: $color-text-gray;
+
+    @include desktop {
+      @include headline-2;
+    }
+
+    @include tablet {
+      @include headline-3;
+      margin-bottom: $space_xs;
+    }
+  }
+
+  &__description {
+    @include text-accent;
+    color: $color-text-lighter;
+
+    @include desktop {
+      @include text;
+    }
+  }
+}

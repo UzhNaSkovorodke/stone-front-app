@@ -1,5 +1,5 @@
-@use 'src/shared/styles/unity' as *;
-@use 'src/shared/styles/input' as *;
+@use 'shared/styles/unity' as *;
+@use 'shared/styles/input' as *;
 
 .input {
   @include invisible-input;

@@ -1,0 +1,22 @@
+@use 'shared/styles/unity' as *;
+
+.address {
+  opacity: 0.5;
+}
+
+.info {
+  border-top: 1px solid rgb(230 232 236 / 20%);
+
+  @include media($m) {
+    border-top: none;
+    border-left: 1px solid rgb(230 232 236 / 20%);
+  }
+
+  > div {
+    border-bottom: 1px solid rgb(244 245 246 / 10%);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}

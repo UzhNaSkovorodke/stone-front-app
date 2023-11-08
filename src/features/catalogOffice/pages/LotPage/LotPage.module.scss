@@ -1,0 +1,52 @@
+@use 'shared/styles/unity' as *;
+
+div.wrapper {
+  height: 100%;
+  background-color: $neutrals-white;
+
+  @include media($l) {
+    grid-template-columns: auto 368px;
+    grid-template-rows: repeat(2, 1fr);
+
+    > div:nth-child(2) {
+      grid-area: 1 / 2 / 3 / 3;
+      border-left: 1px solid $neutrals-gray-6;
+    }
+  }
+}
+
+.fixedFooter {
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  width: 100%;
+}
+
+.mobileFooter {
+  gap: 10px;
+  background-color: $neutrals-white;
+}
+
+.desktopFooter {
+  margin: 0 auto;
+}
+
+.desktopFooterButtons {
+  border: 1px solid $neutrals-gray-4;
+  border-radius: 16px;
+}
+
+// Вернуть когда понадобится кнопка "В избранное"
+
+// .desktopFooterButton {
+//   &:first-child {
+//     border-right: none;
+//     border-top-right-radius: 0;
+//     border-bottom-right-radius: 0;
+//   }
+
+//   &:last-child {
+//     border-top-left-radius: 0;
+//     border-bottom-left-radius: 0;
+//   }
+// }

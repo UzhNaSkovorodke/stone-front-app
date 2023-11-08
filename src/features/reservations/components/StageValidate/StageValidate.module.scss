@@ -1,0 +1,7 @@
+@import 'src/styles/variables';
+
+.lotDescription {
+  @media (max-width: $mq-l) {
+    display: none;
+  }
+}

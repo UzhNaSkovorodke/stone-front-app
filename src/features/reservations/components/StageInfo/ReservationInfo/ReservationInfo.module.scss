@@ -1,0 +1,155 @@
+@import 'src/styles/variables';
+
+.info {
+  margin-bottom: 140px;
+  white-space: pre-line;
+
+  @media (max-width: $mq-xxl) {
+    display: block;
+    margin-bottom: 148px;
+    white-space: normal;
+  }
+  @media (max-width: $mq-l) {
+    margin-bottom: 32px;
+  }
+}
+
+.infoElem {
+  width: 177px;
+  height: 156px;
+  padding: 24px 24px 32px;
+  color: $d-color-neutrals-white;
+  background: $d-color-neutrals-gray-2;
+  border: 1px solid $d-color-neutrals-gray-3;
+  border-radius: 16px;
+
+  @media (max-width: $mq-xxl) {
+    display: flex;
+    align-items: center;
+
+    width: 432px;
+    height: 68px;
+    padding: 24px;
+
+    &:not(:first-child) {
+      margin: 0;
+    }
+    &:first-child {
+      border-radius: 16px 16px 0 0;
+      @media (max-width: $mq-l) {
+        border-radius: 0;
+      }
+    }
+    &:nth-child(2) {
+      border-radius: 0;
+    }
+    &:last-child {
+      border-radius: 0 0 16px 16px;
+    }
+  }
+  @media (max-width: $mq-l) {
+    padding: 24px;
+  }
+
+  &:not(:first-child) {
+    margin-left: 15px;
+    @media (max-width: $mq-xxl) {
+      margin-left: 0;
+    }
+  }
+
+  @media (max-width: $mq-l) {
+    width: 100%;
+  }
+}
+
+.infoWrapper {
+  margin-top: 16px;
+  @media (max-width: $mq-xxl) {
+    margin-top: 8px;
+  }
+  @media (max-width: $mq-l) {
+    margin-top: 0;
+    max-height: 204px;
+  }
+}
+
+.icon {
+  height: 24px;
+  margin: 0 52px 16px;
+  @media (max-width: $mq-xxl) {
+    width: 20px;
+    height: 20px;
+    margin: 0 19px 0 0;
+  }
+  @media (max-width: $mq-l) {
+    margin: 0 16px 0 0;
+  }
+}
+
+.inputWrapper {
+  height: 80px;
+  opacity: 1 !important;
+  border: 1px solid $d-color-neutrals-gray-3;
+
+  @media (min-width: $mq-xxl) {
+    input {
+      padding: 24px !important;
+      font-size: 24px !important;
+      line-height: 32px !important;
+    }
+  }
+  @media (max-width: $mq-xxl) {
+    height: 64px;
+    input {
+      padding: 16px 24px !important;
+      font-size: 20px !important;
+    }
+  }
+  @media (max-width: $mq-l) {
+    height: 72px;
+    &:first-child {
+      border-right: none;
+    }
+    &:last-child {
+      border-left: none;
+    }
+    input {
+      padding: 24px !important;
+      font-size: 16px !important;
+      line-height: 24px !important;
+    }
+  }
+}
+
+.inputGroup {
+  @media (max-width: $mq-l) {
+    width: 100%;
+    .inputWrapper {
+      border-radius: 16px 16px 0 0;
+    }
+  }
+
+  .inputWrapper:first-child {
+    input {
+      color: $d-color-neutrals-white !important;
+      -webkit-text-fill-color: $d-color-neutrals-white !important;
+    }
+  }
+
+  .inputWrapper:last-child {
+    input {
+      text-align: right;
+    }
+  }
+}
+
+.infoElem__text {
+  @media (max-width: $mq-xxl) {
+    text-align: left;
+  }
+  @media (max-width: $mq-l) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}

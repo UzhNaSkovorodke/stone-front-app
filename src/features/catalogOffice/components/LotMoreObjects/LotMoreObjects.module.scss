@@ -1,0 +1,21 @@
+@use 'shared/styles/unity' as *;
+
+.tabs {
+  width: 100%;
+  max-width: 320px;
+}
+
+.lotModalWrapper {
+  height: 100%;
+  padding-bottom: 80px;
+
+  @include media($m) {
+    height: 100%;
+    padding-bottom: 0;
+  }
+}
+
+.linkButton {
+  display: block;
+  width: 100%;
+}

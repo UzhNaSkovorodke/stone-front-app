@@ -1,0 +1,73 @@
+@use 'shared/styles/unity' as *;
+@import 'src/styles/variables';
+
+.root {
+  display: flex;
+  justify-content: center;
+  padding-top: 24px;
+  padding-bottom: 32px;
+  @media (max-width: $mq-l) {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+  }
+  @media (max-width: $mq-l) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 32px 32px;
+  }
+}
+
+.ellipse {
+  width: 4px;
+  height: 4px;
+  margin-right: 16px;
+  margin-left: 16px;
+
+  background-color: $neutrals-gray-5;
+  border-radius: 50%;
+  @media (max-width: $mq-xxl) {
+    margin-right: 8px;
+    margin-left: 8px;
+  }
+}
+
+.ellipseWrapper {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  @media (max-width: $mq-xxl) {
+    height: 16px;
+  }
+}
+
+.text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: $neutrals-white;
+  @media (max-width: $mq-xxl) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  @media (max-width: $mq-l) {
+    margin-bottom: 16px;
+
+    font-size: 14px;
+    line-height: 20px;
+    color: $neutrals-gray-1;
+    text-align: right;
+    &:not(.property) {
+      font-weight: 500;
+    }
+
+    &:nth-child(9),
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.property {
+  color: $neutrals-gray-4;
+  text-align: left;
+}

@@ -1,0 +1,32 @@
+@use 'shared/styles/unity' as *;
+
+.button {
+  display: flex;
+
+  @include media($m) {
+    padding: 10px;
+  }
+}
+
+.icon {
+  will-change: transform;
+  transition: all 200ms;
+
+  &._isOpen {
+    transform: rotate(180deg);
+  }
+}
+
+.descItem:not(:last-of-type) {
+  border-bottom: 1px solid $neutrals-gray-7;
+}
+
+.starusWrapper {
+  gap: 4px;
+}
+
+.tagButton {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+}

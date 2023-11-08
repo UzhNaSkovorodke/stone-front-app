@@ -1,0 +1,124 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.section {
+  padding: 20 * $space_gap $space_l 30 * $space_gap;
+
+  @include desktop {
+    padding: $space_l $space_l 20 * $space_gap;
+  }
+
+  @include tablet {
+    padding: $space_l $space_l 16 * $space_gap;
+  }
+
+  @include media($mq-s) {
+    padding-left: 0;
+    padding-right: 0;
+    overflow: hidden;
+  }
+
+  &__title {
+    @include headline-1-light;
+    color: $color-text-lighter;
+    text-align: center;
+    margin-bottom: 20 * $space_gap;
+
+    @include desktop {
+      @include headline-2;
+      margin-bottom: $space_l;
+    }
+
+    @include tablet {
+      @include headline-4;
+      margin-bottom: 15 * $space_gap;
+    }
+
+    @include media($mq-s) {
+      padding-left: $space;
+      padding-right: $space;
+    }
+  }
+
+  &__list {
+    position: relative;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 154px;
+    height: 114px;
+    color: $color-text-primary-home;
+    z-index: 1;
+
+    @include tablet {
+      top: -40px;
+      width: 121px;
+      height: 89px;
+    }
+  }
+  &__icon_style_office {
+    top: 50px;
+    width: 135px;
+    height: 29px;
+    color: $color-text-lighter;
+
+    @include desktop {
+      top: 40px;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    bottom: -24px;
+    left: 0;
+    right: 0;
+    width: 48px;
+    height: 48px;
+    margin: auto;
+  }
+}
+
+.tileList {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: calc(100% / 5);
+
+    @include desktop {
+      width: calc(100% / 3);
+    }
+  }
+  &__col_tablet_hide {
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__item {
+    position: static !important; // перебить inline стили компонента Image
+    width: 100%;
+    border-radius: $border-radius_xl;
+    object-fit: cover;
+  }
+}
+
+.slider {
+  overflow: hidden;
+  margin: 0 (-$space_xxs);
+
+  &__item {
+    padding-left: $space_xxs;
+    padding-right: $space_xxs;
+    outline: none;
+  }
+}

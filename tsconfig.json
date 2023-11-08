@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom.iterable",
+      "esnext",
+      "dom"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -21,12 +25,27 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"],
-      "shared/*": ["./src/shared/*"],
-      "widgets/*": ["./src/widgets/*"],
-      "features/*": ["./src/features/*"],
+      "@/*": [
+        "./*"
+      ],
+      "shared/*": [
+        "./src/shared/*"
+      ],
+      "widgets/*": [
+        "./src/widgets/*"
+      ],
+      "features/*": [
+        "./src/features/*"
+      ]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

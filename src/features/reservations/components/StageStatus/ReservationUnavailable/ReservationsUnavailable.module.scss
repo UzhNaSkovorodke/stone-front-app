@@ -1,0 +1,52 @@
+@import 'src/styles/variables';
+
+.root {
+  position: relative;
+  height: 100%;
+  @media (max-width: $mq-l) {
+    margin-top: 0;
+  }
+}
+
+.svg__fail {
+  display: flex;
+  justify-content: center;
+  @media (max-width: $mq-xxl) {
+    margin-bottom: 32px;
+  }
+
+  svg {
+    width: 72px;
+    height: 72px;
+  }
+}
+
+.errorMessage {
+  margin: 24px 0;
+
+  @media (max-width: $mq-xxl) {
+    margin: 24px 0 8px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  @media (max-width: $mq-l) {
+    margin: 24px 0;
+  }
+}
+
+.subHeader {
+  @media (max-width: $mq-xxl) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.btnWrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  margin-top: auto;
+  padding: 24px 80px;
+}

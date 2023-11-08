@@ -1,0 +1,163 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.card_link {
+  display: flex;
+
+  @include media($mq-m) {
+    flex-direction: column;
+  }
+
+  &__item {
+    width: calc(100% / 2);
+    height: 500px;
+    padding-left: 20 * $space_gap;
+    padding-right: 20 * $space_gap;
+    padding-top: 111px;
+
+    @include desktop {
+      height: 400px;
+      padding-left: $space_l;
+      padding-right: $space_l;
+      padding-top: 20 * $space_gap;
+    }
+
+    @include tablet {
+      padding-left: $space;
+      padding-right: $space;
+    }
+
+    @include media($mq-m) {
+      display: flex;
+      justify-content: space-between;
+      width: auto;
+      height: 86px;
+      min-height: 86px;
+      padding: $space_s $space 0;
+    }
+  }
+
+  &__item_1 {
+    background-image: url('/image/switch_01_web.jpg');
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 35px;
+
+    @include desktop {
+      background-size: 142% auto;
+      background-position: top right -112px;
+    }
+
+    @include tablet {
+      background-size: 156% auto;
+      padding-top: 29px;
+    }
+
+    @include media($mq-m) {
+      background-size: cover;
+      background-position: top -26px right;
+    }
+  }
+
+  &__item_1 &__logo {
+    @include media($mq-m) {
+      margin-top: -34px;
+    }
+  }
+
+  &__item_1 &__icon {
+    width: 351px;
+    height: 128px;
+
+    @include desktop {
+      width: 234px;
+      height: 86px;
+    }
+
+    @include media($mq-m) {
+      width: 165px;
+      height: 60px;
+    }
+  }
+
+  &__item_1 &__description {
+    margin-top: -19px;
+
+    @include desktop {
+      margin-top: -13px;
+    }
+  }
+
+  &__item_2 {
+    background-image: url('/image/switch_02_web.jpg');
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include desktop {
+      background-size: 142% auto;
+      background-position: top right -209px;
+    }
+
+    @include tablet {
+      background-size: 156% auto;
+    }
+
+    @include media($mq-m) {
+      background-size: cover;
+      background-position: top -26px right;
+    }
+  }
+
+  &__logo {
+    margin-bottom: $space;
+
+    @include desktop {
+      margin-bottom: $space_s;
+    }
+
+    @include media($mq-m) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__icon {
+    width: 327px;
+    height: 33px;
+    margin-bottom: $space_xxs;
+
+    @include desktop {
+      width: 218px;
+      height: 22px;
+    }
+
+    @include media($mq-m) {
+      width: 155px;
+      height: 15px;
+    }
+  }
+
+  &__description {
+    color: $color-text-lighter;
+
+    @include media($mq-m) {
+      @include text-caption;
+    }
+  }
+
+  &__link a:first-child {
+    @include media($mq-m) {
+      display: none;
+    }
+  }
+
+  &__link a:last-child {
+    display: none;
+
+    @include media($mq-m) {
+      display: flex;
+      margin-top: -6px;
+    }
+  }
+}

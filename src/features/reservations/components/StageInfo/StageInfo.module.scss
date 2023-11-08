@@ -1,0 +1,26 @@
+@import 'src/styles/variables';
+
+.subHeader {
+  margin-bottom: 40px;
+  div {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  @media (max-width: $mq-xxl) {
+    div {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+  @media (max-width: $mq-l) {
+    margin-right: 16px;
+    margin-left: 16px;
+    margin-bottom: 32px;
+  }
+}
+
+.lotDescription {
+  @media (max-width: $mq-l) {
+    display: none;
+  }
+}

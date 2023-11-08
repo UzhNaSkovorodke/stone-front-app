@@ -1,0 +1,118 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 992px;
+  gap: 16px;
+  border-radius: 24px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.newRoot {
+  background-color: $d-color-neutrals-white;
+  padding: 40px;
+  border-radius: 24px;
+  width: 100%;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.projectNameWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.metroWrapper {
+  padding: 12px 24px 12px 14px;
+  border-radius: 130px;
+  border: 1px solid $d-color-neutrals-gray-6;
+  margin-bottom: 16px;
+}
+
+.headerTitle {
+  color: $d-color-neutrals-gray-1;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: -0.32px;
+}
+
+.description {
+  color: $d-color-neutrals-gray-3;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  margin-bottom: 24px;
+  width: 100%;
+
+  & span {
+    cursor: pointer;
+    font-weight: 500;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: $mq-l) {
+  .root {
+    overflow: unset;
+    padding: 0;
+    border-radius: 24px;
+  }
+
+  .newRoot {
+    overflow: unset;
+    padding: 0 0 16px 0;
+  }
+
+  .projectNameWrapper {
+    padding: 32px 32px 0 32px;
+  }
+
+  .headerTitle {
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    width: 100%;
+  }
+
+  .metroWrapper {
+    padding: 0;
+    border-radius: 130px;
+    border: none;
+    margin-bottom: 8px;
+  }
+
+  .headerSubTitle {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  .selectWrapper {
+    padding: 0 16px;
+  }
+
+  .description {
+    display: none;
+  }
+}

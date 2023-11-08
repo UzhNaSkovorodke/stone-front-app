@@ -1,0 +1,58 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.empty {
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .svgWrapper {
+    width: 247px;
+    height: 184px;
+    margin: 0 auto 32px auto;
+  }
+
+  & h2 {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 400;
+    margin: 0 0 24px 0;
+    color: $d-color-neutrals-gray-1;
+  }
+
+  & p {
+    margin: 0 0 24px 0;
+    color: $d-color-neutrals-gray-4;
+  }
+
+  .catalogBtn {
+    margin-bottom: 16px;
+    width: 202px;
+  }
+}
+
+@media (max-width: $mq-n) {
+  .empty {
+    .svgWrapper {
+      width: 164px;
+      height: 122px;
+    }
+
+    & h2 {
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    & p {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  .brDesktop {
+    display: none;
+  }
+}

@@ -1,0 +1,45 @@
+@use 'shared/styles/unity' as *;
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.overlay {
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.root {
+  z-index: 2;
+  height: 183px;
+  width: 343px;
+  overflow: hidden;
+  background: $neutrals-white;
+  border-radius: 24px;
+  -webkit-box-shadow: 0 0 30px 5px rgba(70, 70, 70, 0.3);
+  -moz-box-shadow: 0 0 30px 5px rgba(70, 70, 70, 0.3);
+  box-shadow: 0 0 30px 5px rgba(70, 70, 70, 0.3);
+  padding: 32px;
+  position: absolute;
+}
+
+.contentWrapper:before {
+  content: '';
+  z-index: 3;
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  border-bottom: 16px solid white;
+}
+
+.btnWrapper {
+  margin-top: 24px;
+
+  button:first-child {
+    margin-right: 17px;
+  }
+}

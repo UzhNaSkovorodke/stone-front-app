@@ -1,0 +1,30 @@
+@import '../../../../styles/variables';
+
+.root {
+  padding: 40px;
+  border-radius: 50px;
+  background: $d-color-neutrals-gray-7;
+  min-height: 400px;
+}
+
+@media (max-width: $mq-xxl) {
+  .root {
+    padding: 40px 52px;
+  }
+
+  .list {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+@media (max-width: $mq-l) {
+  .root {
+    padding: 24px 16px;
+    border-radius: 36px;
+  }
+
+  .list {
+    gap: 16px;
+  }
+}

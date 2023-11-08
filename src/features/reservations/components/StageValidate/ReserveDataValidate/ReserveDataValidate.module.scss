@@ -1,0 +1,135 @@
+@use 'shared/styles/unity' as *;
+@import 'src/styles/variables';
+
+.root {
+  height: 504px;
+  @media (max-width: $mq-xxl) {
+    height: 524px;
+  }
+  @media (max-width: $mq-l) {
+    height: auto;
+  }
+}
+
+.validateWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  @media (max-width: $mq-l) {
+    margin-bottom: 32px;
+  }
+
+  div:not(.rightColumn) {
+    min-width: 160px;
+  }
+}
+
+.subHeader {
+  margin: 0 10px 40px 10px;
+  @media (max-width: $mq-xxl) {
+    margin: 0 0 40px 0;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  @media (max-width: $mq-l) {
+    margin: 0 0 32px 0;
+  }
+}
+
+.column {
+  overflow: hidden;
+
+  width: 280px;
+  height: 52px;
+  padding: 16px 24px;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: $neutrals-gray-4;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  background: transparent;
+  border: 1px solid $d-color-neutrals-gray-3;
+  border-radius: 0;
+
+  @media (max-width: $mq-xxl) {
+    width: 216px;
+  }
+
+  @media (max-width: $mq-l) {
+    width: auto;
+    height: auto;
+    margin: 8px 0 8px 16px;
+    padding: 0;
+
+    color: $neutrals-gray-5;
+
+    border: none;
+
+    &:first-child,
+    &:nth-child(2),
+    &:nth-child(11),
+    &:last-child {
+      border-radius: 0;
+    }
+
+    &:first-child {
+      margin: 0 0 8px 16px;
+    }
+
+    &:nth-child(11) {
+      margin: 8px 0 0 16px;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:first-child {
+    border-top-left-radius: 24px;
+  }
+
+  &:nth-child(2) {
+    border-top-right-radius: 24px;
+  }
+
+  &:nth-child(11) {
+    border-bottom-left-radius: 24px;
+  }
+
+  &:last-child {
+    border-bottom-right-radius: 24px;
+  }
+
+  @media (max-width: $mq-l) {
+    &:first-child,
+    &:nth-child(2),
+    &:nth-child(11),
+    &:last-child {
+      border-radius: 0;
+    }
+
+    border-radius: 0;
+  }
+}
+
+.rightColumn {
+  color: $neutrals-white;
+  text-align: right;
+  opacity: 1;
+
+  -webkit-text-fill-color: $neutrals-white;
+  @media (max-width: $mq-l) {
+    margin: 8px 16px 8px 0;
+
+    &:nth-child(2) {
+      margin: 0 16px 8px 0;
+    }
+
+    &:last-child {
+      margin: 8px 16px 0 0;
+    }
+  }
+}

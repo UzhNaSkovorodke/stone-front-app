@@ -3,6 +3,7 @@ import FavService from '../store/services/favService'
 import MeetingsService from '../store/services/meetingsService'
 import SelectionsService from '../store/services/selectionsService'
 import User from '../store/services/User'
+import LotsValue from './services/lotsDefaultValue'
 import {
   IFavorites,
   ILot,
@@ -13,8 +14,6 @@ import {
 import { makeAutoObservable, runInAction } from 'mobx'
 import { axiosStone } from 'shared/services/axiosConfig'
 
-//import LotsValue from 'shared/services/lotsDefaultValue'
-
 class LkStore {
   favorites: IFavorites[] | [] = []
   selections: ISelections[] | [] = []
@@ -23,7 +22,7 @@ class LkStore {
 
   selectionsNew: number[] = []
   meetingsNew: number[] = []
-  //lots
+  lots
   user
   favService
   selectionService
@@ -34,7 +33,7 @@ class LkStore {
     makeAutoObservable(this)
 
     this.user = new User()
-    // this.lots = new LotsValue()
+    this.lots = new LotsValue()
     this.favService = new FavService()
     this.selectionService = new SelectionsService()
     this.meetingsService = new MeetingsService()

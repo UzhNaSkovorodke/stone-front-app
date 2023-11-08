@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Color } from 'src/shared/styles/colors.module.scss'
+import { Color } from 'shared/styles/colors.module.scss'
 import { ICON_BUTTON_VARIANTS, IconButton, IconButtonVariant } from './index'
 import { Flex } from '../Flex'
 import { keys } from 'rambda'

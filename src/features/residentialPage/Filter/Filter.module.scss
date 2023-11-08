@@ -1,0 +1,219 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.section {
+  display: flex;
+  flex-direction: column;
+  background-image: url('/image/residential.jpg');
+  background-repeat: no-repeat;
+  background-size: 120%;
+  background-position: top;
+  padding: $space_l;
+  padding-top: 30 * $space_gap;
+
+  @include desktop {
+    background-size: 100%;
+    padding-top: 20 * $space_gap;
+  }
+
+  @include tablet {
+    background-size: 700%;
+    background-position: top;
+    padding: $space_xs;
+    padding-top: $space;
+  }
+
+  &__header {
+    margin-bottom: 20 * $space_gap;
+
+    @include tablet {
+      padding: 0 $space_xs;
+    }
+  }
+
+  &__filter {
+    display: block;
+  }
+}
+
+.header {
+  display: flex;
+
+  @include tablet {
+    flex-direction: column;
+    margin-bottom: $space;
+  }
+
+  &__item {
+    width: calc(100% / 2);
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    top: -80px;
+    left: 50px;
+    width: 180px;
+    height: 133px;
+    color: $color-text-lighter;
+
+    @include desktop {
+      top: -38px;
+      left: 6px;
+      width: 151px;
+      height: 112px;
+    }
+
+    @include tablet {
+      position: static;
+      margin-bottom: $space;
+    }
+  }
+
+  &__title {
+    @include headline-2;
+    color: $color-text-lighter;
+    margin-bottom: $space;
+
+    @include desktop {
+      @include headline-4;
+      margin-bottom: $space_s;
+    }
+  }
+}
+
+.plug {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-background-lighter;
+  padding: $space_l;
+  border-radius: $border-radius_l;
+
+  @include tablet {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+
+    @include tablet {
+      flex-direction: column;
+    }
+  }
+
+  &__img {
+    margin-right: $space;
+
+    @include desktop {
+      width: 57px;
+      height: 52px;
+      margin-right: $space_xs;
+    }
+
+    @include tablet {
+      margin-right: 0;
+      margin-bottom: $space;
+    }
+  }
+
+  &__title {
+    @include headline-4;
+    margin-bottom: $space_xxs;
+    margin-right: 115px;
+
+    @include desktop {
+      @include headline-5;
+      margin-bottom: 0;
+      margin-right: $space_l;
+    }
+
+    @include tablet {
+      text-align: center;
+      margin-right: 0;
+      margin-bottom: $space_s;
+    }
+  }
+
+  &__title span {
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__note {
+    display: block;
+    @include text;
+    color: $color-text-gray;
+    padding-top: $space_xxs;
+
+    @include desktop {
+      @include text-description;
+      padding-top: 0;
+    }
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__description {
+    max-width: 110px;
+    @include headline-5;
+    color: $color-text-dark-gray;
+
+    @include desktop {
+      @include button-l;
+    }
+
+    @include tablet {
+      @include text;
+      max-width: none;
+      margin-bottom: $space_s;
+    }
+  }
+
+  &__button {
+  }
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 72px;
+    height: 72px;
+    border: 1px solid $color-border-positive;
+    border-radius: 50%;
+    margin-bottom: $space;
+  }
+
+  &__icon svg {
+    width: $icon-size;
+    height: $icon-size;
+    color: $color-text-positive;
+  }
+
+  &__title {
+    @include headline-5;
+    margin-bottom: $space_xs;
+  }
+
+  &__description {
+    text-align: center;
+    color: $color-text-gray;
+    margin-bottom: $space;
+  }
+}

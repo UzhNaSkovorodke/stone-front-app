@@ -1,0 +1,80 @@
+@import './../../styles/variables';
+@import './../../styles/mixins.scss';
+
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: $d-color-neutrals-white;
+}
+
+.main {
+  width: 100%;
+  max-width: 1440px;
+}
+
+.mainWrapper {
+  position: relative;
+  display: flex;
+  height: 812px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 24px !important;
+}
+
+@media (max-width: $mq-xxl) {
+  .main {
+    width: 100%;
+    max-width: 1024px;
+  }
+
+  .mainWrapper {
+    flex-direction: column;
+    max-width: 1024px;
+    position: relative;
+    height: 100%;
+  }
+}
+
+@media (max-width: $mq-n) {
+  .root {
+    align-items: unset;
+  }
+}
+
+.clearPanel__root {
+  right: 50px;
+  top: 90px;
+  @include desktop {
+    right: 50px;
+    top: 183px;
+  }
+  @include tablet {
+    top: 162px;
+    right: 20px;
+  }
+  @media (max-width: $mq-n) {
+    top: 149px;
+    right: 20px;
+  }
+}
+
+.clearPanel__contentWrapper:before {
+  right: 90px;
+  top: 77px;
+  @include desktop {
+    top: 168.52px;
+  }
+  @include tablet {
+    top: 149.52px;
+    right: 60px;
+  }
+  @media (max-width: $mq-n) {
+    top: 134px;
+    right: 60px;
+  }
+}

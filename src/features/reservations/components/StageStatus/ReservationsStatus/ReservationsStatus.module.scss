@@ -1,0 +1,55 @@
+@import 'src/styles/variables';
+
+.svg__success {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  @media (max-width: $mq-xxl) {
+    margin-top: 142px;
+    margin-bottom: 32px;
+  }
+  @media (max-width: $mq-l) {
+    margin-top: 8px;
+  }
+
+  svg {
+    width: 72px;
+    height: 72px;
+  }
+}
+
+.root__fail {
+  margin-bottom: 176px;
+}
+
+.btnWrapper {
+  padding: 16px 32px;
+  @media (max-width: $mq-xxl) {
+    padding: 14px 24px;
+    font-size: 14px;
+
+    line-height: 20px;
+  }
+  @media (max-width: $mq-l) {
+    margin-bottom: 69px;
+    padding: 14px 24px;
+    font-weight: 500;
+  }
+}
+
+.subHeader {
+  margin-bottom: 40px;
+  @media (max-width: $mq-xxl) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  @media (max-width: $mq-l) {
+    margin-bottom: 32px;
+  }
+}
+
+.lotDescription {
+  @media (max-width: $mq-l) {
+    display: none;
+  }
+}

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { keys } from 'rambda'
-import { Color } from 'src/shared/styles/colors.module.scss'
+import { Color } from 'shared/styles/colors.module.scss'
 import { BUTTON_VARIANTS, Button, ButtonVariant } from './index'
 import { Flex } from '../Flex'
 import { Text } from '../Text'
@@ -85,10 +85,10 @@ export const AllVariants: Story = {
             {v}
           </Text>
           {/* prettier-ignore */}
-          <Flex g="3" ai="center">
-            <Button variant={v} s="large" disabled={args.disabled}>Button</Button>
-            <Button variant={v} s="medium" disabled={args.disabled}>Button</Button>
-            <Button variant={v} s="small" disabled={args.disabled}>Button</Button>
+          <Flex g='3' ai='center'>
+            <Button variant={v} s='large' disabled={args.disabled}>Button</Button>
+            <Button variant={v} s='medium' disabled={args.disabled}>Button</Button>
+            <Button variant={v} s='small' disabled={args.disabled}>Button</Button>
           </Flex>
         </Flex>
       ))}

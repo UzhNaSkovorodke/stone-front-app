@@ -1,0 +1,68 @@
+@import 'src/styles/variables.scss';
+@import 'src/styles/mixins.scss';
+
+.projects-navigation {
+  display: flex;
+  border: 1px solid $color-border-gray;
+  background-color: $color-background-lighter;
+  border-radius: $border-radius;
+  position: sticky;
+  bottom: 24px;
+  left: calc(50% - 156px);
+  width: max-content;
+  z-index: 50; //кнопка просмотр на карте/фильр перекрывается модалкой просмотра проекта и модалкой вызова. но перекрывает остальные элементы
+  margin-top: -52px;
+
+  @include tablet {
+    left: calc(50% - 50px);
+    bottom: 58px;
+    width: max-content;
+  }
+
+  &__title {
+    color: $color-text;
+
+    @include button-l;
+    margin: 0;
+  }
+
+  &__icon {
+    display: flex;
+    gap: $space_xs;
+    align-items: center;
+    padding: $space_xs;
+    cursor: pointer;
+
+    > svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    @include tablet {
+      padding: 14px;
+
+      > svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  &__line {
+    height: 54px;
+    border: 1px solid $color-border-gray;
+    margin: 0;
+
+    @include tablet {
+      height: 46px;
+    }
+  }
+
+  &--hide {
+    display: none;
+  }
+
+  &_up {
+    bottom: 90px;
+  }
+}

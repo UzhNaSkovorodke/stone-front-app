@@ -1,0 +1,139 @@
+@use 'shared/styles/unity' as *;
+
+$border: 1px solid $neutrals-gray-7;
+
+.root {
+  // @include media($l) {
+  //   position: sticky;
+  //   top: 0;
+  // }
+}
+
+.content {
+  @include media($l) {
+    position: sticky;
+    top: 140px;
+  }
+}
+
+.officeBlock {
+  border-top: $border;
+  border-bottom: $border;
+
+  &._isDisabled {
+    > div {
+      color: $neutrals-gray-4;
+    }
+  }
+}
+
+.price._isDisabled {
+  color: $neutrals-gray-4;
+}
+
+.discountPrice {
+  text-decoration: line-through;
+}
+
+.description {
+  &:not(._isDescriptionOpen) {
+    > div:nth-child(3) {
+      border-bottom: none;
+
+      @include media($m) {
+        border-bottom: $border;
+      }
+    }
+  }
+
+  & > div {
+    border-bottom: $border;
+
+    @include media($m) {
+      &:nth-child(4n - 2) {
+        border-right: $border;
+      }
+
+      &:nth-last-of-type(-n + 4) {
+        border-bottom: none;
+      }
+
+      &:nth-child(4n - 1) {
+        padding-left: 16px;
+      }
+    }
+
+    @include media($l) {
+      &:nth-child(4n - 2) {
+        border-right: none;
+      }
+
+      &:nth-last-of-type(-n + 4) {
+        border-bottom: $border;
+      }
+
+      &:nth-child(4n - 1) {
+        padding-left: 0;
+      }
+    }
+
+    &:nth-last-of-type(-n + 2) {
+      border-bottom: none;
+    }
+
+    &:nth-child(odd) {
+      border-right: $border;
+    }
+
+    &:nth-child(2n) {
+      padding-left: 16px;
+    }
+  }
+}
+
+.descriptionItem._isDisabled {
+  .descriptionItemText {
+    color: $neutrals-gray-4;
+  }
+
+  svg {
+    color: $neutrals-gray-4;
+  }
+}
+
+.statuses {
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 24px;
+
+  @include media($m) {
+    margin-top: 0;
+    margin-left: 4px;
+  }
+
+  @include media($l) {
+    margin-top: 24px;
+    margin-left: 0;
+  }
+}
+
+.buttonBook {
+  flex-basis: 232px;
+}
+
+.status {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 16px;
+
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+
+  border-radius: 8px;
+
+  @include sans-serif;
+}

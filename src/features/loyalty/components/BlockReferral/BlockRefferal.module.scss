@@ -1,0 +1,203 @@
+@import 'src/styles/variables.scss';
+@import 'src/styles/mixins.scss';
+
+.number {
+  width: 48px;
+  height: 48px;
+  background: $d-color-neutrals-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  @include text;
+  @include headline-5;
+  margin-top: 40px;
+  margin-bottom: 16px;
+  @include tablet {
+    margin-top: 0;
+    margin-bottom: 24px;
+  }
+}
+
+.title {
+  color: $d-color-neutrals-white;
+  @include headline-3;
+  margin-bottom: 24px;
+  @include desktop {
+    @include headline-4;
+    margin-bottom: 24px;
+  }
+  @include tablet {
+    @include headline-5;
+    margin-bottom: 16px;
+  }
+}
+
+.description {
+  text-align: center;
+  white-space: pre-wrap;
+  color: $d-color-neutrals-white;
+  @include text;
+  @include desktop {
+    @include text-description;
+  }
+  @include tablet {
+    @include text-caption;
+    max-width: 311px;
+  }
+}
+
+.recommendation {
+  width: 1360px;
+  border: solid 1px $d-color-neutrals-gray-3;
+  background: #1b1b1d;
+  border-radius: $border-radius_l;
+  @include desktop {
+    width: 944px;
+  }
+  @include tablet {
+    width: 311px;
+  }
+}
+
+.recommendation_title {
+  white-space: pre-wrap;
+  color: $d-color-neutrals-white;
+  @include headline-4;
+  padding-top: 36px;
+  @include desktop {
+    @include headline-5;
+    padding-top: 52px;
+  }
+  @include tablet {
+    @include text;
+    padding-top: 0;
+  }
+}
+
+.recommendation_text {
+  white-space: pre-wrap;
+  @include text-accent;
+  color: $d-color-neutrals-gray-5;
+  padding: 32px 0;
+  @include desktop {
+    @include text;
+    padding-top: 24px;
+  }
+  @include tablet {
+    @include text-description;
+    padding-bottom: 20px;
+    white-space: normal;
+  }
+}
+
+.step {
+  display: flex;
+  @include text-description;
+  padding-bottom: 24px;
+}
+
+.step_index {
+  min-width: 10px;
+  margin-right: 19px;
+  background: linear-gradient(
+    94deg,
+    #b49266 -3.75%,
+    #c2a678 3.94%,
+    #e7dba8 20.42%,
+    #dbcb98 24.82%,
+    #bc9e6d 38.01%,
+    #e1c588 51.2%,
+    #d0b079 57.79%,
+    #c5a370 64.38%,
+    #d8be88 69.88%,
+    #e6d29a 76.47%,
+    #ebd9a0 79.77%,
+    #d0bc9a 96.25%,
+    #c6b198 105.04%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.step_text {
+  color: $d-color-neutrals-white;
+}
+
+.recommendation_btn {
+  margin-top: 44px;
+  margin-bottom: 36px;
+  @include desktop {
+    margin-bottom: 52px;
+    margin-top: 24px;
+  }
+  @include tablet {
+    margin-top: 4px;
+    margin-bottom: 35px;
+  }
+}
+
+.recommendation_content {
+  padding-right: 64px;
+  padding-left: 64px;
+  @include desktop {
+    padding-left: 24px;
+    padding-right: 64px;
+  }
+  @include tablet {
+    padding-left: 0;
+    padding-right: 0;
+    button {
+      width: 247px;
+      padding: 14px 24px;
+    }
+  }
+}
+
+.recommendation_image {
+  background: $d-color-neutrals-gray-1;
+  max-width: 584px;
+  padding: 43px 86px;
+  border-radius: $border-radius_l;
+  border: 1px solid $d-color-neutrals-gray-3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  @include desktop {
+    max-width: 414px;
+    padding: 44px;
+  }
+  @include tablet {
+    background: none;
+    border: none;
+    padding: 0 6px;
+  }
+
+  img {
+    transform: rotate(-2.63deg);
+  }
+}
+
+.image_description {
+  white-space: pre-line;
+  @include text-description;
+  color: $d-color-neutrals-white;
+  text-align: center;
+  padding-top: 28px;
+  @include desktop {
+    @include text-caption;
+  }
+}
+
+.image_blur {
+  z-index: -1;
+  position: absolute;
+  width: 214px;
+  height: 214px;
+  opacity: 0.3;
+  background: #c68523;
+
+  filter: blur(104px);
+}

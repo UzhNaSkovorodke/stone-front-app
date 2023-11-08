@@ -1,0 +1,109 @@
+@use 'shared/styles/unity' as *;
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+
+.wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.closeIcon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
+  > svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.imageZoomPanWrapper {
+  position: relative;
+  padding: 40px 16px 30px 40px;
+  height: 100%;
+  width: 100%;
+
+  @media (max-width: 1024px) {
+    padding: 0px;
+  }
+}
+
+.imageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+
+  @include tablet {
+    height: 535px;
+    flex-shrink: 0;
+  }
+}
+
+.imagePreviewMobile {
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+}
+
+.imageZoomPanControls {
+  position: absolute;
+  top: 0;
+  right: 16px;
+  bottom: 0;
+}
+
+.descWrap {
+  flex: 0 0 368px;
+  color: $neutrals-white;
+  padding-top: 88px;
+  border-radius: 0;
+
+  @include tablet {
+    flex-grow: 1;
+    padding-top: 32px;
+    border-radius: 24px 24px 0 0;
+  }
+}
+
+.zoom {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+}
+
+.bookButton {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tags {
+  gap: 4px;
+}
+
+.tag {
+  padding: 7px 15px;
+
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+
+  background-color: $neutrals-gray-2;
+  border: 1px solid $neutrals-gray-3;
+  border-radius: 130px;
+}
+
+.button {
+  @media (width < 1024px) {
+    position: sticky;
+    bottom: 32px;
+    left: 32px;
+    right: 32px;
+  }
+}

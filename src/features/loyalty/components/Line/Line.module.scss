@@ -1,0 +1,15 @@
+@import 'src/styles/variables.scss';
+@import 'src/styles/mixins.scss';
+
+.body {
+  user-select: none;
+  z-index: 1;
+  height: 1px;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-size-adjust: none;
+  background: linear-gradient(to right, #3d414f 0, #7b8398 30%, #353945 20%);
+}
+
+.line {
+  height: 1px;
+}

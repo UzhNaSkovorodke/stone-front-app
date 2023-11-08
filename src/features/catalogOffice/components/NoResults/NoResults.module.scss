@@ -1,0 +1,14 @@
+@use 'shared/styles/unity' as *;
+
+.wrapper {
+  padding-block: 160px;
+}
+
+.content {
+  max-width: 600px;
+  text-align: center;
+}
+
+.button {
+  width: 282px;
+}

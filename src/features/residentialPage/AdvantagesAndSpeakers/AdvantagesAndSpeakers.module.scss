@@ -1,0 +1,414 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.blockList {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 1;
+
+  &__item:first-child {
+    width: calc((100% / 4) * 3);
+    order: 1;
+
+    @include desktop {
+      width: calc((100% / 3) * 2);
+      order: 0;
+    }
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  &__item:last-child {
+    width: calc(100% / 4);
+    background-color: $color-background-lighter;
+
+    @include desktop {
+      width: calc(100% / 3);
+    }
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+}
+
+.teaserList {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 1;
+
+  @include media($mq-n) {
+    flex-direction: column;
+    padding: $space_xl $space;
+    background-color: $color-background-primary-home;
+  }
+
+  &__item {
+    width: calc(100% / 3);
+    height: $teaser-item-size;
+
+    @include desktop {
+      width: calc(100% / 2);
+      height: $teaser-item-size-tablet;
+    }
+
+    @include tablet {
+      height: $teaser-item-size-tablet;
+    }
+
+    @include media($mq-n) {
+      width: auto;
+      height: auto;
+      background-color: $color-background;
+      border-bottom: 1px solid rgba($color-border-lighter, 0.2);
+    }
+  }
+
+  &__item_border_none {
+    border-bottom: none !important; // перебивает вышестоящие модификаторы
+  }
+
+  &__item_tablet_display {
+    display: none;
+
+    @include desktop {
+      display: block;
+    }
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__item_tablet_hide {
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__item_mobile_hide {
+    @include tablet {
+      display: none;
+    }
+  }
+}
+
+.teaser {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-background-lighter;
+  padding: $space_l;
+
+  @include tablet {
+    padding: $space;
+  }
+
+  @include media($mq-n) {
+    padding: $space 0;
+  }
+
+  &_1 {
+    background-color: $color-background;
+
+    @include desktop {
+      background-color: $color-background-lighter;
+    }
+
+    @include media($mq-n) {
+      background-color: $color-background-primary-home;
+    }
+  }
+
+  &_1 &__h {
+    color: $color-text-lighter;
+
+    @include desktop {
+      color: $color-text;
+    }
+
+    @include media($mq-n) {
+      color: $color-text-lighter;
+    }
+  }
+
+  &_1 &__title {
+    color: $color-text-lighter;
+
+    @include desktop {
+      color: $color-text;
+    }
+
+    @include media($mq-n) {
+      color: $color-text-lighter;
+    }
+  }
+
+  &_2 {
+    background-color: $color-background-primary-home;
+
+    @include desktop {
+      background-color: $color-background;
+    }
+
+    @include media($mq-n) {
+      background-color: $color-background-primary-home;
+    }
+  }
+
+  &_2 &__h {
+    color: $color-text-lighter;
+
+    @include desktop {
+      color: $color-text-lighter;
+    }
+  }
+
+  &_2 &__title {
+    color: $color-text-lighter;
+
+    @include desktop {
+      color: $color-text-lighter;
+    }
+  }
+
+  &_2 &__description {
+    color: $color-text-lighter;
+
+    @include desktop {
+      color: $color-text-gray;
+    }
+
+    @include media($mq-n) {
+      color: $color-text-lighter;
+    }
+  }
+
+  &_3 {
+    @include desktop {
+      background-color: $color-background-primary-home;
+    }
+
+    @include media($mq-n) {
+      background-color: $color-background-primary-home;
+    }
+  }
+
+  &_3 &__h {
+    @include desktop {
+      color: $color-text-lighter;
+    }
+  }
+
+  &_3 &__title {
+    @include desktop {
+      color: $color-text-lighter;
+    }
+  }
+
+  &_3 &__description {
+    @include desktop {
+      color: $color-text-lighter;
+    }
+  }
+
+  &__h {
+    @include headline-xl-light;
+
+    @include media($mq-n) {
+      @include headline-l-light;
+      color: $color-text-lighter;
+    }
+  }
+
+  &__body {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @include media($mq-n) {
+      padding-top: $space;
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include text-accent;
+    flex-shrink: 0;
+    margin-bottom: $space_s;
+
+    @include media($mq-n) {
+      @include text;
+      color: $color-text-lighter;
+      margin-bottom: (-$space_xs);
+    }
+  }
+
+  &__description {
+    display: flex;
+    align-items: flex-end;
+    @include text-description;
+    color: $color-text-gray;
+
+    @include media($mq-n) {
+      color: $color-text-lighter;
+      margin-top: $space;
+    }
+  }
+}
+
+.backgroundList {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+
+  @include desktop {
+    margin-top: $teaser-item-size-tablet;
+  }
+
+  @include media($mq-n) {
+    display: none;
+  }
+
+  &__item {
+    height: $teaser-item-size * 2;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include desktop {
+      height: $teaser-item-size-tablet;
+    }
+
+    @include tablet {
+      width: calc(100% / 2);
+      height: $teaser-item-size-tablet;
+    }
+  }
+
+  &__item:first-child {
+    width: calc(100% / 4);
+
+    @include desktop {
+      width: calc(100% / 3);
+    }
+
+    @include tablet {
+      width: calc(100% / 2);
+    }
+  }
+
+  &__item:last-child {
+    width: calc((100% / 4) * 3);
+    background-image: url('/image/infographics_3.jpg');
+    background-position: bottom right;
+
+    @include desktop {
+      width: calc(100% / 3);
+      background-size: 151% auto;
+      background-position: bottom right -85px;
+    }
+
+    @include tablet {
+      width: calc(100% / 2);
+      background-size: cover;
+      background-position: bottom right;
+    }
+  }
+}
+
+.teaserL {
+  display: flex;
+  flex-direction: column;
+  height: $teaser-item-size;
+  padding: 0 $space_l $space_l;
+  overflow: hidden;
+
+  @include desktop {
+    height: $teaser-item-size-tablet;
+  }
+
+  @include tablet {
+    padding-left: $space;
+    padding-right: $space;
+  }
+
+  @include media($mq-n) {
+    background-color: $color-background-lighter;
+    padding: 0 $space 20 * $space_gap;
+  }
+
+  &__bodyWrap {
+    position: relative;
+    flex: 1 0 auto;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    opacity: 0;
+  }
+
+  &__body.isActive {
+    top: 0;
+    opacity: 1;
+  }
+
+  &__h {
+    display: none;
+    @include headline-4;
+    margin-bottom: $space_s;
+    flex-shrink: 0;
+
+    @include desktop {
+      @include headline-4;
+      margin-bottom: $space;
+    }
+
+    @include media($mq-n) {
+      display: block;
+      color: $color-text;
+      margin-bottom: $space_s;
+    }
+  }
+
+  &__description {
+    flex: 1 0 auto;
+    @include text;
+
+    @include media($mq-n) {
+      color: $color-text;
+    }
+  }
+
+  &__footer {
+    flex-shrink: 0;
+  }
+
+  &__title {
+    @include text;
+
+    @include media($mq-n) {
+      @include text-description;
+      color: $color-text;
+    }
+  }
+
+  &__note {
+    @include text-caption;
+    color: $color-text-gray;
+  }
+}

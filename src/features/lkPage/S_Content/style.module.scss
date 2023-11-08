@@ -1,0 +1,149 @@
+@use 'shared/styles/unity' as *;
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+@import 'shared/styles/colors.module';
+
+.root {
+  display: flex;
+  flex-direction: column;
+  max-width: 1072px;
+  width: 100%;
+  padding: 40px;
+  height: 100%;
+  overflow-y: scroll;
+  background-color: $d-color-neutrals-gray-7;
+  position: relative;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.navigation {
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 33.3%);
+
+  h2 {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 400;
+    margin: 0;
+  }
+}
+
+.tabsWrapper {
+  display: flex;
+  justify-content: center;
+
+  label > input:checked ~ div {
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid rgba(0, 0, 0, 0);
+  }
+}
+
+.tabsWrapper {
+  user-select: none;
+
+  label:first-child > input ~ div:before {
+    position: absolute;
+    content: '';
+    z-index: 0;
+    width: 104px;
+    height: 44px;
+    background-color: $neutrals-white;
+    border: 1px solid $neutrals-gray-5;
+    pointer-events: none;
+    border-radius: 48px;
+    transition: 0.2s;
+  }
+
+  @media (max-width: $mq-l) {
+    label:first-child > input ~ div:before {
+      width: 152.5px;
+      height: 44px;
+    }
+  }
+
+  label:first-child > input:not(:checked) ~ div:before {
+    translate: 103%;
+  }
+}
+
+.clearBtnWrapper {
+  display: flex;
+  justify-content: flex-end;
+
+  .clearBtn {
+    @include button;
+    font-weight: 400;
+    color: $d-color-neutrals-gray-4;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .activeClearBtn {
+    color: $d-color-secondary-red;
+  }
+}
+
+@media (max-width: $mq-xxl) {
+  .root {
+    flex-direction: column;
+    max-width: 1024px;
+    height: 722px;
+  }
+}
+
+@media (min-width: $mq-xxs) and (max-width: $mq-l) {
+  .root {
+    padding: 32px;
+    height: 100%;
+  }
+
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 auto 32px auto;
+    width: 100%;
+
+    h2 {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+
+  .tabsWrapper {
+    display: flex;
+    justify-content: center;
+    order: 3;
+    width: 100%;
+  }
+  @include tablet-mini {
+    .root {
+      padding: 32px 0 38px 0;
+    }
+
+    .navigation {
+      padding: 0 32px;
+
+      h2 {
+        margin-bottom: 16px;
+      }
+    }
+    .clearBtn {
+      margin-bottom: 16px;
+    }
+  }
+
+  .clearBtn {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}

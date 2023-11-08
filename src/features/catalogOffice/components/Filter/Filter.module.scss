@@ -1,0 +1,56 @@
+@use 'shared/styles/unity' as *;
+
+.headerItem {
+  flex: 1 0 33%;
+}
+
+.type {
+  &._variant-narrow {
+    flex-basis: 100%;
+    order: 1;
+  }
+
+  &._variant-wide {
+    order: initial;
+    width: auto;
+  }
+}
+
+.search {
+  flex-shrink: 0;
+}
+
+.tabWrapper {
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.additional:not(:last-of-type) {
+  border-bottom: 1px solid $neutrals-gray-7;
+}
+
+.additional._variant-narrow {
+  position: relative;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    top: calc(100% + 16px);
+    left: 0;
+
+    width: 100%;
+
+    border-bottom: 1px solid $neutrals-gray-7;
+  }
+}
+
+.posRel {
+  position: relative;
+}
+
+.priceType {
+  position: absolute;
+  top: -3px;
+  right: 0;
+}

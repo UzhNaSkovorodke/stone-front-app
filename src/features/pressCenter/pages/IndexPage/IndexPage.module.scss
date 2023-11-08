@@ -1,0 +1,39 @@
+@use 'shared/styles/unity' as *;
+
+.root {
+  @include media($l) {
+    padding-bottom: 120px;
+  }
+}
+
+.header {
+  @include media($l) {
+    padding-top: 120px;
+  }
+}
+
+.pageTitle {
+  @include media($m) {
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  @include media($l) {
+    font-size: 64px;
+    line-height: 64px;
+  }
+}
+
+.select {
+  @include media($m) {
+    width: 464px;
+  }
+
+  @include media($l) {
+    width: 443px;
+  }
+}
+
+.list {
+  background-color: $neutrals-gray-7;
+}

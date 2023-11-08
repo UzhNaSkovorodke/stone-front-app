@@ -1,0 +1,124 @@
+@use 'shared/styles/unity' as *;
+
+.wrapper {
+  position: relative;
+  height: 100%;
+
+  @include media($m) {
+    grid-template-columns: 1fr 368px;
+  }
+}
+
+.closeIcon {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+
+  > svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.imgWrap {
+  position: relative;
+  flex-shrink: 0;
+  height: 535px;
+
+  @include media($m) {
+    flex-grow: 1;
+    height: initial;
+  }
+}
+
+.descWrap {
+  flex-grow: 1;
+  padding-bottom: 100px;
+  color: $neutrals-white;
+  border-radius: 24px 24px 0 0;
+
+  @include media($m) {
+    flex: 0 0 368px;
+    padding-top: 88px;
+    padding-bottom: 40px;
+    border-radius: 0;
+  }
+}
+
+.zoom {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+}
+
+.bookButton {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tags {
+  gap: 4px;
+}
+
+.tag {
+  padding: 7px 15px;
+
+  font-size: 12px;
+  font-weight: 50;
+  line-height: 16px;
+
+  background-color: $neutrals-gray-2;
+  border: 1px solid $neutrals-gray-3;
+  border-radius: 130px;
+}
+
+.bookmark {
+  width: 55px;
+  height: 55px;
+
+  > svg {
+    width: 27.5px;
+    height: 27.5px;
+  }
+}
+
+.imageZoomPanWrapper {
+  position: relative;
+
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageZoomPanControls {
+  position: absolute;
+  top: 0;
+  right: 16px;
+  bottom: 0;
+}
+
+.imageZoomPan {
+  width: 100%;
+  height: 100%;
+}
+
+.imageZoomPanTransformWrapper {
+  /* stylelint-disable-next-line declaration-no-important */
+  width: 85% !important;
+  /* stylelint-disable-next-line declaration-no-important */
+  height: 85% !important;
+}
+
+.imageZoomPanButton {
+  background-color: $neutrals-white;
+  box-shadow: 0 4px 4px 0 #00000040;
+}
+
+.linkButton {
+  display: block;
+  width: 100%;
+}

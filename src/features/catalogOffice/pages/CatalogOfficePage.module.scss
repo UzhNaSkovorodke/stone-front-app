@@ -1,0 +1,124 @@
+@use 'shared/styles/unity' as *;
+
+// ==============================
+// Layout
+// ==============================
+
+.wrapper {
+  flex-grow: 1;
+  padding-top: 40px;
+
+  @include media($m) {
+    padding-top: 0;
+  }
+}
+
+.side {
+  position: sticky;
+  top: 100px;
+
+  overflow-y: scroll;
+  flex-basis: 368px;
+  flex-shrink: 0;
+
+  height: calc(100vh - 100px);
+}
+
+.main {
+  min-height: 110vh;
+  flex-grow: 1;
+}
+
+// ==============================
+// Mobile Header
+// ==============================
+
+.mHeaderSide,
+.mHeaderMiddle {
+  padding: 12px;
+}
+
+.mHeaderSide {
+  flex-basis: 80px;
+
+  > button {
+    display: flex;
+  }
+}
+
+.mHeaderMiddle {
+  flex-grow: 1;
+  border-right: 1px solid $neutrals-gray-6;
+  border-left: 1px solid $neutrals-gray-6;
+}
+
+.mobileHeader {
+  border-bottom: 1px solid $neutrals-gray-6;
+}
+
+// ==============================
+// Header
+// ==============================
+
+.headerControls {
+  flex-basis: 336px;
+
+  @include media($l) {
+    flex-basis: 311px;
+  }
+}
+
+.sort {
+  flex-grow: 1;
+}
+
+// ==============================
+// Filter
+// ==============================
+
+.lotModalWrapper {
+  height: 100%;
+  padding-bottom: 80px;
+
+  @include media($m) {
+    height: 100%;
+    padding-bottom: 0;
+  }
+}
+
+.floatedButton {
+  position: fixed;
+  z-index: 10;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  border: 1px solid $neutrals-gray-4;
+
+  @media (hover: hover) {
+    &:hover {
+      border: 1px solid $neutrals-gray-4;
+    }
+  }
+
+  @include media($s) {
+    display: none;
+  }
+
+  @include media($m) {
+    display: flex;
+  }
+
+  @include media($l) {
+    display: none;
+  }
+
+  &:active:not(._disabled) {
+    border: 1px solid $neutrals-gray-4;
+  }
+}
+
+.linkButton {
+  display: block;
+  width: 100%;
+}

@@ -1,0 +1,52 @@
+@import '../../../../styles/mixins';
+@import '../../../../styles/variables';
+
+.root {
+  padding: 64px 270px;
+
+  h1 {
+    @include headline-1-light;
+    color: $color-text-lighter;
+    text-align: center;
+  }
+
+  p {
+    @include text-accent;
+
+    margin: 40px 0 0 0;
+    text-align: center;
+    color: $color-text-light;
+  }
+
+  @include desktop {
+    padding: 80px 196px;
+
+    h1 {
+      @include headline-2;
+    }
+
+    p {
+      @include text;
+      text-align: center;
+      max-width: 633px;
+    }
+  }
+
+  @include tablet {
+    padding: 40px 32px;
+    justify-content: flex-start;
+
+    h1 {
+      @include headline-4;
+      text-align: left;
+      width: 100%;
+    }
+
+    p {
+      margin: 32px 0 0 0;
+      text-align: left;
+      width: 100%;
+      max-width: unset;
+    }
+  }
+}

@@ -1,0 +1,280 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+
+.root {
+  width: 443px;
+  border-radius: 40px;
+  border: 1px solid $d-color-neutrals-gray-6;
+  background-color: $d-color-neutrals-white;
+
+  h2 {
+    @include headline-3;
+    margin-top: 80px;
+    white-space: pre-wrap;
+  }
+}
+
+.wrapper {
+  position: relative;
+  width: inherit;
+  left: -1px;
+  top: -1px;
+  min-height: 692px;
+  padding: 48px;
+  border-radius: 40px;
+  border: 1px solid $d-color-neutrals-gray-6;
+
+  p {
+    @include text-description;
+    margin: 40px 0 0 0;
+    white-space: pre-wrap;
+    text-align: center;
+    color: $d-color-neutrals-gray-4;
+  }
+
+  .icon {
+    position: absolute;
+    left: 24px;
+    top: 40px;
+  }
+
+  .btn {
+    margin-top: 32px;
+  }
+}
+
+.characteristicsList {
+  margin-top: 32px;
+}
+
+.characteristicsItem {
+  padding: 23px 0;
+  border-bottom: 1px solid $d-color-neutrals-gray-6;
+
+  &:first-child {
+    border-top: 1px solid $d-color-neutrals-gray-6;
+  }
+
+  p {
+    @include text-accent;
+    text-align: left;
+    white-space: pre-wrap;
+    margin: 0;
+    color: $d-color-neutrals-gray-4;
+
+    &:last-child {
+      text-align: right;
+      color: $d-color-neutrals-gray-3;
+    }
+  }
+}
+
+.optionList {
+  width: inherit;
+  padding: 24px 48px;
+}
+
+.optionWrapper {
+  align-items: center;
+  border-top: 1px solid $d-color-neutrals-gray-6;
+
+  &:first-child {
+    border-top: none;
+  }
+
+  img {
+    align-self: flex-start;
+    margin: 24px 0 0 0;
+  }
+
+  h3 {
+    @include button-l;
+    white-space: pre-wrap;
+    margin: 0;
+    color: $d-color-neutrals-gray-1;
+  }
+
+  p {
+    @include text-description;
+    white-space: pre-wrap;
+    margin: 0;
+    color: $d-color-neutrals-gray-4;
+  }
+
+  .optionItem {
+    width: 100%;
+    padding: 23px 0 24px 0;
+    margin-left: 16px;
+  }
+}
+
+@media (max-width: $mq-xxl) {
+  .wrapper {
+    width: calc(100% + 2px);
+  }
+
+  .root {
+    width: 100%;
+    border-radius: 24px;
+    margin: 0 auto;
+
+    h2 {
+      @include headline-3;
+      margin-top: 96px;
+      min-width: 56%;
+    }
+  }
+
+  .wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: calc(100% + 2px);
+    min-height: 424px;
+    padding: 64px;
+    border-radius: 24px;
+
+    p {
+      min-width: 347px;
+      margin: 36px 0 0 0;
+    }
+
+    .icon {
+      left: 40px;
+      top: 56px;
+    }
+
+    .btn {
+      margin: 0;
+      width: 100%;
+      max-width: 187px;
+    }
+  }
+
+  .characteristicsList {
+    min-width: 347px;
+    margin: 0;
+  }
+
+  .characteristicsItem {
+    p {
+      margin: 0;
+      min-width: unset;
+    }
+  }
+
+  .optionList {
+    padding: 25px 64px 40px 64px;
+    display: grid;
+    grid-template-columns: minmax(347px, auto) minmax(347px, auto);
+    grid-template-rows: auto auto;
+    justify-content: space-between;
+  }
+
+  .optionWrapper {
+    min-width: 347px;
+    border: none;
+
+    img {
+      margin: 38px 0 0 0;
+    }
+
+    &:nth-child(n + 3) {
+      border-top: 1px solid $d-color-neutrals-gray-6;
+    }
+
+    .optionItem {
+      padding: 39px 0 23px 0;
+      margin-left: 16px;
+      max-width: 375px;
+      align-self: flex-start;
+    }
+  }
+}
+
+@media (max-width: $mq-l) {
+  .wrapper {
+    width: calc(100% + 2px);
+  }
+
+  .root {
+    h2 {
+      @include headline-4;
+      margin-top: 72px;
+    }
+  }
+
+  .wrapper {
+    padding: 32px 32px 40px;
+    border-radius: 24px;
+
+    p {
+      @include text-caption;
+      min-width: 100%;
+      margin: 32px 0 0 0;
+    }
+
+    .icon {
+      width: 80px;
+      height: 80px;
+      left: 11px;
+      top: 24px;
+
+      svg {
+        width: 88px;
+        height: 88px;
+      }
+    }
+
+    .btn {
+      margin: 32px 0 0 0;
+      max-width: unset;
+    }
+  }
+
+  .characteristicsList {
+    min-width: 100%;
+    margin: 32px 0 0 0;
+  }
+
+  .characteristicsItem {
+    p {
+      @include text;
+      margin: 0;
+      min-width: unset;
+    }
+  }
+
+  .optionList {
+    padding: 10px 32px 16px;
+    display: flex;
+  }
+
+  .optionWrapper {
+    min-width: 279px;
+    border: none;
+
+    img {
+      align-self: flex-start;
+      margin-top: 24px;
+    }
+
+    h3 {
+      @include button-l;
+    }
+
+    p {
+      @include text-description;
+    }
+
+    &:nth-child(n + 2) {
+      border-top: 1px solid $d-color-neutrals-gray-6;
+    }
+
+    .optionItem {
+      padding: 23px 0;
+      margin-left: 16px;
+      max-width: 375px;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+
+$teaser-hight: 360px;
+$teaser-hight-medium: 341px;
+$teaser-hight-small: 265px;
+
+.block {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  @include media($mq-n) {
+    flex-direction: column;
+  }
+}
+
+.teaser {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: $space_xxl;
+  height: $teaser-hight;
+  background-color: $color-background-lighter;
+
+  @include desktop {
+    height: $teaser-hight-medium;
+  }
+
+  @include media($mq-n) {
+    height: $teaser-hight-small;
+  }
+
+  &_style_bg {
+    background-color: $color-background;
+    background-image: url('../../../../../public/image/numbersAndSloganBackground.svg');
+    background-size: cover;
+  }
+
+  &_style_light &__title {
+    color: $color-text-lighter;
+    @include headline-3;
+
+    @include desktop {
+      @include headline-4;
+    }
+
+    @include tablet {
+      @include headline-5;
+    }
+  }
+
+  &__title {
+    @include headline-1-light;
+    color: $color-text;
+    text-align: center;
+    padding-bottom: $space_xs;
+  }
+
+  &__description {
+    @include text-accent;
+    color: $color-text-gray;
+    text-align: center;
+  }
+}

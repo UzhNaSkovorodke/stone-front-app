@@ -1,0 +1,23 @@
+@use 'shared/styles/unity' as *;
+
+.transformerComponent {
+  &__wrap {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__componentWrap {
+    width: 100% !important; // перебить стили компонента Image
+    height: 100% !important;
+  }
+
+  &__component {
+    width: 85% !important;
+    height: 85% !important;
+  }
+
+  &__img {
+    margin: 0 auto;
+    object-fit: scale-down;
+  }
+}

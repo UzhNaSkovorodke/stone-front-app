@@ -1,0 +1,45 @@
+@use 'shared/styles/unity' as *;
+
+.root {
+  height: 100%;
+}
+
+.title {
+  @include media($m) {
+    font-size: 40px;
+    line-height: 48px;
+  }
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  background-color: $neutrals-gray-4;
+  border-radius: 50%;
+}
+
+.additionalInfo {
+  @include media($l) {
+    margin-top: 356px;
+  }
+}
+
+.image {
+  object-fit: cover;
+
+  @include media($m) {
+    object-fit: fill;
+  }
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+}
+
+.sourceImage {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}

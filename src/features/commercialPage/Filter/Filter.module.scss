@@ -1,0 +1,279 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.section {
+  display: flex;
+  flex-direction: column;
+  background-image: url('/image/switch_02_web.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: $space_l;
+  padding-top: 30 * $space_gap;
+
+  @include desktop {
+    padding-top: 20 * $space_gap;
+  }
+
+  @include tablet {
+    padding: $space_xs;
+    padding-top: 20 * $space_gap;
+  }
+
+  &__header {
+    margin-bottom: 20 * $space_gap;
+
+    @include tablet {
+      padding: 0 $space_xs;
+    }
+  }
+
+  &__filter {
+    display: block;
+  }
+}
+
+.header {
+  display: flex;
+
+  @include tablet {
+    flex-direction: column;
+    margin-bottom: $space;
+  }
+
+  &__item {
+    width: calc(100% / 2);
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  &__icon {
+    width: 178px;
+    height: 38px;
+
+    @include desktop {
+      width: 135px;
+      height: 29px;
+    }
+
+    @include tablet {
+      margin-bottom: $space;
+    }
+  }
+
+  &__title {
+    @include headline-2;
+    color: $color-text-lighter;
+    margin-bottom: $space;
+
+    @include desktop {
+      @include headline-4;
+      margin-bottom: $space_s;
+    }
+  }
+}
+
+.filter {
+  background-color: $color-background-lighter;
+  padding: $space_l;
+  border-radius: $border-radius_l;
+
+  @include tablet {
+    padding: $space_s;
+  }
+
+  &__header {
+    display: flex;
+    margin-bottom: $space;
+  }
+
+  &__leftSide {
+    width: calc(100% / 2);
+
+    @include desktop {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    @include headline-3;
+    margin-bottom: $space_l;
+
+    @include desktop {
+      @include headline-4;
+      margin-bottom: $space_l;
+    }
+
+    @include tablet {
+      @include headline-5;
+      margin-bottom: $space_s;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space_xxs;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__tabsMobile {
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
+  }
+
+  &__rightSide {
+    display: flex;
+    align-items: center;
+    width: calc(100% / 2);
+    color: $color-text-gray;
+    padding: 0 $space_l;
+    border: 1px solid $color-border-lightly;
+    border-radius: $border-radius;
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: $space_xs;
+
+    @include tablet {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  &__item_1 {
+    width: 28%;
+
+    @include desktop {
+      width: 31%;
+    }
+
+    @include tablet {
+      width: 100%;
+      margin-bottom: $space;
+    }
+  }
+
+  &__item_2 {
+    width: 48%;
+
+    @include desktop {
+      width: 45%;
+    }
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  &__item_3 {
+    width: 24%;
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+}
+
+.label {
+  display: none;
+  @include text-description;
+  margin-bottom: $space_xxs;
+  color: $color-text-gray;
+
+  @include tablet {
+    @include text-caption;
+    display: block;
+  }
+}
+
+.inputGroup {
+  display: flex;
+  gap: $space_xs;
+
+  @include tablet {
+    flex-direction: column;
+    gap: 0;
+    height: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+  }
+
+  &.isOpen {
+    @include tablet {
+      height: auto;
+      overflow: visible;
+      margin-bottom: $space;
+    }
+  }
+
+  &__item_1 {
+    width: 46%;
+
+    @include desktop {
+      width: 59%;
+    }
+
+    @include tablet {
+      width: 100%;
+      margin-bottom: $space;
+    }
+  }
+
+  &__item_2 {
+    width: 54%;
+
+    @include desktop {
+      width: 41%;
+    }
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+}
+
+.toggleButton {
+  display: none;
+  align-items: center;
+  @include button;
+  margin: 0 auto;
+  margin-bottom: $space;
+  cursor: pointer;
+
+  @include tablet {
+    display: flex;
+  }
+
+  &__value {
+    margin-right: $space_xxs;
+  }
+
+  &__icon {
+    width: $icon-size_s;
+    height: $icon-size_s;
+    color: $color-text;
+
+    transition: transform $animation_duration;
+  }
+
+  &__icon.isOpen {
+    transform: rotate(-180deg);
+  }
+}
+
+.btn_filter {
+  white-space: nowrap;
+}

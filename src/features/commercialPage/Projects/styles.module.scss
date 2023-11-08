@@ -1,0 +1,237 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 40px;
+  background-color: $color-background-light;
+
+  @include desktop {
+    padding: 80px 40px;
+  }
+
+  @include tablet {
+    padding: 80px 16px 80px;
+  }
+}
+
+.projectServices {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: $content-width;
+  margin: 0 auto;
+}
+
+.header {
+  width: 1360px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 80px;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+    -webkit-appearance: none;
+    width: 0;
+    height: 0;
+  }
+
+  @include desktop {
+    margin-bottom: 64px;
+  }
+
+  @include tablet {
+    margin-bottom: 24px;
+  }
+
+  @include desktop {
+    width: 100%;
+    gap: $space_l;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  @include tablet {
+    padding: 0 $space_xs;
+    width: 100%;
+    overflow: auto;
+  }
+
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    @include tablet {
+      overflow: auto;
+      gap: $space_s;
+      width: max-content;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    gap: $space_gap;
+  }
+
+  &__tab {
+    padding: 12px $space_s;
+    background-color: $color-background-lighter;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: $color-text;
+    border: 1px solid $color-border-gray;
+    border-radius: 130px;
+    height: 44px;
+    width: max-content;
+    cursor: pointer;
+  }
+
+  &__tab:disabled {
+    background-color: $color-background-light;
+    border: 1px solid $color-background-light-gray;
+    color: $color-text-gray;
+  }
+
+  &__title {
+    color: $color-text;
+    @include headline-3;
+  }
+
+  &__title_mobile {
+    width: 100%;
+
+    @include headline-4;
+
+    margin-bottom: 40px;
+
+    @include tablet {
+      width: 100%;
+      padding: 0 $space_xs;
+      align-self: flex-start;
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: $space_xs;
+  align-items: center;
+  width: 100%;
+}
+
+.banner-office {
+  display: flex;
+  align-items: center;
+  border-radius: $border-radius;
+  width: 100%;
+  height: 160px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include desktop {
+    height: 146px;
+  }
+
+  @include tablet {
+    height: 314px;
+    align-items: flex-start;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-left: 720px;
+
+    @include desktop {
+      margin-left: 44px;
+    }
+
+    @include tablet {
+      margin: 32px;
+    }
+  }
+
+  &__title {
+    width: 227px;
+    height: 22px;
+
+    @include tablet {
+      width: 196px;
+      height: 19px;
+    }
+  }
+
+  &__description {
+    color: $color-text-lighter;
+    margin: 0;
+
+    @include text;
+
+    @include tablet {
+      @include text-description;
+    }
+  }
+
+  &__button-arrow {
+    position: absolute;
+    top: calc(50% - 24px);
+    right: 56px;
+
+    @include desktop {
+      right: 50px;
+    }
+
+    @include tablet {
+      left: 32px;
+      bottom: 32px;
+      top: unset;
+      right: unset;
+    }
+  }
+}
+
+.navigation {
+  display: flex;
+  border: 1px solid $color-border-gray;
+  background-color: $color-background-lighter;
+  border-radius: 12px;
+  position: sticky;
+  bottom: 46px;
+  left: calc(50% - 46px);
+
+  &__icon {
+    padding: 14px;
+
+    > svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__line {
+    height: 48px;
+    border: 1px solid $color-border-gray;
+    margin: 0;
+  }
+}

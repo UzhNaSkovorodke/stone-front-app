@@ -213,7 +213,7 @@
       height: 20px;
       z-index: 2;
 
-      background-image: url('public/image/checked.svg');
+      background-image: url('/image/checked.svg');
 
       background-repeat: no-repeat;
       background-size: 20px 20px;
@@ -222,11 +222,11 @@
 
     &:checked + label:hover::after,
     &:checked + label:focus::after {
-      background-image: url('public/image/checkedHover.svg');
+      background-image: url('/image/checkedHover.svg');
     }
 
     &:checked + label:active::after {
-      background-image: url('public/image/checkedClick.svg');
+      background-image: url('/image/checkedClick.svg');
     }
 
     &:not(:checked) + label::before {
@@ -237,7 +237,7 @@
       left: 0;
       width: 20px;
       height: 20px;
-      background-image: url('public/image/unchecked.svg');
+      background-image: url('/image/unchecked.svg');
       background-size: 20px 20px;
       background-repeat: no-repeat;
       cursor: pointer;
@@ -245,24 +245,24 @@
 
     &:not(:checked) + label:hover::before,
     &:not(:checked) + label:focus::before {
-      background-image: url('public/image/uncheckedHover.svg');
+      background-image: url('/image/uncheckedHover.svg');
     }
 
     &:not(:checked) + label:active::before {
-      background-image: url('public/image/uncheckedClick.svg');
+      background-image: url('/image/uncheckedClick.svg');
     }
 
     @include tablet-mini {
       &:not(:checked) + label:focus::before,
       &:not(:checked) + label:active::before,
       &:not(:checked) + label:hover::before {
-        background-image: url('public/image/unchecked.svg');
+        background-image: url('/image/unchecked.svg');
       }
 
       &:checked + label:hover::after,
       &:checked + label:focus::after,
       &:checked + label:active::after {
-        background-image: url('public/image/checked.svg');
+        background-image: url('/image/checked.svg');
       }
     }
   }

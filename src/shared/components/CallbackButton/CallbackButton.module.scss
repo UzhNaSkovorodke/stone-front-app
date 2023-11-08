@@ -1,0 +1,141 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.widget {
+  position: absolute;
+  right: $space_xl;
+  bottom: $space_s;
+
+  @include tablet {
+    right: $space_s;
+    bottom: 64px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      background-color: $color-background-lighter;
+      padding: $space_xxs $space_s (18 * $space_gap) $space_s;
+      border-radius: $border-radius;
+    }
+  }
+
+  &__phone {
+    color: transparent;
+    position: absolute;
+    width: 212px;
+    height: 56px;
+    z-index: 1;
+  }
+
+  &__item {
+    margin-bottom: $space_xxs;
+    cursor: pointer;
+
+    @include tablet {
+      margin-bottom: 0;
+      border-bottom: 1px solid $color-border-light;
+    }
+  }
+
+  &__item:last-child {
+    display: none;
+
+    @include tablet {
+      display: block;
+      border-bottom: none;
+    }
+  }
+
+  &__btn {
+    @include tablet {
+      position: absolute;
+      right: $space_xxs;
+      bottom: $space_xxs;
+    }
+  }
+
+  &_with-cookies {
+    bottom: $space_s;
+
+    @include media($mq-m) {
+      right: $space_s;
+      bottom: 84px;
+    }
+  }
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  background-color: $color-background-lighter;
+  border: 1px solid $color-border-gray;
+  border-radius: $border-radius;
+
+  @include tablet {
+    position: relative;
+    justify-content: flex-start;
+    width: auto;
+    height: auto;
+    border: none;
+    padding: $space_xs 48px $space_xs 0;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    color: $color-text;
+
+    @include tablet {
+      margin-right: 12px;
+    }
+  }
+
+  &__value {
+    display: none;
+    color: $color-text;
+
+    @include tablet {
+      display: block;
+    }
+  }
+
+  &__arrow {
+    display: none;
+    color: $color-text;
+
+    @include tablet {
+      display: block;
+      position: absolute;
+      top: 16px;
+      right: 0;
+    }
+  }
+}
+
+.toggleButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  background-color: $color-background;
+  border-radius: $border-radius;
+  cursor: pointer;
+
+  @include tablet {
+    width: 48px;
+    height: 48px;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    color: $color-text-lighter;
+  }
+}

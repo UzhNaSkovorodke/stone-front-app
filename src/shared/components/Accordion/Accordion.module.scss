@@ -1,0 +1,56 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.accordion {
+  &__item {
+    padding: $space 0;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $color-border-light;
+    }
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title svg {
+    width: $icon-size;
+    height: $icon-size;
+    color: $color-text;
+
+    transition: transform $animation_duration;
+  }
+
+  &__title.isRotatedIcon svg {
+    transform: rotate(-180deg);
+  }
+
+  &__bodyWrap {
+    height: 0;
+    overflow: hidden;
+
+    transition: height $animation_duration;
+  }
+
+  &__body {
+    padding-top: $space;
+  }
+
+  &__icon {
+    width: 311px;
+    height: 89px;
+    margin-bottom: $space;
+
+    @include mobile {
+      width: 255px;
+      height: 74px;
+    }
+  }
+
+  &__description {
+    @include text-description;
+    color: $color-text-gray;
+  }
+}

@@ -1,0 +1,59 @@
+@use 'src/shared/styles/unity' as *;
+
+.wrapper {
+  border: 1px solid $neutrals-gray-5;
+}
+
+.imageWrapper {
+  position: relative;
+  border-bottom: 1px solid $neutrals-gray-5;
+}
+
+.skeletonImage {
+  width: 100%;
+  height: 145px;
+  border-radius: 8px;
+}
+
+.type {
+  width: 86px;
+  height: 16px;
+  border-radius: 6px;
+}
+
+.price {
+  width: 110px;
+  height: 18px;
+  border-radius: 8px;
+}
+
+.pricePer {
+  width: 67px;
+  height: 16px;
+  border-radius: 6px;
+}
+
+.lot {
+  width: 74px;
+  height: 16px;
+  border-radius: 6px;
+}
+
+.tab {
+  width: 46px;
+  height: 18px;
+  border-radius: 8px;
+}
+
+.button {
+  flex-grow: 1;
+  height: 32px;
+  border-radius: 8px;
+}
+
+.iconButton {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}

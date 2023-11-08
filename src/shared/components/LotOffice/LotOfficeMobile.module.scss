@@ -1,0 +1,29 @@
+@use 'src/shared/styles/unity' as *;
+
+.wrapper {
+  color: initial;
+  border: 1px solid $neutrals-gray-5;
+}
+
+.imageWrapper {
+  position: relative;
+  border-bottom: 1px solid $neutrals-gray-5;
+}
+
+.popular {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+}
+
+.iconWrapper {
+  flex-direction: row-reverse;
+}
+
+.button {
+  flex-grow: 1;
+
+  & > button {
+    width: 100%;
+  }
+}

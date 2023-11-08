@@ -1,0 +1,101 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.slider {
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  height: 744px;
+
+  @include media($mq-xl) {
+    height: 529px;
+  }
+}
+
+.picture {
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  height: 744px;
+  overflow: hidden;
+
+  @include media($mq-xl) {
+    height: 529px;
+  }
+
+  &__button {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    margin-top: -$space_s;
+
+    @include media($mq-m) {
+      display: none;
+    }
+
+    &_right {
+      right: $space_l;
+    }
+
+    &_left {
+      left: $space_l;
+    }
+  }
+}
+
+.list {
+  &_style_dom &__item_active {
+    background-color: $color-background;
+
+    &:hover {
+      background-color: $color-background;
+    }
+  }
+
+  &__item {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: $space_l;
+    height: 360px;
+    overflow: hidden;
+    background-color: $color-background-light;
+    border-left: 1px solid rgba($color-border-gray, 0.5);
+
+    &:hover {
+      background-color: $color-background-light-gray;
+      color: $color-text;
+    }
+
+    &_active {
+      background-color: $color-background-primary-office;
+      color: $color-text-lighter;
+      border-left: none;
+
+      &:hover {
+        background-color: $color-background-primary-office;
+        color: $color-text-lighter;
+      }
+    }
+  }
+
+  &__title {
+    @include headline-4;
+    overflow: hidden;
+
+    @include media($mq-xl) {
+      @include headline-5;
+    }
+  }
+
+  &__note {
+    @include text-description;
+    color: $color-text-dark-gray;
+    overflow: hidden;
+  }
+
+  &__item_active &__note {
+    color: $color-text-light;
+  }
+}

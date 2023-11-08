@@ -1,0 +1,155 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.banner-service {
+  display: flex;
+  align-items: center;
+  border-radius: $border-radius;
+  background-color: $color-background;
+  width: 100%;
+  height: 160px;
+  padding: $space $space_l;
+  position: relative;
+  background-repeat: no-repeat;
+
+  &_style_light {
+    background-color: $color-background-light;
+  }
+
+  &_style_light &__image svg:last-child {
+    display: block;
+  }
+
+  &_style_light &__image svg:first-child {
+    display: none;
+  }
+
+  &_style_light &__title {
+    color: $color-text;
+  }
+
+  &_style_light &__description {
+    color: $color-text;
+  }
+
+  &_style_light &__button-arrow button:first-child {
+    display: flex;
+  }
+
+  &_style_light &__button-arrow button:last-child {
+    display: none;
+  }
+
+  @include desktop {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+
+  @include tablet {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: $space;
+    min-height: 314px;
+  }
+  @media (max-width: 395px) {
+    min-height: 336px;
+  }
+
+  &__images-container {
+    display: flex;
+    gap: $space_l;
+    height: max-content;
+    @media (min-width: 1023px) and (max-width: 1439px) {
+      position: absolute;
+      top: 33px;
+      right: 158px;
+    }
+  }
+
+  &__image {
+    width: 280px;
+    height: 94px;
+
+    @include tablet {
+      width: 231px;
+      height: 78px;
+    }
+  }
+
+  &__image_rotate {
+    transform: rotate(180deg);
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__image svg:last-child {
+    display: none;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: $space_gap;
+    margin: 0 0 0 80px;
+
+    @include desktop {
+      margin: 0 60px 0 0;
+    }
+    @media (min-width: 1200px) and (max-width: 1440px) {
+      max-width: 630px;
+    }
+    @media (min-width: 1023px) and (max-width: 1200px) {
+      max-width: 430px;
+    }
+    @include tablet {
+      margin: 0 0 22px 0;
+      gap: $space_xxs;
+    }
+  }
+
+  &__title {
+    color: $color-text-lighter;
+
+    @include headline-4;
+
+    @include tablet {
+      @include headline-5;
+    }
+  }
+
+  &__description {
+    max-width: 500px;
+    color: $color-text-lighter;
+    margin: 0;
+
+    @include text;
+
+    @include tablet {
+      @include text-description;
+    }
+  }
+
+  &__button-arrow {
+    position: absolute;
+    top: calc(50% - 24px);
+    right: 56px;
+
+    @include desktop {
+      right: 50px;
+    }
+
+    @include tablet {
+      left: 32px;
+      bottom: 32px;
+      top: unset;
+      right: unset;
+    }
+  }
+
+  &__button-arrow button:first-child {
+    display: none;
+  }
+}

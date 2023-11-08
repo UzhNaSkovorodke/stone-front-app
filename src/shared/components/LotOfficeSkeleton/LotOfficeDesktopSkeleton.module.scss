@@ -1,0 +1,107 @@
+@use 'src/shared/styles/unity' as *;
+
+.wrapper {
+  overflow: hidden;
+  border: 1px solid $neutrals-gray-6;
+}
+
+.imageWrapper {
+  flex: 0 0 178px;
+  border-right: 1px solid $neutrals-gray-6;
+}
+
+.content {
+  flex-grow: 1;
+}
+
+.controls {
+  flex: 0 0 40px;
+}
+
+.info {
+  gap: 4px;
+}
+
+.img {
+  width: 130px;
+  height: 96px;
+  border-radius: 8px;
+
+  &._variant-full {
+    height: 96px;
+  }
+
+  &._variant-short {
+    height: 72px;
+  }
+}
+
+.infoV {
+  height: 20px;
+  border-radius: 8px;
+}
+
+.infoL {
+  height: 16px;
+  border-radius: 6px;
+}
+
+.info1v {
+  width: 73px;
+}
+
+.info1l {
+  width: 86px;
+}
+
+.info2v {
+  width: 32px;
+}
+
+.info2l {
+  width: 45px;
+}
+
+.info3v {
+  width: 32px;
+}
+
+.info3l {
+  width: 68px;
+}
+
+.info4v {
+  width: 32px;
+}
+
+.info4l {
+  width: 54px;
+}
+
+.info5v {
+  width: 53px;
+}
+
+.info5l {
+  width: 35px;
+}
+
+.info6v {
+  width: 113px;
+}
+
+.info6l {
+  width: 35px;
+}
+
+.button {
+  width: 119px;
+  height: 32px;
+  border-radius: 8px;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}

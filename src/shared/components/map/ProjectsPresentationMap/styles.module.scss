@@ -1,0 +1,454 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.map-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 748px;
+  border-radius: $border-radius-l;
+
+  @include media($mq-m) {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+  }
+
+  .slider-counter {
+    position: absolute;
+    bottom: 16px;
+    left: calc(50% - 36px);
+    background-color: $color-background;
+    border-radius: 130px;
+    opacity: 0.8;
+    padding: 8px 16px;
+    color: $color-text-lighter;
+
+    @include text-description;
+  }
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+
+  &__close-button {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 4;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+  }
+
+  &__pin {
+    position: relative;
+    padding: 14px $space_s;
+    background-color: $color-background-lighter;
+    border-radius: $border-radius-s;
+    width: max-content;
+    z-index: 1000;
+  }
+
+  &__pin-title {
+    color: $color-text;
+    margin: 0;
+
+    @include text-description;
+
+    font-weight: 500;
+  }
+
+  &__pin-circle {
+    &_small {
+      position: absolute;
+      border-radius: 50%;
+      bottom: -8px;
+      left: calc(50% - 8px);
+      width: 16px;
+      height: 16px;
+    }
+
+    &_large {
+      position: absolute;
+      border-radius: 50%;
+      bottom: -8px;
+      left: calc(50% - 8px);
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.zoom {
+  &__container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: $space_xxs;
+    right: 16px;
+    top: calc(50% - 52px);
+
+    @include media($mq-m) {
+      bottom: 455px;
+      top: unset;
+      z-index: 5;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+    background-color: $color-background-lighter;
+    z-index: 1;
+    cursor: pointer;
+
+    > svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.modal-mobile {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
+
+  &__container {
+    position: relative;
+    padding: 6px 16px 49px 16px;
+    width: 100%;
+    height: 100%;
+    background-color: $color-background-light;
+    border-radius: $border-radius_s $border-radius_s 0 0;
+
+    .swipe-zone {
+      position: absolute;
+      top: -6px;
+      left: 0;
+      width: 100vw;
+      height: 12px;
+
+      &__container {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        background-color: $color-background-light;
+        clip-path: path(
+          'M188 5C194.138 5 199.63 4.30875 203.299 3.22067C210.398 1.11505 213.948 0.062238 214.163 0.031119C214.377 0 213.749 0 214 0H327C349.627 0 360.941 0 367.971 7.02944C375 14.0589 375 25.3726 375 48V684C375 706.627 375 717.941 367.971 724.971C360.941 732 349.627 732 327 732H48C25.3726 732 14.0589 732 7.02944 724.971C0 717.941 0 706.627 0 684V48C0 25.3726 0 14.0589 7.02944 7.02944C14.0589 0 25.3726 0 48 0H162C162.251 0 161.623 0 161.837 0.031119C162.052 0.062238 165.602 1.11505 172.701 3.22067C176.37 4.30875 181.862 5 188 5Z'
+        );
+        z-index: 1;
+
+        @media (min-width: 425px) {
+          transform: scaleX(1.15);
+          margin: 0 28px;
+        }
+
+        @media (min-width: 768px) {
+          transform: scaleX(2.1);
+          margin: 0 410px;
+        }
+      }
+    }
+  }
+}
+
+.ellipse {
+  position: absolute;
+  top: -3px;
+  left: calc(50% - 15px);
+  width: 30px;
+  height: 6px;
+  background-color: $color-background-light;
+  border-radius: 50%;
+  z-index: 4;
+}
+
+.modal {
+  position: absolute;
+  left: 40px;
+  top: 54px;
+  z-index: 55; //модалка подробностей проекта на карте, перекрывает кнопку просмотра на карте/фильтр
+
+  @include desktop {
+    left: 24px;
+    top: 24px;
+  }
+
+  @include media($mq-m) {
+    position: static;
+  }
+
+  .modal-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 464px;
+    box-shadow: 0 $space_xs $space_s 0 rgba(0, 0, 0, 0.16);
+    border-radius: $border-radius;
+
+    @include desktop {
+      width: 343px;
+    }
+
+    @include media($mq-m) {
+      width: 100%;
+      box-shadow: none;
+    }
+
+    .close-button {
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+      border-radius: 50%;
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      z-index: 10;
+
+      @include desktop {
+        top: 8px;
+        right: 8px;
+      }
+    }
+  }
+
+  .modal-slider {
+    border-radius: $border-radius $border-radius 0 0;
+    overflow: hidden;
+    background-color: $color-background-lighter;
+
+    @include desktop {
+      margin-bottom: -6px;
+    }
+
+    @include media($mq-m) {
+      margin-bottom: 0;
+    }
+
+    &__image {
+      height: 464px;
+      width: 464px;
+
+      @include desktop {
+        height: 343px;
+        width: 343px;
+      }
+    }
+
+    &__counter {
+      position: absolute;
+      bottom: 16px;
+      left: calc(50% - 36px);
+      background-color: $color-background;
+      border-radius: 130px;
+      opacity: 0.8;
+      padding: 8px 16px;
+      color: $color-text-lighter;
+
+      @include text-caption;
+    }
+  }
+
+  .modal-main {
+    border-radius: 0 0 $border-radius $border-radius;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: max-content;
+    padding: $space_s;
+    background-color: $color-background-lighter;
+
+    @include desktop {
+      padding: $space_s;
+    }
+
+    @include tablet {
+      width: 100%;
+      border-radius: 0 0 $border-radius $border-radius;
+    }
+
+    &__header {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__header-block {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      & div {
+        font-size: 12px;
+        line-height: 16px;
+
+        & div:first-child {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+
+    &__text {
+      color: $color-text-gray;
+      margin: 0;
+      @include text-caption;
+
+      @include desktop {
+        @include text-caption;
+      }
+    }
+
+    &__title {
+      padding: $space_gap 0 $space_xs;
+      color: $color-text;
+      @include headline-5;
+
+      @include desktop {
+        padding: $space_gap 0 $space_xxs;
+      }
+    }
+
+    &__prices {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    &__price {
+      position: relative;
+      color: $color-text-dark-gray;
+      margin: 0;
+      padding-left: 16px;
+
+      @include text-caption;
+    }
+
+    &__price::before {
+      position: absolute;
+      content: '';
+      top: 5px;
+      left: 0;
+      width: 6px;
+      height: 6px;
+      background-color: $color-background-gray;
+      border-radius: 50%;
+    }
+
+    &__tags {
+      display: flex;
+      gap: $space_gap;
+      flex-wrap: wrap;
+      margin-top: $space_xs;
+
+      @include desktop {
+        margin-top: $space_xs;
+      }
+    }
+
+    &__tag {
+      display: inline-flex;
+      align-items: center;
+      gap: $space_xxs;
+      padding: 11px 24px;
+      border: 1px solid $color-border-light;
+      border-radius: 130px;
+      font-weight: 500;
+    }
+
+    &__tag_mobile {
+      display: inline-flex;
+      align-items: center;
+      gap: $space_xxs;
+    }
+
+    &__tag-icon {
+      width: 20px;
+      height: 12px;
+    }
+
+    &__tag-title {
+      margin: 0;
+
+      @include text-caption;
+      font-weight: 500;
+    }
+
+    &__tag-description {
+      color: $color-text-gray;
+      margin: 0;
+
+      @include text-caption;
+    }
+  }
+
+  .arrow {
+    display: none;
+  }
+}
+
+.modal:hover {
+  .arrow {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    // Вычитается половина высоты кнопки для точного выравнивания посередине
+    bottom: calc(50% - 24px);
+    z-index: 10;
+
+    @include media($mq-m) {
+      display: none;
+    }
+  }
+}
+
+.prev-arrow {
+  left: 16px;
+}
+
+.next-arrow {
+  right: 16px;
+}
+
+.line {
+  border: 1px solid $color-border-light;
+  margin: 16px 0;
+}
+
+.route-button {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 14px 14px 14px 24px;
+  background-color: $color-background-lighter;
+  border: 1px solid $color-background-gray;
+  border-radius: $border-radius-s;
+  height: 48px;
+  width: 134px;
+  margin: $space_xs 0 $space_xs $space_xs;
+  color: $color-text;
+
+  & svg {
+    display: block;
+    height: 100%;
+    height: 100%;
+  }
+
+  &__title {
+    @include button;
+    margin: 0;
+  }
+}

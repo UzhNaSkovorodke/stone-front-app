@@ -1,0 +1,94 @@
+@use 'src/shared/styles/unity' as *;
+
+$border: 1px solid $neutrals-gray-3;
+
+.root {
+  width: 100%;
+  background-color: $neutrals-gray-1;
+}
+
+.subscribe {
+  border-bottom: $border;
+
+  @include media($m) {
+    border-right: $border;
+  }
+}
+
+.follow {
+  border-bottom: $border;
+}
+
+.logoBlock {
+  border-right: $border;
+}
+
+.honestDevelopment {
+  svg {
+    width: 138.4px;
+    height: 45.6px;
+  }
+}
+
+.links {
+  > div {
+    flex: 1;
+    border-right: $border;
+    border-bottom: $border;
+
+    @include media($m) {
+      border-bottom: none;
+    }
+
+    &:nth-of-type(3) {
+      @include media($s) {
+        border-right: none;
+      }
+
+      @include media($m) {
+        border-right: $border;
+      }
+    }
+
+    &:last-of-type {
+      grid-column: 2 span;
+      border-right: none;
+
+      @include media($m) {
+        grid-column: auto;
+      }
+    }
+  }
+}
+
+.contacts {
+  margin-top: 68px;
+}
+
+.bottomBar {
+  > div {
+    @include media($m) {
+      border-top: $border;
+    }
+
+    &:first-of-type {
+      grid-column: 3 span;
+
+      @include media($m) {
+        border-right: $border;
+      }
+    }
+  }
+}
+
+.link {
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}

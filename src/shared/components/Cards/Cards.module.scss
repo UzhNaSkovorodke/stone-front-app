@@ -1,0 +1,63 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+$icon-size: 48px;
+
+.list {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.listItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 180px;
+  padding: $space_l ($space_l + $icon-size) $space_l $space_l;
+  cursor: pointer;
+  color: $color-text-lighter;
+  text-decoration: none;
+
+  @include desktop {
+    padding: $space_l;
+    height: 216px;
+  }
+
+  @include tablet {
+    height: 176px;
+    padding: $space;
+  }
+
+  &__icon {
+    position: absolute;
+    top: $space_l;
+    right: $space_l;
+    display: none;
+    width: $icon-size;
+    height: $icon-size;
+    flex-shrink: 0;
+  }
+
+  &:hover &__icon {
+    display: block;
+
+    @include desktop {
+      display: none;
+    }
+  }
+}
+
+.listItem__title {
+  flex: 1 0 auto;
+  @include headline-5;
+
+  @include desktop {
+    @include button-l;
+  }
+}
+
+.listItem__note {
+  @include text-description;
+  color: $color-text-light;
+  flex-shrink: 0;
+}

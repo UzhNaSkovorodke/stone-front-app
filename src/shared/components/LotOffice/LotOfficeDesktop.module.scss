@@ -1,0 +1,61 @@
+@use 'src/shared/styles/unity' as *;
+
+.wrapper {
+  overflow: hidden;
+  color: initial;
+  border: 1px solid $neutrals-gray-6;
+
+  &:hover {
+    border: 1px solid $neutrals-gray-5;
+
+    .imageWrapper {
+      border-right: 1px solid $neutrals-gray-5;
+    }
+  }
+}
+
+.imageWrapper {
+  flex: 0 0 178px;
+  min-width: 178px;
+  border-right: 1px solid $neutrals-gray-6;
+}
+
+.content {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.controls {
+  flex: 0 0 40px;
+  justify-content: flex-start;
+}
+
+.info_grid {
+  gap: 4px;
+
+  &:first-child {
+    width: 104px;
+  }
+  &:nth-child(2) {
+    width: 114px;
+  }
+  &:nth-child(3) {
+    width: 65px;
+  }
+  &:nth-child(4) {
+    width: 65px;
+  }
+  &:nth-child(5) {
+    width: 65px;
+  }
+  &:nth-child(6) {
+    width: 104px;
+  }
+}
+.gridWrapper {
+  width: 100%;
+}
+.grid {
+  grid-template-columns: repeat(6, auto);
+}

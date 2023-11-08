@@ -1,0 +1,65 @@
+@use 'src/shared/styles/unity' as *;
+
+.root {
+  height: 72px;
+
+  @include media($m) {
+    height: 88px;
+  }
+
+  @include media($l) {
+    height: 100px;
+  }
+}
+
+.left,
+.right {
+  width: 50%;
+}
+
+.left {
+  @include media($m) {
+    border-right: 1px solid $neutrals-gray-3;
+
+    &._isActive {
+      background: linear-gradient(-90.24deg, rgba(#b2461a, 0.5) 0%, rgb(178 70 26 / 0%) 75%);
+    }
+  }
+}
+
+.right {
+  &._isActive {
+    @include media($m) {
+      background: linear-gradient(90.24deg, #1c3040 0%, rgb(28 48 64 / 0%) 75%);
+    }
+  }
+}
+
+.logo {
+  display: flex;
+  color: $neutrals-white;
+
+  > svg {
+    width: 89px;
+    height: 16px;
+  }
+}
+
+.link {
+  color: $neutrals-white;
+  text-decoration: none;
+
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+.phoneWrapper {
+  border-left: 1px solid $neutrals-gray-3;
+}

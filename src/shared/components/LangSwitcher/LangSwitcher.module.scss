@@ -1,0 +1,86 @@
+@use 'src/shared/styles/unity' as *;
+@use 'src/shared/styles/input' as *;
+
+.input {
+  @include invisible-input;
+}
+
+.root {
+  cursor: pointer;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: 68px;
+  height: 36px;
+  padding: 2px;
+
+  background-color: $neutrals-gray-3;
+  border-radius: 120px;
+  @include sans-serif;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+}
+
+.left,
+.right,
+.circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.left,
+.right {
+  user-select: none;
+
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: color 200ms ease-out;
+}
+
+.circle {
+  will-change: transform;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background-color: $neutrals-gray-1;
+
+  transition: transform 200ms ease-out;
+}
+
+.input:checked {
+  & + .wrapper > .left {
+    color: $neutrals-white;
+  }
+
+  & + .wrapper > .right {
+    color: $neutrals-gray-4;
+  }
+}
+
+.input:not(:checked) {
+  & + .wrapper > .left {
+    color: $neutrals-gray-4;
+  }
+
+  & + .wrapper > .right {
+    color: $neutrals-white;
+  }
+
+  & + .wrapper > .circle {
+    transform: translateX(32px);
+  }
+}

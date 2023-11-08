@@ -1,0 +1,78 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding-left: $space_l;
+  padding-right: $space_l;
+
+  @include tablet {
+    justify-content: flex-start;
+    height: auto;
+    padding: 25 * $space_gap $space $space;
+  }
+
+  @media (max-height: 666px) {
+    padding-top: $space_xl;
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 72px;
+    height: 72px;
+    border: 1px solid $color-border-positive;
+    border-radius: 50%;
+    margin-bottom: $space;
+  }
+
+  &__icon_style_info {
+    border: 1px solid $color-border-info;
+  }
+
+  &__icon svg {
+    width: $icon-size;
+    height: $icon-size;
+    color: $color-text-positive;
+  }
+
+  &__icon_style_info svg {
+    color: $color-text-info;
+  }
+
+  &__title {
+    @include headline-5;
+    text-align: center;
+    margin-bottom: $space_xs;
+  }
+
+  &__subtitle {
+    text-align: center;
+    margin-top: $space_xs;
+    margin-bottom: $space;
+  }
+
+  &__subtitle span {
+    color: $color-text-positive;
+  }
+
+  &__description {
+    text-align: center;
+    color: $color-text-gray;
+    margin-bottom: $space;
+  }
+
+  &__description_size_s {
+    @include text-description;
+    margin-bottom: $space;
+  }
+
+  &__description span {
+    color: $color-text;
+  }
+}

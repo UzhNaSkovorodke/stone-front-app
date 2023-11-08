@@ -1,0 +1,275 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+
+.block {
+  display: flex;
+  background-color: $color-background;
+
+  @include tablet {
+    flex-direction: column;
+  }
+
+  &__img {
+    width: calc(100% / 2);
+    background-image: url('/image/salesoffice.jpg');
+    background-size: cover;
+    background-position: center;
+
+    @include desktop {
+      width: calc(100% / 3);
+    }
+
+    @include tablet {
+      width: 100%;
+      height: 375px;
+    }
+  }
+
+  &__content {
+    max-width: 800px;
+    width: calc(100% / 2);
+    padding: 20 * $space_gap;
+    margin: 0 auto;
+
+    @include desktop {
+      width: calc((100% / 3) * 2);
+    }
+
+    @include tablet {
+      max-width: none;
+      width: 100%;
+      padding: (20 * $space_gap) $space;
+      margin: 0;
+    }
+  }
+
+  &__content_loyalty {
+    padding: (30 * $space_gap) (20 * $space_gap);
+    @include desktop {
+      padding: 20 * $space_gap;
+    }
+    @include tablet {
+      padding: (20 * $space_gap) $space;
+    }
+  }
+
+  &__content_invest {
+    padding: (30 * $space_gap) (20 * $space_gap);
+
+    @include desktop {
+      padding: (20 * $space_gap);
+    }
+    @include tablet {
+      max-width: none;
+      width: 100%;
+      padding: (20 * $space_gap) $space;
+      margin: 0;
+    }
+  }
+
+  &__title {
+    @include headline-3;
+    color: $color-text-lighter;
+    margin-bottom: $space_l;
+
+    @include desktop {
+      @include headline-4;
+      margin-bottom: $space_l;
+    }
+  }
+
+  &__title_invest_loyalty {
+    margin-bottom: 0;
+    padding-bottom: $space_l;
+    @include desktop {
+      padding-bottom: ($space);
+    }
+    @include tablet {
+      padding-bottom: $space_s;
+    }
+  }
+
+  &__description {
+    @include text-accent;
+    color: $color-text-lighter;
+    padding-bottom: (20 * $space_gap);
+
+    @include tablet {
+      @include text;
+      padding-bottom: $space_l;
+    }
+  }
+
+  &__description_loyalty {
+    padding-bottom: $space_l;
+
+    @include desktop {
+      padding-bottom: $space;
+    }
+
+    @include tablet {
+      padding-bottom: $space_s;
+    }
+  }
+}
+
+.info {
+  border-bottom: 1px solid $color-border;
+  padding-bottom: $space_s;
+  margin-bottom: $space_s;
+
+  &_lastChild {
+    border: none;
+    margin-bottom: $space;
+  }
+
+  &__title {
+    @include text-description;
+    margin-bottom: $space_xxs;
+    color: $color-text-gray;
+  }
+
+  &__value {
+    display: flex;
+    align-items: center;
+    @include text-accent;
+    color: $color-text-lighter;
+
+    @include media($mq-n) {
+      @include text;
+    }
+  }
+
+  &__icon {
+    margin-right: $space_xs;
+  }
+}
+
+.phone {
+  color: $d-color-neutrals-gray-5;
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: -0.32px;
+
+  padding-bottom: (8 * $space_xxs);
+  @include desktop {
+    padding-bottom: $space_xl;
+
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.24px;
+  }
+
+  @include tablet {
+    font-size: 20px;
+  }
+}
+
+.form {
+  &__line {
+    display: flex;
+    margin-bottom: $space;
+
+    @include media($mq-n) {
+      flex-direction: column;
+    }
+  }
+
+  &__line_spaceB_l {
+    margin-bottom: $space_l + $space_gap;
+    @include tablet {
+      margin-bottom: $space;
+    }
+  }
+
+  &__line_spaceB_lg {
+    margin-bottom: $space;
+  }
+
+  &__cell {
+    width: calc(100% / 2);
+
+    @include media($mq-n) {
+      width: 100%;
+    }
+  }
+
+  &__cell:first-child {
+    margin-right: $space_xs;
+  }
+
+  &__cell:not(:last-child) {
+    @include media($mq-n) {
+      margin-bottom: $space;
+    }
+  }
+}
+
+.inputGroup {
+  position: relative;
+
+  &__title {
+    @include text-description;
+    margin-bottom: $space_xxs;
+    color: $color-text-gray;
+  }
+
+  &__message {
+    position: absolute;
+    bottom: -17px;
+    left: 0;
+    @include text-caption;
+    @include nowrap;
+    color: $color-text-warning;
+    padding: 0 $space;
+  }
+
+  &__message_style_checkbox {
+    padding-left: 20px + $space_xs;
+  }
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 72px;
+    height: 72px;
+    border: 1px solid $color-border-positive;
+    border-radius: 50%;
+    margin-bottom: $space;
+  }
+
+  &__icon svg {
+    width: $icon-size;
+    height: $icon-size;
+    color: $color-text-positive;
+  }
+
+  &__title {
+    @include headline-5;
+    margin-bottom: $space_xs;
+  }
+
+  &__description {
+    text-align: center;
+    color: $color-text-gray;
+    margin-bottom: $space;
+  }
+}
+
+.checkboxValue {
+  @include text-caption;
+  color: $color-text-gray;
+
+  & a {
+    color: $color-text-light;
+  }
+}

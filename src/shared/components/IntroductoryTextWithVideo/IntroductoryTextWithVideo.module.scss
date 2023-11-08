@@ -1,0 +1,58 @@
+@import '../../../styles/fonts';
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $color-background-lighter;
+  color: $color-text;
+  padding: (3 * $space_l) $space_l;
+
+  @include desktop {
+    padding: (2 * $space_l) $space_l;
+  }
+
+  @include tablet {
+    padding: (2 * $space_l) $space;
+  }
+
+  &__title {
+    @include headline-3;
+    text-align: center;
+    max-width: 775px;
+    margin-bottom: $space_xl;
+
+    @include desktop {
+      @include headline-4;
+      margin-bottom: $space_l;
+    }
+
+    @include tablet {
+      @include headline-5;
+      margin-bottom: $space;
+    }
+
+    span {
+      color: $color-text-gray;
+    }
+  }
+
+  &__description {
+    @include text-accent;
+    text-align: center;
+    max-width: 565px;
+    margin-bottom: $space_xl;
+
+    @include desktop {
+      @include text;
+      margin-bottom: $space_l;
+    }
+
+    @include tablet {
+      @include text;
+      margin-bottom: $space;
+    }
+  }
+}

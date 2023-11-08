@@ -1,0 +1,238 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.block {
+  display: flex;
+  height: 380px;
+  width: 100%;
+
+  @include tablet {
+    flex-direction: column;
+    height: max-content;
+  }
+
+  .slider {
+    width: 50%;
+    border-radius: $border-radius 0 0 $border-radius;
+    overflow: hidden;
+
+    @include tablet {
+      width: 100%;
+      height: 343px;
+      border-radius: $border-radius $border-radius 0 0;
+    }
+
+    &__image {
+      object-fit: cover;
+
+      @include tablet {
+        height: 343px;
+      }
+    }
+  }
+
+  .main {
+    border: 1px solid $color-background-lighter;
+    border-radius: 0 $border-radius $border-radius 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    padding: $space_l;
+    background-color: $color-background-lighter;
+
+    @include desktop {
+      padding: $space_s;
+    }
+
+    @include tablet {
+      width: 100%;
+      border-radius: 0 0 $border-radius $border-radius;
+    }
+
+    &__header {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__header-block {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__text {
+      color: $color-text-gray;
+      margin: 0;
+      @include text-description;
+
+      @include desktop {
+        @include text-caption;
+      }
+    }
+
+    &__title {
+      padding: $space_xs 0;
+      color: $color-text;
+      @include headline-4;
+
+      @include desktop {
+        @include headline-5;
+      }
+    }
+
+    &__title_mobile {
+      padding: 4px 0 8px;
+    }
+
+    &__price-container {
+      display: flex;
+    }
+
+    &__description {
+      color: $color-text-dark-gray;
+      margin: 0;
+      @include text-description;
+
+      @include desktop {
+        @include text-caption;
+      }
+    }
+
+    &__tags {
+      display: flex;
+      gap: $space_gap;
+      flex-wrap: wrap;
+      margin-top: $space_s;
+
+      @include desktop {
+        margin-top: $space_xs;
+      }
+    }
+
+    &__tag {
+      display: inline-flex;
+      align-items: center;
+      gap: $space_xxs;
+      padding: 11px 24px;
+      border: 1px solid $color-border-light;
+      border-radius: 130px;
+      font-weight: 500;
+    }
+
+    &__tag_mobile {
+      display: inline-flex;
+      align-items: center;
+      gap: $space_xxs;
+    }
+
+    &__tag-icon {
+      width: 20px;
+      height: 12px;
+    }
+
+    &__tag-title {
+      margin: 0;
+      color: $color-text-dark-gray;
+      @include text-caption;
+      font-weight: 500;
+    }
+
+    &__tag-description {
+      color: $color-text-gray;
+      margin: 0;
+
+      @include text-caption;
+    }
+
+    &__prices {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    &__price {
+      position: relative;
+      color: $color-text-dark-gray;
+      margin: 0;
+      padding-left: 16px;
+
+      @include text-caption;
+    }
+
+    &__price::before {
+      position: absolute;
+      content: '';
+      top: 5px;
+      left: 0;
+      width: 6px;
+      height: 6px;
+      background-color: $color-background-gray;
+      border-radius: 50%;
+    }
+  }
+
+  .arrow {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    // Вычитается половина высоты кнопки для точного выравнивания посередине
+    bottom: calc(50% - 24px);
+    z-index: 10;
+  }
+
+  .prev-arrow {
+    left: 16px;
+  }
+
+  .next-arrow {
+    right: 16px;
+  }
+
+  .slider-counter {
+    display: none;
+    position: absolute;
+    bottom: 16px;
+    left: calc(50% - 36px);
+    background-color: $color-background;
+    border-radius: 130px;
+    opacity: 0.8;
+    padding: 8px 16px;
+    color: $color-text-lighter;
+
+    @include text-description;
+
+    @include desktop {
+      display: block;
+    }
+  }
+}
+
+.block:hover {
+  .main {
+    border: 1px solid $color-border-gray;
+
+    @include desktop {
+      border: 1px solid transparent;
+    }
+  }
+
+  .arrow {
+    display: block;
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  .slider-counter {
+    display: block;
+  }
+}
+
+.line {
+  height: 1px;
+  background-color: $color-border-light;
+  margin: 16px 0;
+}

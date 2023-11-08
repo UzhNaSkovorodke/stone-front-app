@@ -1,0 +1,99 @@
+@import '../../../styles/variables';
+
+$modal-width: 464px;
+$modal-header-height: 72px;
+$close-size: 32px;
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color-background, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3002;
+}
+
+.modalContent {
+  width: 1200px;
+  height: 675px;
+  border-radius: 20px;
+  @media (max-width: 1440px) {
+    width: 853.334px;
+    height: 480px;
+  }
+  @media (max-width: 1023px) {
+    display: none;
+  }
+}
+
+.desktopContent {
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  @media (max-width: 1023px) {
+    display: none;
+  }
+}
+
+.tabletContent {
+  height: 100%;
+  width: 100%;
+  @media (min-width: 1023px) {
+    display: none;
+  }
+
+  iframe {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+  }
+}
+
+.header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $modal-header-height;
+  background-color: $color-background-lighter;
+  border-bottom: 1px solid $color-border-light;
+  padding-left: $space;
+  padding-right: $space;
+  border-bottom: 1px solid $color-border-light;
+}
+
+.logo {
+  width: 89px;
+  height: 16px;
+}
+
+.close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: $space_xs;
+  right: $space_xs;
+  width: $close-size;
+  height: $close-size;
+  background-color: $color-background-light;
+  border-radius: 50%;
+  cursor: pointer;
+
+  @media (max-width: 1023px) {
+    position: static;
+    background-color: transparent;
+  }
+}
+
+.contentWrap {
+  width: 100%;
+  background: white;
+  height: 100vh;
+}

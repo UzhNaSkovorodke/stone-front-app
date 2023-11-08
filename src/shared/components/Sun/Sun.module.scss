@@ -1,0 +1,39 @@
+@use 'src/shared/styles/unity' as *;
+
+.root {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  width: max-content;
+
+  > svg {
+    overflow: visible;
+  }
+}
+
+.label {
+  display: inline-block;
+}
+
+.sunLabel {
+  gap: 2px;
+
+  width: 73px;
+  padding: 10px 11px;
+
+  background-color: $neutrals-white;
+  border: 2px solid #777e91;
+  border-radius: 210px;
+
+  svg {
+    color: #777e91;
+  }
+
+  &._isSunny {
+    border-color: #e9b737;
+
+    svg {
+      color: #e9b737;
+    }
+  }
+}
